@@ -4,9 +4,7 @@
   <title>McBeth Gaming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -14,78 +12,75 @@
       font-family: Arial, sans-serif;
       color: white;
       background:
-        linear-gradient(rgba(2,6,23,.82), rgba(2,6,23,.92)),
-        url('images/background.jpg') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
+        linear-gradient(rgba(2,6,23,.75), rgba(2,6,23,.92)),
+        url("images/background.png") center/cover no-repeat fixed;
+      padding: 28px;
     }
 
-    .container {
-      width: 100%;
+    .wrap {
       max-width: 1100px;
-      background: rgba(15,23,42,.78);
-      border: 1px solid rgba(34,197,94,.3);
-      border-radius: 30px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, .82);
+      border: 1px solid rgba(34,197,94,.35);
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(34,197,94,.15);
+      box-shadow: 0 0 55px rgba(34,197,94,.25);
       backdrop-filter: blur(8px);
     }
 
     .hero {
-      padding: 50px 30px;
       text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 45px 28px;
     }
 
     .logo {
-      width: 140px;
-      border-radius: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 25px rgba(34,197,94,.35);
+      width: 190px;
+      max-width: 70%;
+      border-radius: 22px;
+      box-shadow: 0 0 35px rgba(34,197,94,.55);
+      margin-bottom: 24px;
     }
 
     h1 {
+      font-size: clamp(46px, 8vw, 82px);
       margin: 0;
-      font-size: clamp(42px, 7vw, 84px);
       line-height: 1;
     }
 
     h1 span {
       color: #22c55e;
-      text-shadow: 0 0 18px rgba(34,197,94,.55);
+      text-shadow: 0 0 25px rgba(34,197,94,.8);
     }
 
-    .subtitle {
-      margin-top: 18px;
-      color: #bfdbfe;
+    .tagline {
+      margin-top: 14px;
       font-size: 24px;
+      color: #bbf7d0;
       font-weight: bold;
     }
 
-    .description {
-      max-width: 760px;
-      margin: 26px auto 0;
+    .text {
+      max-width: 720px;
+      margin: 24px auto 0;
       color: #d1d5db;
-      line-height: 1.8;
       font-size: 18px;
+      line-height: 1.7;
     }
 
     .buttons {
-      margin-top: 35px;
+      margin-top: 32px;
       display: flex;
-      gap: 16px;
       justify-content: center;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .buttons a {
-      padding: 16px 26px;
-      border-radius: 16px;
+      padding: 15px 24px;
+      border-radius: 14px;
       text-decoration: none;
       font-weight: 900;
-      transition: .2s ease;
+      font-size: 17px;
     }
 
     .primary {
@@ -94,45 +89,34 @@
     }
 
     .secondary {
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,.09);
       color: white;
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    .buttons a:hover {
-      transform: translateY(-2px);
+      border: 1px solid rgba(255,255,255,.18);
     }
 
     .section {
-      padding: 40px 30px;
+      padding: 35px 28px 45px;
+      border-top: 1px solid rgba(255,255,255,.1);
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 30px;
+    .server-img {
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(34,197,94,.35);
+      box-shadow: 0 0 35px rgba(0,0,0,.55);
     }
 
     .cards {
+      margin-top: 24px;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
     }
 
     .card {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 22px;
-      overflow: hidden;
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .card-content {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
       padding: 20px;
     }
 
@@ -141,93 +125,68 @@
       color: #22c55e;
     }
 
-    .footer {
+    .card p {
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    footer {
       text-align: center;
-      padding: 20px;
+      padding: 18px;
       color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,.08);
+      border-top: 1px solid rgba(255,255,255,.1);
     }
   </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <section class="hero">
+      <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
-<div class="container">
+      <h1><span>McBeth</span> Gaming</h1>
 
-  <section class="hero">
-
-    <img class="logo" src="images/logo.png" alt="McBeth Gaming">
-
-    <h1><span>McBeth</span> Gaming</h1>
-
-    <div class="subtitle">
-      Community • Survival • Chaos
-    </div>
-
-    <p class="description">
-      Welcome to the home of McBeth Gaming —
-      family-friendly survival gaming, community-driven servers,
-      and nonstop chaos in 7 Days to Die, Valheim, and beyond.
-      The full website is currently under construction.
-    </p>
-
-    <div class="buttons">
-      <a class="primary" href="https://discord.gg/b3qQeMBz">Join Discord</a>
-      <a class="secondary" href="https://www.twitch.tv/mcbeth_gaming">Watch Twitch</a>
-      <a class="secondary" href="https://www.tiktok.com/@mcbethgaming">Follow TikTok</a>
-    </div>
-
-  </section>
-
-  <section class="section">
-
-    <div class="section-title">
-      What’s Coming
-    </div>
-
-    <div class="cards">
-
-      <div class="card">
-        <img src="images/server.jpg">
-        <div class="card-content">
-          <h3>Community Servers</h3>
-          <p>
-            Subscriber and supporter access servers with custom events,
-            community builds, and horde night madness.
-          </p>
-        </div>
+      <div class="tagline">
+        Community • Survival • Chaos
       </div>
 
-      <div class="card">
-        <img src="images/background.jpg">
-        <div class="card-content">
-          <h3>Streamer Events</h3>
-          <p>
-            Creator weekends, challenge runs,
-            giveaways, and live community events.
-          </p>
+      <p class="text">
+        The official McBeth Gaming hub is coming soon. This will be the home for
+        server access, community updates, supporter tiers, events, stream links,
+        and everything happening in the McBeth Gaming world.
+      </p>
+
+      <div class="buttons">
+        <a class="primary" href="https://discord.gg/b3qQeMBz">Join Discord</a>
+        <a class="secondary" href="https://www.tiktok.com/@mcbethgaming">TikTok</a>
+        <a class="secondary" href="https://www.twitch.tv/mcbeth_gaming">Twitch</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <img class="server-img" src="images/server.jpg" alt="McBeth Gaming Server">
+
+      <div class="cards">
+        <div class="card">
+          <h3>7 Days to Die Servers</h3>
+          <p>Community worlds, horde nights, builds, events, and chaos with the McBeth Gaming crew.</p>
+        </div>
+
+        <div class="card">
+          <h3>Fun, Not Foul</h3>
+          <p>A family-friendly gaming community focused on teamwork, laughs, and non-toxic survival.</p>
+        </div>
+
+        <div class="card">
+          <h3>Supporter Access</h3>
+          <p>Server access, Discord roles, VIP perks, and future member features are coming soon.</p>
         </div>
       </div>
+    </section>
 
-      <div class="card">
-        <img src="images/server.jpg">
-        <div class="card-content">
-          <h3>Supporter Perks</h3>
-          <p>
-            VIP access, supporter perks,
-            Discord roles, and future website features.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <div class="footer">
-    McBeth Gaming © 2026
+    <footer>
+      © 2026 McBeth Gaming — Website Coming Soon
+    </footer>
   </div>
-
-</div>
-
 </body>
 </html>
