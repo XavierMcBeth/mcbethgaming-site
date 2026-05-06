@@ -390,11 +390,21 @@
 
     <div class="music-player">
 
-        <audio controls loop>
+        <audio id="bgMusic" controls loop>
             <source src="music/McBeth Online.mp3" type="audio/mpeg">
         </audio>
 
     </div>
+
+    <script>
+        window.addEventListener('click', () => {
+            const music = document.getElementById('bgMusic');
+
+            if (music.paused) {
+                music.play();
+            }
+        }, { once: true });
+    </script>
 
 </body>
 </html>
