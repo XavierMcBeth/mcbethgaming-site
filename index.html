@@ -3,80 +3,69 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>McBeth Gaming</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        body {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            background: url('images/background.png') center center / cover no-repeat fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        body{
-            font-family:'Orbitron',sans-serif;
-            color:white;
-            background:url('images/background.png') center center / cover no-repeat fixed;
-            min-height:100vh;
-            overflow-x:hidden;
+        .overlay {
+            background: rgba(0, 0, 0, 0.72);
+            min-height: 100vh;
+            width: 100%;
         }
 
-        .overlay{
-            background:rgba(0,0,0,.72);
-            min-height:100vh;
-            width:100%;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 40px 20px;
         }
 
-        header{
-            text-align:center;
-            padding-top:40px;
+        .logo {
+            width: 280px;
+            max-width: 90%;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 14px rgba(0,255,102,.45));
         }
 
-        .logo{
-            width:260px;
-            max-width:80%;
-            margin-bottom:20px;
-            filter:drop-shadow(0 0 14px rgba(0,255,102,.45));
-        }
-
-        h1{
-            font-size:clamp(3rem,8vw,6rem);
-            color:#19ff73;
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #19ff73;
 
             text-shadow:
                 0 0 6px rgba(25,255,115,.45),
                 0 0 14px rgba(25,255,115,.18);
 
-            margin-bottom:15px;
-            font-weight:900;
+            margin-bottom: 20px;
         }
 
-        .subtitle{
-            font-size:1.2rem;
-            color:#dddddd;
-            margin-bottom:50px;
-            padding:0 20px;
-        }
-
-        .content{
-            width:100%;
-            max-width:1200px;
-            margin:auto;
-            padding:20px;
-            text-align:center;
+        .subtitle {
+            font-size: 1.35rem;
+            color: #dddddd;
+            margin-bottom: 45px;
         }
 
         .server-wrapper{
             position:relative;
-            width:100%;
-            max-width:1100px;
+            width:92%;
+            max-width:1000px;
             margin:auto;
+            margin-bottom:40px;
         }
 
-        .server-img{
+        .server-img {
             width:100%;
             border-radius:25px;
             border:3px solid #19ff73;
@@ -121,101 +110,128 @@
             letter-spacing:3px;
         }
 
-        .buttons{
-            margin-top:45px;
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin: 30px 0 55px;
         }
 
-        .buttons a{
-            display:inline-block;
-            margin:10px;
-            padding:16px 34px;
-            background:#119944;
-            color:white;
-            text-decoration:none;
-            border-radius:12px;
-            font-size:1rem;
-            font-weight:700;
-            transition:.3s ease;
-            box-shadow:0 0 10px rgba(25,255,115,.25);
+        .buttons a {
+            display: inline-block;
+            padding: 18px 35px;
+            background: #119944;
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 0 10px rgba(25,255,115,.25);
         }
 
-        .buttons a:hover{
-            background:#19ff73;
-            color:black;
-            transform:scale(1.05);
-            box-shadow:0 0 18px rgba(25,255,115,.45);
+        .buttons a:hover {
+            background: #19ff73;
+            color: black;
+            transform: scale(1.05);
+            box-shadow: 0 0 18px rgba(25,255,115,.45);
         }
 
-        .music-credit{
-            margin-top:35px;
-            color:#bbbbbb;
-            font-size:.9rem;
-            font-family:Arial,sans-serif;
+        .about {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            background: rgba(0,0,0,0.65);
+            border: 2px solid rgba(0,255,100,0.25);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 0 20px rgba(0,255,100,0.15);
         }
 
-        .music-credit a{
-            color:#19ff73;
-            text-decoration:none;
-            font-weight:700;
+        .about h2 {
+            color: #19ff73;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+
+            text-shadow:
+                0 0 4px rgba(25,255,115,.45),
+                0 0 10px rgba(25,255,115,.18);
         }
 
-        footer{
-            margin-top:70px;
-            text-align:center;
-            padding:30px 20px;
-            color:#999999;
-            font-size:.85rem;
-            font-family:Arial,sans-serif;
+        .about p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            font-family: Arial, sans-serif;
         }
 
-        audio{
-            opacity:.92;
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.85);
+            border: 2px solid #19ff73;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(0,255,100,0.35);
+            z-index: 999;
+            text-align: center;
         }
 
-        @media(max-width:768px){
+        .music-note {
+            color: #8cffb5;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
 
-            .subtitle{
-                font-size:1rem;
+        .music-credit {
+            margin-top: 6px;
+            font-size: 0.7rem;
+            color: #8cffb5;
+            font-family: Arial, sans-serif;
+        }
+
+        .music-credit a {
+            color: #19ff73;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 70px;
+            text-align: center;
+            padding-bottom: 40px;
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 1rem; }
+            .buttons a { width: 100%; }
+
+            .music-player {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
             }
 
-            .buttons a{
-                width:80%;
-            }
-
+            audio { width: 100%; }
         }
-
     </style>
 </head>
 
 <body>
-
-    <audio autoplay loop controls
-           style="
-           position:fixed;
-           bottom:15px;
-           right:15px;
-           z-index:999;
-           ">
-        <source src="music/McBeth Online.mp3" type="audio/mpeg">
-    </audio>
-
     <div class="overlay">
+        <div class="container">
 
-        <header>
-
-            <img class="logo"
-                 src="images/logo.png"
-                 alt="McBeth Gaming Logo">
+            <img src="images/logo.png" alt="McBeth Gaming Logo" class="logo">
 
             <h1>McBeth Gaming</h1>
 
-            <p class="subtitle">
+            <div class="subtitle">
                 Family Friendly Streaming • Community Survival • 7 Days to Die
-            </p>
-
-        </header>
-
-        <div class="content">
+            </div>
 
             <div class="server-wrapper">
 
@@ -224,43 +240,51 @@
                      class="server-img">
 
                 <div class="server-overlay">
-
                     <h2>SERVER ACCESS</h2>
-
                     <p>COMING SOON</p>
-
                 </div>
 
             </div>
 
             <div class="buttons">
-
-                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-                    Twitch
-                </a>
-
-                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-                    TikTok
-                </a>
-
-                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
-                    Discord
-                </a>
-
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
+                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
             </div>
 
-            <div class="music-credit">
-                Music by
-                <a href="https://www.tiktok.com/@skynetkids" target="_blank">
-                    @skynetkids
-                </a>
+            <div class="about">
+                <h2>About McBeth Gaming</h2>
+
+                <p>
+                    McBeth Gaming is a family-friendly gaming community focused on survival games,
+                    teamwork, livestreams, and unforgettable chaos. Join the community for
+                    7 Days to Die servers, live events, creator content, and future supporter perks.
+                </p>
             </div>
+
+            <footer>
+                © 2026 McBeth Gaming — Fun Not Foul
+            </footer>
 
         </div>
+    </div>
 
-        <footer>
-            © 2026 McBeth Gaming — Fun Not Foul
-        </footer>
+    <div class="music-player">
+
+        <div class="music-note">
+            Click play for the McBeth Gaming theme
+        </div>
+
+        <audio id="bgMusic" controls loop>
+            <source src="music/McBeth Online.mp3" type="audio/mpeg">
+        </audio>
+
+        <p class="music-credit">
+            Theme song by
+            <a href="https://www.tiktok.com/@skynetkids" target="_blank">
+                @skynetkids
+            </a>
+        </p>
 
     </div>
 
