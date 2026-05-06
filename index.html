@@ -8,262 +8,403 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        *{ margin:0; padding:0; box-sizing:border-box; }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
         body{
-            font-family:'Orbitron', Arial, sans-serif;
-            background:url('images/background.png') center center/cover no-repeat fixed;
+            font-family:'Orbitron',sans-serif;
+            background:url('images/background.png') center center / cover no-repeat fixed;
             color:white;
             min-height:100vh;
+            overflow-x:hidden;
+            position:relative;
         }
 
-        .overlay{
-            background:rgba(0,0,0,.74);
-            min-height:100vh;
-            width:100%;
+        body::before{
+            content:'';
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.72);
+            z-index:-1;
         }
 
-        header{
+        .container{
+            width:90%;
+            max-width:1400px;
+            margin:auto;
             text-align:center;
-            padding:50px 20px 30px;
-            background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0));
+            padding:40px 20px;
         }
 
         .logo{
-            width:240px;
-            max-width:80%;
-            filter:drop-shadow(0 0 22px #00ff66);
+            width:280px;
+            max-width:90%;
             margin-bottom:20px;
+            filter:drop-shadow(0 0 25px #00ff66);
         }
 
         h1{
-            font-size:4.8rem;
-            color:#00ff66;
-            text-shadow:0 0 12px #00ff66;
-            margin-bottom:10px;
+            font-size:5rem;
             font-weight:900;
+            color:#00ff66;
+            text-shadow:
+                0 0 10px #00ff66,
+                0 0 20px #00ff66,
+                0 0 40px #00ff66;
+            margin-bottom:20px;
         }
 
         .subtitle{
-            font-size:1.15rem;
-            color:#d1d5db;
-            margin-bottom:30px;
-            letter-spacing:1px;
+            font-size:1.5rem;
+            color:#dddddd;
+            margin-bottom:50px;
         }
 
-        .content{
+        .hero-image{
+            width:100%;
             max-width:1200px;
-            margin:auto;
-            padding:20px;
-            text-align:center;
+            border-radius:25px;
+            border:4px solid #00ff66;
+            box-shadow:0 0 35px rgba(0,255,100,0.7);
+            margin-bottom:50px;
         }
 
-        .server-img{
-            width:95%;
-            max-width:950px;
-            border-radius:24px;
-            border:3px solid #00ff66;
-            box-shadow:0 0 35px rgba(0,255,100,.45);
-        }
-
-        .info-grid{
+        .cards{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-            margin-top:40px;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+            margin-bottom:60px;
         }
 
         .card{
-            background:rgba(0,0,0,.58);
-            border:1px solid rgba(0,255,100,.25);
-            border-radius:18px;
-            padding:24px;
+            background:rgba(0,0,0,0.65);
+            border:2px solid rgba(0,255,100,0.25);
+            border-radius:25px;
+            padding:30px;
             backdrop-filter:blur(6px);
+            box-shadow:0 0 20px rgba(0,255,100,0.15);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 30px rgba(0,255,100,0.45);
         }
 
         .card h2{
             color:#00ff66;
             margin-bottom:15px;
-            text-shadow:0 0 8px #00ff66;
+            font-size:2rem;
         }
 
         .card p{
-            color:#d1d5db;
-            line-height:1.6;
-            font-family:Arial,sans-serif;
-            font-size:1.05rem;
-        }
-
-        .section-title{
-            margin-top:70px;
-            color:#00ff66;
-            font-size:2.4rem;
-            text-shadow:0 0 12px #00ff66;
-        }
-
-        .creator-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:28px;
-            margin-top:35px;
-        }
-
-        .creator-card{
-            background:rgba(0,0,0,.6);
-            border:1px solid rgba(0,255,100,.25);
-            border-radius:22px;
-            padding:30px;
-            backdrop-filter:blur(6px);
-        }
-
-        .creator-card.main{
-            border:2px solid #00ff66;
-            box-shadow:0 0 35px rgba(0,255,100,.35);
-        }
-
-        .creator-card h3{
-            font-size:2.2rem;
-            color:#00ff66;
-            margin-bottom:16px;
-        }
-
-        .creator-card p{
-            color:#d1d5db;
+            color:#d0d0d0;
             line-height:1.7;
-            margin-bottom:22px;
-            font-family:Arial,sans-serif;
-            font-size:1.05rem;
+            font-size:1rem;
         }
 
-        .buttons{
+        .links-section{
+            margin-bottom:70px;
+        }
+
+        .links-title{
+            font-size:2.7rem;
+            color:#00ff66;
+            margin-bottom:25px;
+            text-shadow:0 0 15px #00ff66;
+        }
+
+        .main-links{
             display:flex;
             flex-wrap:wrap;
             justify-content:center;
-            gap:12px;
+            gap:20px;
         }
 
-        .buttons a{
-            display:inline-block;
-            padding:14px 24px;
-            color:white;
+        .main-links a{
             text-decoration:none;
-            border-radius:12px;
-            font-size:1rem;
+            color:white;
+            background:#00cc55;
+            padding:18px 35px;
+            border-radius:18px;
+            font-size:1.15rem;
             font-weight:bold;
-            transition:.25s ease;
-            box-shadow:0 0 15px rgba(0,255,100,.25);
+            transition:0.3s;
+            box-shadow:0 0 15px rgba(0,255,100,0.45);
         }
 
-        .buttons a:hover{
-            transform:translateY(-3px) scale(1.03);
+        .main-links a:hover{
+            background:#00ff66;
+            transform:scale(1.05);
+            box-shadow:0 0 30px rgba(0,255,100,0.8);
         }
 
-        .twitch{ background:#9146FF; }
-        .discord{ background:#5865F2; }
-        .tiktok{
-            background:#111111;
-            border:1px solid #00ff66;
+        .crew-section{
+            margin-top:80px;
+        }
+
+        .crew-title{
+            font-size:3rem;
+            color:#00ff66;
+            margin-bottom:40px;
+            text-shadow:0 0 15px #00ff66;
+        }
+
+        .crew-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:30px;
+        }
+
+        .crew-card{
+            background:rgba(0,0,0,0.65);
+            border:2px solid rgba(0,255,100,0.25);
+            border-radius:25px;
+            padding:35px;
+            backdrop-filter:blur(6px);
+            box-shadow:0 0 20px rgba(0,255,100,0.15);
+        }
+
+        .crew-card h3{
+            color:#00ff66;
+            font-size:2rem;
+            margin-bottom:10px;
+        }
+
+        .crew-role{
+            color:#8cffb5;
+            margin-bottom:15px;
+            font-size:1rem;
+        }
+
+        .crew-card p{
+            color:#d0d0d0;
+            line-height:1.6;
+            margin-bottom:25px;
+        }
+
+        .crew-links{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:15px;
+        }
+
+        .crew-links a{
+            text-decoration:none;
+            color:white;
+            background:#00cc55;
+            padding:12px 22px;
+            border-radius:14px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .crew-links a:hover{
+            background:#00ff66;
+            transform:scale(1.05);
+        }
+
+        .music-player{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            background:rgba(0,0,0,0.85);
+            border:2px solid #00ff66;
+            border-radius:20px;
+            padding:10px;
+            box-shadow:0 0 20px rgba(0,255,100,0.55);
+            z-index:999;
         }
 
         footer{
-            text-align:center;
-            padding:60px 20px 30px;
+            margin-top:90px;
+            padding-bottom:40px;
             color:#aaaaaa;
-            font-size:.9rem;
+            font-size:0.95rem;
         }
 
         @media(max-width:768px){
-            h1{ font-size:3rem; }
-            .subtitle{ font-size:1rem; }
-            .buttons{ flex-direction:column; }
-            .buttons a{ width:100%; }
+
+            h1{
+                font-size:3rem;
+            }
+
+            .subtitle{
+                font-size:1.1rem;
+            }
+
+            .links-title,
+            .crew-title{
+                font-size:2rem;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
-<div class="overlay">
 
-<header>
-    <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
+    <div class="container">
 
-    <h1>McBeth Gaming</h1>
+        <img src="images/logo.png" alt="McBeth Gaming Logo" class="logo">
 
-    <p class="subtitle">
-        Family Friendly Streaming • Community Survival • 7 Days to Die
-    </p>
-</header>
+        <h1>McBeth Gaming</h1>
 
-<div class="content">
-
-    <img class="server-img" src="images/server.png" alt="McBeth Gaming Server">
-
-    <div class="info-grid">
-        <div class="card">
-            <h2>Community Servers</h2>
-            <p>
-                Play alongside the McBeth Gaming community in persistent survival worlds,
-                live events, horde nights, and future custom experiences.
-            </p>
+        <div class="subtitle">
+            Family Friendly Streaming • Community Survival • 7 Days to Die
         </div>
 
-        <div class="card">
-            <h2>Fun Not Foul</h2>
-            <p>
-                A family-friendly gaming community focused on teamwork,
-                laughs, creativity, and good people.
-            </p>
+        <img src="images/server.png" alt="McBeth Gaming Server" class="hero-image">
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>Community Servers</h2>
+
+                <p>
+                    Join the McBeth Gaming community in persistent survival worlds,
+                    live events, horde nights, and future custom server experiences.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Fun Not Foul</h2>
+
+                <p>
+                    A family-friendly gaming community built around teamwork,
+                    laughs, creativity, and good people.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Supporter Perks</h2>
+
+                <p>
+                    VIP roles, Discord perks, supporter features,
+                    server access, and future community rewards are coming soon.
+                </p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h2>Supporter Features</h2>
-            <p>
-                VIP perks, supporter tiers, Discord rewards,
-                server access, and future website features are coming soon.
-            </p>
+        <div class="links-section">
+
+            <div class="links-title">
+                Follow McBeth Gaming
+            </div>
+
+            <div class="main-links">
+
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                    Twitch
+                </a>
+
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                    TikTok
+                </a>
+
+                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
+                    Discord
+                </a>
+
+            </div>
+
         </div>
+
+        <div class="crew-section">
+
+            <div class="crew-title">
+                McBeth Gaming Crew
+            </div>
+
+            <div class="crew-grid">
+
+                <div class="crew-card">
+
+                    <h3>McBeth</h3>
+
+                    <div class="crew-role">
+                        Founder • Streamer • Community Lead
+                    </div>
+
+                    <p>
+                        Building a fun, family-friendly survival gaming community
+                        focused on teamwork, chaos, and unforgettable moments.
+                    </p>
+
+                    <div class="crew-links">
+
+                        <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                            Twitch
+                        </a>
+
+                        <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                            TikTok
+                        </a>
+
+                        <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
+                            Discord
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="crew-card">
+
+                    <h3>BoogieFaye00</h3>
+
+                    <div class="crew-role">
+                        Crew Member • Community Team
+                    </div>
+
+                    <p>
+                        Part of the McBeth Gaming crew and community server team.
+                    </p>
+
+                    <div class="crew-links">
+
+                        <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">
+                            Follow Boogie
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            © 2026 McBeth Gaming — Fun Not Foul
+        </footer>
+
     </div>
 
-    <h2 class="section-title">Featured Creators</h2>
+    <div class="music-player">
 
-    <div class="creator-grid">
-
-        <div class="creator-card main">
-            <h3>McBeth</h3>
-
-            <p>
-                Founder of McBeth Gaming. Family-friendly survival gaming,
-                community servers, livestreams, horde nights, and nonstop chaos.
-            </p>
-
-            <div class="buttons">
-                <a class="twitch" href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
-                <a class="tiktok" href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
-                <a class="discord" href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
-            </div>
-        </div>
-
-        <div class="creator-card">
-            <h3>BoogieFaye00</h3>
-
-            <p>
-                Part of the McBeth Gaming creator crew and community server team.
-                Follow for survival gaming, community events, and gaming chaos.
-            </p>
-
-            <div class="buttons">
-                <a class="tiktok" href="https://www.tiktok.com/@boogiefaye_00" target="_blank">TikTok</a>
-            </div>
-        </div>
+        <audio id="bgMusic" controls loop>
+            <source src="music/McBeth Online.mp3" type="audio/mpeg">
+        </audio>
 
     </div>
 
-</div>
+    <script>
+        window.addEventListener('click', () => {
+            const music = document.getElementById('bgMusic');
 
-<footer>
-    © 2026 McBeth Gaming — Fun Not Foul
-</footer>
+            if (music.paused) {
+                music.play();
+            }
+        }, { once: true });
+    </script>
 
-</div>
 </body>
 </html>
