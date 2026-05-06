@@ -6,11 +6,7 @@
     <title>McBeth Gaming</title>
 
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+        *{ margin:0; padding:0; box-sizing:border-box; }
 
         body{
             font-family:Arial,sans-serif;
@@ -57,10 +53,6 @@
             text-align:center;
         }
 
-        .server-section{
-            margin-top:20px;
-        }
-
         .server-img{
             width:95%;
             max-width:950px;
@@ -69,44 +61,44 @@
             box-shadow:0 0 35px rgba(0,255,100,.45);
         }
 
-        .info-grid{
+        .info-grid, .creator-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
             gap:20px;
             margin-top:40px;
         }
 
-        .card{
-            background:rgba(0,0,0,.55);
+        .card, .creator-card{
+            background:rgba(0,0,0,.58);
             border:1px solid rgba(0,255,100,.25);
             border-radius:18px;
             padding:24px;
             backdrop-filter:blur(6px);
         }
 
-        .card h2{
+        .card h2, .creator-card h3{
             color:#00ff66;
             margin-bottom:15px;
         }
 
-        .card p{
+        .card p, .creator-card p{
             color:#d1d5db;
             line-height:1.6;
         }
 
         .buttons{
-            margin-top:40px;
+            margin-top:25px;
         }
 
         .buttons a{
             display:inline-block;
-            margin:10px;
-            padding:15px 30px;
+            margin:8px;
+            padding:14px 24px;
             background:#00aa44;
             color:white;
             text-decoration:none;
             border-radius:12px;
-            font-size:1.05rem;
+            font-size:1rem;
             font-weight:bold;
             transition:.25s ease;
             box-shadow:0 0 15px rgba(0,255,100,.35);
@@ -118,34 +110,11 @@
             transform:translateY(-3px);
         }
 
-        .crew{
+        .section-title{
             margin-top:70px;
-        }
-
-        .crew h2{
             color:#00ff66;
-            font-size:2rem;
-            margin-bottom:25px;
+            font-size:2.2rem;
             text-shadow:0 0 12px #00ff66;
-        }
-
-        .crew-card{
-            max-width:420px;
-            margin:auto;
-            background:rgba(0,0,0,.55);
-            border:1px solid rgba(0,255,100,.25);
-            border-radius:18px;
-            padding:24px;
-        }
-
-        .crew-card h3{
-            font-size:1.5rem;
-            margin-bottom:10px;
-        }
-
-        .crew-card p{
-            color:#cccccc;
-            margin-bottom:18px;
         }
 
         footer{
@@ -156,28 +125,17 @@
         }
 
         @media(max-width:768px){
-
-            h1{
-                font-size:2.8rem;
-            }
-
-            .subtitle{
-                font-size:1rem;
-            }
-
-            .buttons a{
-                width:85%;
-            }
+            h1{ font-size:2.8rem; }
+            .subtitle{ font-size:1rem; }
+            .buttons a{ width:85%; }
         }
     </style>
 </head>
 
 <body>
-
 <div class="overlay">
 
 <header>
-
     <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
     <h1>McBeth Gaming</h1>
@@ -185,19 +143,13 @@
     <p class="subtitle">
         Family Friendly Streaming • Community Survival • 7 Days to Die
     </p>
-
 </header>
 
 <div class="content">
 
-    <div class="server-section">
-
-        <img class="server-img" src="images/server.png" alt="McBeth Gaming Server">
-
-    </div>
+    <img class="server-img" src="images/server.png" alt="McBeth Gaming Server">
 
     <div class="info-grid">
-
         <div class="card">
             <h2>Community Servers</h2>
             <p>
@@ -221,51 +173,36 @@
                 Discord perks, and future community rewards are coming soon.
             </p>
         </div>
-
     </div>
 
-    <div class="buttons">
+    <h2 class="section-title">Featured Creators</h2>
 
-        <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-            Twitch
-        </a>
+    <div class="creator-grid">
 
-        <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-            TikTok
-        </a>
-
-        <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
-            Discord
-        </a>
-
-    </div>
-
-    <div class="crew">
-
-        <h2>McBeth Gaming Crew</h2>
-
-        <div class="crew-card">
-
-            <h3>Boog</h3>
-
+        <div class="creator-card">
+            <h3>McBeth</h3>
             <p>
-                Part of the McBeth Gaming crew and community server team.
+                Founder of McBeth Gaming. Family-friendly survival gaming,
+                7 Days to Die community servers, and live chaos with the crew.
             </p>
 
-            <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank"
-               style="
-               display:inline-block;
-               padding:14px 28px;
-               background:#00aa44;
-               color:white;
-               border-radius:12px;
-               text-decoration:none;
-               font-weight:bold;
-               box-shadow:0 0 15px rgba(0,255,100,.35);
-               ">
-                Follow Boog
-            </a>
+            <div class="buttons">
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
+                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
+            </div>
+        </div>
 
+        <div class="creator-card">
+            <h3>Boogie</h3>
+            <p>
+                Part of the McBeth Gaming creator crew and community server team.
+                Follow Boogie for more survival gaming, laughs, and community chaos.
+            </p>
+
+            <div class="buttons">
+                <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">TikTok</a>
+            </div>
         </div>
 
     </div>
@@ -277,6 +214,5 @@
 </footer>
 
 </div>
-
 </body>
 </html>
