@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>McBeth Gaming</title>
 
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    <style>
+        *{ margin:0; padding:0; box-sizing:border-box; }
 
         body{
-            font-family:Arial,sans-serif;
+            font-family:'Orbitron', Arial, sans-serif;
             background:url('images/background.png') center center/cover no-repeat fixed;
             color:white;
             min-height:100vh;
@@ -29,6 +26,7 @@
         header{
             text-align:center;
             padding:50px 20px 30px;
+            background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0));
         }
 
         .logo{
@@ -41,14 +39,16 @@
         h1{
             font-size:4.8rem;
             color:#00ff66;
-            text-shadow:0 0 20px #00ff66;
+            text-shadow:0 0 12px #00ff66;
             margin-bottom:10px;
+            font-weight:900;
         }
 
         .subtitle{
-            font-size:1.3rem;
+            font-size:1.15rem;
             color:#d1d5db;
             margin-bottom:30px;
+            letter-spacing:1px;
         }
 
         .content{
@@ -84,11 +84,14 @@
         .card h2{
             color:#00ff66;
             margin-bottom:15px;
+            text-shadow:0 0 8px #00ff66;
         }
 
         .card p{
             color:#d1d5db;
             line-height:1.6;
+            font-family:Arial,sans-serif;
+            font-size:1.05rem;
         }
 
         .section-title{
@@ -128,6 +131,8 @@
             color:#d1d5db;
             line-height:1.7;
             margin-bottom:22px;
+            font-family:Arial,sans-serif;
+            font-size:1.05rem;
         }
 
         .buttons{
@@ -153,14 +158,8 @@
             transform:translateY(-3px) scale(1.03);
         }
 
-        .twitch{
-            background:#9146FF;
-        }
-
-        .discord{
-            background:#5865F2;
-        }
-
+        .twitch{ background:#9146FF; }
+        .discord{ background:#5865F2; }
         .tiktok{
             background:#111111;
             border:1px solid #00ff66;
@@ -174,34 +173,18 @@
         }
 
         @media(max-width:768px){
-
-            h1{
-                font-size:3rem;
-            }
-
-            .subtitle{
-                font-size:1rem;
-            }
-
-            .buttons{
-                flex-direction:column;
-            }
-
-            .buttons a{
-                width:100%;
-            }
+            h1{ font-size:3rem; }
+            .subtitle{ font-size:1rem; }
+            .buttons{ flex-direction:column; }
+            .buttons a{ width:100%; }
         }
-
     </style>
-
 </head>
 
 <body>
-
 <div class="overlay">
 
 <header>
-
     <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
     <h1>McBeth Gaming</h1>
@@ -209,7 +192,6 @@
     <p class="subtitle">
         Family Friendly Streaming • Community Survival • 7 Days to Die
     </p>
-
 </header>
 
 <div class="content">
@@ -217,7 +199,6 @@
     <img class="server-img" src="images/server.png" alt="McBeth Gaming Server">
 
     <div class="info-grid">
-
         <div class="card">
             <h2>Community Servers</h2>
             <p>
@@ -241,7 +222,6 @@
                 server access, and future website features are coming soon.
             </p>
         </div>
-
     </div>
 
     <h2 class="section-title">Featured Creators</h2>
@@ -249,7 +229,6 @@
     <div class="creator-grid">
 
         <div class="creator-card main">
-
             <h3>McBeth</h3>
 
             <p>
@@ -258,31 +237,13 @@
             </p>
 
             <div class="buttons">
-
-                <a class="twitch"
-                   href="https://www.twitch.tv/mcbeth_gaming"
-                   target="_blank">
-                    Twitch
-                </a>
-
-                <a class="tiktok"
-                   href="https://www.tiktok.com/@mcbethgaming"
-                   target="_blank">
-                    TikTok
-                </a>
-
-                <a class="discord"
-                   href="https://discord.gg/F8MuZxKUsk"
-                   target="_blank">
-                    Discord
-                </a>
-
+                <a class="twitch" href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
+                <a class="tiktok" href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
+                <a class="discord" href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
             </div>
-
         </div>
 
         <div class="creator-card">
-
             <h3>BoogieFaye00</h3>
 
             <p>
@@ -291,15 +252,8 @@
             </p>
 
             <div class="buttons">
-
-                <a class="tiktok"
-                   href="https://www.tiktok.com/@boogiefaye_00"
-                   target="_blank">
-                    TikTok
-                </a>
-
+                <a class="tiktok" href="https://www.tiktok.com/@boogiefaye_00" target="_blank">TikTok</a>
             </div>
-
         </div>
 
     </div>
@@ -311,6 +265,5 @@
 </footer>
 
 </div>
-
 </body>
 </html>
