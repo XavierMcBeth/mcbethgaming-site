@@ -123,13 +123,26 @@
             padding: 10px;
             box-shadow: 0 0 20px rgba(0,255,100,0.55);
             z-index: 999;
+            text-align: center;
         }
 
         .music-note {
             color: #8cffb5;
             font-size: 0.8rem;
             margin-bottom: 6px;
-            text-align: center;
+        }
+
+        .music-credit {
+            margin-top: 6px;
+            font-size: 0.7rem;
+            color: #8cffb5;
+            font-family: Arial, sans-serif;
+        }
+
+        .music-credit a {
+            color: #00ff66;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         footer {
@@ -144,11 +157,13 @@
             h1 { font-size: 3rem; }
             .subtitle { font-size: 1rem; }
             .buttons a { width: 100%; }
+
             .music-player {
                 left: 10px;
                 right: 10px;
                 bottom: 10px;
             }
+
             audio { width: 100%; }
         }
     </style>
@@ -192,10 +207,15 @@
 
     <div class="music-player">
         <div class="music-note">Click play for the McBeth Gaming theme</div>
+
         <audio id="bgMusic" controls loop>
             <source src="music/McBeth Online.mp3" type="audio/mpeg">
         </audio>
-    </div>
 
+        <p class="music-credit">
+            Theme song by
+            <a href="https://www.tiktok.com/@skynetkids" target="_blank">@skynetkids</a>
+        </p>
+    </div>
 </body>
 </html>
