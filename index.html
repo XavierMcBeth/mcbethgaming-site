@@ -39,16 +39,17 @@
             width:260px;
             max-width:80%;
             margin-bottom:20px;
-            filter:drop-shadow(0 0 20px #00ff66);
+            filter:drop-shadow(0 0 14px rgba(0,255,102,.45));
         }
 
         h1{
             font-size:clamp(3rem,8vw,6rem);
-            color:#00ff66;
+            color:#19ff73;
+
             text-shadow:
-                0 0 10px #00ff66,
-                0 0 20px #00ff66,
-                0 0 40px #00ff66;
+                0 0 6px rgba(25,255,115,.45),
+                0 0 14px rgba(25,255,115,.18);
+
             margin-bottom:15px;
             font-weight:900;
         }
@@ -78,8 +79,8 @@
         .server-img{
             width:100%;
             border-radius:25px;
-            border:3px solid #00ff66;
-            box-shadow:0 0 25px rgba(0,255,100,.6);
+            border:3px solid #19ff73;
+            box-shadow:0 0 18px rgba(25,255,115,.35);
             display:block;
         }
 
@@ -91,18 +92,18 @@
             justify-content:center;
             align-items:center;
             text-align:center;
-            background:rgba(0,0,0,.20);
+            background:rgba(0,0,0,.18);
             border-radius:25px;
         }
 
         .server-overlay h2{
             font-size:clamp(2.5rem,6vw,6rem);
-            color:#00ff66;
+            color:#19ff73;
+
             text-shadow:
-                0 0 10px #00ff66,
-                0 0 25px #00ff66,
-                0 0 40px #00ff66,
-                0 0 60px #00ff66;
+                0 0 4px rgba(25,255,115,.45),
+                0 0 10px rgba(25,255,115,.18);
+
             margin:0;
             font-weight:900;
             letter-spacing:4px;
@@ -110,10 +111,11 @@
 
         .server-overlay p{
             font-size:clamp(1.5rem,4vw,3rem);
-            color:white;
+            color:#f2f2f2;
+
             text-shadow:
-                0 0 10px black,
-                0 0 20px black;
+                0 0 4px rgba(0,0,0,.55);
+
             margin-top:10px;
             font-weight:700;
             letter-spacing:3px;
@@ -127,30 +129,32 @@
             display:inline-block;
             margin:10px;
             padding:16px 34px;
-            background:#00aa44;
+            background:#119944;
             color:white;
             text-decoration:none;
             border-radius:12px;
             font-size:1rem;
             font-weight:700;
             transition:.3s ease;
-            box-shadow:0 0 15px rgba(0,255,100,.45);
+            box-shadow:0 0 10px rgba(25,255,115,.25);
         }
 
         .buttons a:hover{
-            background:#00ff66;
+            background:#19ff73;
+            color:black;
             transform:scale(1.05);
-            box-shadow:0 0 25px rgba(0,255,100,.9);
+            box-shadow:0 0 18px rgba(25,255,115,.45);
         }
 
         .music-credit{
             margin-top:35px;
             color:#bbbbbb;
             font-size:.9rem;
+            font-family:Arial,sans-serif;
         }
 
         .music-credit a{
-            color:#00ff66;
+            color:#19ff73;
             text-decoration:none;
             font-weight:700;
         }
@@ -161,6 +165,11 @@
             padding:30px 20px;
             color:#999999;
             font-size:.85rem;
+            font-family:Arial,sans-serif;
+        }
+
+        audio{
+            opacity:.92;
         }
 
         @media(max-width:768px){
@@ -180,7 +189,13 @@
 
 <body>
 
-    <audio autoplay loop controls style="position:fixed; bottom:15px; right:15px; z-index:999;">
+    <audio autoplay loop controls
+           style="
+           position:fixed;
+           bottom:15px;
+           right:15px;
+           z-index:999;
+           ">
         <source src="music/McBeth Online.mp3" type="audio/mpeg">
     </audio>
 
