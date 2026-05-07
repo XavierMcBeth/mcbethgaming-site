@@ -1,3 +1,6 @@
+Paste this over your full `index.html`:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Orbitron', sans-serif;
@@ -54,28 +53,40 @@
         .subtitle {
             font-size: 1.35rem;
             color: #dddddd;
-            margin-bottom: 20px;
+            margin-bottom: 45px;
         }
 
-        .coming-soon {
+        .server-wrap {
+            position: relative;
             display: inline-block;
-            margin-bottom: 45px;
-            padding: 12px 26px;
-            border: 2px solid #00ff66;
-            border-radius: 14px;
-            background: rgba(0,255,100,0.1);
-            color: #00ff66;
-            font-size: 1rem;
-            box-shadow: 0 0 18px rgba(0,255,100,0.4);
+            width: 92%;
+            max-width: 1000px;
+            margin-bottom: 40px;
         }
 
         .server-img {
-            width: 92%;
-            max-width: 1000px;
+            width: 100%;
             border-radius: 25px;
             border: 4px solid #00ff66;
             box-shadow: 0 0 35px rgba(0,255,100,0.7);
-            margin-bottom: 40px;
+            display: block;
+        }
+
+        .coming-soon {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            padding: 12px 26px;
+            border: 2px solid #00ff66;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
+            color: #00ff66;
+            font-size: 1rem;
+            box-shadow: 0 0 18px rgba(0,255,100,0.4);
+            white-space: nowrap;
         }
 
         .buttons {
@@ -193,16 +204,14 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 1rem; }
+            .buttons a { width: 100%; }
 
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .buttons a {
-                width: 100%;
+            .coming-soon {
+                font-size: 0.75rem;
+                padding: 10px 14px;
+                top: 12px;
             }
 
             .music-player {
@@ -212,17 +221,13 @@
                 max-width: none;
             }
 
-            audio {
-                width: 100%;
-            }
+            audio { width: 100%; }
         }
     </style>
 </head>
 
 <body>
-
     <div class="overlay">
-
         <div class="container">
 
             <img src="images/logo.png" alt="McBeth Gaming Logo" class="logo">
@@ -233,35 +238,23 @@
                 Family Friendly Streaming • Community Survival • 7 Days to Die
             </div>
 
-            <div class="coming-soon">
-                🚧 Community Server Coming Soon 🚧
+            <div class="server-wrap">
+                <div class="coming-soon">
+                    🚧 Community Server Coming Soon 🚧
+                </div>
+
+                <img src="images/server.png" alt="McBeth Gaming Server" class="server-img">
             </div>
 
-            <img src="images/server.png" alt="McBeth Gaming Server" class="server-img">
-
             <div class="buttons">
-
-                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-                    Twitch
-                </a>
-
-                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-                    TikTok
-                </a>
-
-                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
-                    Discord
-                </a>
-
-                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
-                    My PC Build
-                </a>
-
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
+                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
+                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">My PC Build</a>
             </div>
 
             <div class="about">
                 <h2>About McBeth Gaming</h2>
-
                 <p>
                     McBeth Gaming is a family-friendly gaming community focused on survival games,
                     teamwork, livestreams, and unforgettable chaos. Join the community for
@@ -270,9 +263,7 @@
             </div>
 
             <div class="sponsor-section">
-
                 <h2>Powered By NoBull Networks</h2>
-
                 <p>
                     Want a powerful and reliable company to host your game servers?
                     McBeth Gaming proudly uses NoBull Networks for community hosting.
@@ -284,7 +275,6 @@
                    target="_blank">
                     Launch Your Server
                 </a>
-
             </div>
 
             <footer>
@@ -292,14 +282,10 @@
             </footer>
 
         </div>
-
     </div>
 
     <div class="music-player">
-
-        <div class="music-note">
-            Click anywhere for music
-        </div>
+        <div class="music-note">Click anywhere for music</div>
 
         <audio id="bgMusic" controls loop autoplay muted>
             <source src="music/McBeth Online.mp3" type="audio/mpeg">
@@ -307,11 +293,8 @@
 
         <p class="music-credit">
             Theme song by
-            <a href="https://www.tiktok.com/@skynetkids" target="_blank">
-                @skynetkids
-            </a>
+            <a href="https://www.tiktok.com/@skynetkids" target="_blank">@skynetkids</a>
         </p>
-
     </div>
 
     <script>
@@ -322,6 +305,6 @@
             music.play();
         }, { once: true });
     </script>
-
 </body>
 </html>
+```
