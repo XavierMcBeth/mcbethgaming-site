@@ -16,20 +16,13 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-S59920LRSF');
     </script>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Rajdhani', sans-serif;
@@ -62,9 +55,7 @@
             transition: 0.3s ease;
         }
 
-        .logo:hover {
-            transform: scale(1.03);
-        }
+        .logo:hover { transform: scale(1.03); }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
@@ -113,7 +104,8 @@
             margin-bottom: 50px;
         }
 
-        .buttons a {
+        .buttons a,
+        .affiliate-btn {
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
@@ -129,19 +121,37 @@
                 0 0 25px rgba(0,255,100,0.2);
         }
 
-        .buttons a:hover {
+        .buttons a:hover,
+        .affiliate-btn:hover {
             transform: translateY(-3px) scale(1.04);
             box-shadow:
                 0 0 20px rgba(0,255,100,0.7),
                 0 0 40px rgba(0,255,100,0.35);
         }
 
-        .section-title {
+        .info-box {
+            margin: 55px auto 20px;
+            max-width: 850px;
+            background: rgba(0,0,0,0.65);
+            border: 2px solid rgba(0,255,100,0.35);
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 0 20px rgba(0,255,100,0.15);
+        }
+
+        .info-box h2 {
             font-family: 'Orbitron', sans-serif;
             color: #00ff66;
-            font-size: 2.2rem;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
+            font-size: 2rem;
             text-shadow: 0 0 12px rgba(0,255,100,0.6);
+        }
+
+        .info-box p {
+            font-size: 1.2rem;
+            color: #d0d0d0;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
 
         .music-credit {
@@ -156,54 +166,7 @@
             font-weight: bold;
         }
 
-        .music-credit a:hover {
-            text-decoration: underline;
-        }
-
-        .affiliate-box {
-            margin: 70px auto 20px;
-            max-width: 850px;
-            background: rgba(0,0,0,0.65);
-            border: 2px solid rgba(0,255,100,0.35);
-            border-radius: 20px;
-            padding: 35px 25px;
-            box-shadow:
-                0 0 20px rgba(0,255,100,0.15);
-        }
-
-        .affiliate-box h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00ff66;
-            margin-bottom: 15px;
-            font-size: 2rem;
-        }
-
-        .affiliate-box p {
-            font-size: 1.2rem;
-            color: #d0d0d0;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .affiliate-btn {
-            display: inline-block;
-            padding: 16px 34px;
-            background: linear-gradient(135deg, #00aa44, #00ff66);
-            color: white;
-            text-decoration: none;
-            border-radius: 14px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: 0.25s ease;
-            box-shadow:
-                0 0 12px rgba(0,255,100,0.4);
-        }
-
-        .affiliate-btn:hover {
-            transform: scale(1.05);
-            box-shadow:
-                0 0 20px rgba(0,255,100,0.7);
-        }
+        .music-credit a:hover { text-decoration: underline; }
 
         footer {
             margin-top: 70px;
@@ -214,27 +177,18 @@
         }
 
         @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .subtitle { font-size: 1rem; }
 
-            h1 {
-                font-size: 2.8rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .buttons a {
+            .buttons a,
+            .affiliate-btn {
                 width: 85%;
                 max-width: 320px;
             }
 
-            .logo {
-                width: 240px;
-            }
+            .logo { width: 240px; }
 
-            .affiliate-box {
-                padding: 25px 18px;
-            }
+            .info-box { padding: 25px 18px; }
         }
     </style>
 </head>
@@ -249,7 +203,6 @@
     <div class="overlay">
 
         <header>
-
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
             <h1>McBeth Gaming</h1>
@@ -257,7 +210,6 @@
             <p class="subtitle">
                 Family Friendly Streaming • Community Survival • 7 Days to Die
             </p>
-
         </header>
 
         <div class="content">
@@ -267,34 +219,29 @@
             </div>
 
             <div class="buttons">
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
+                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
+                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">My PC Build</a>
+            </div>
 
-                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-                    Twitch
-                </a>
+            <div class="info-box">
+                <h2>About McBeth Gaming</h2>
 
-                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-                    TikTok
-                </a>
-
-                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
-                    Discord
-                </a>
-
-                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
-                    My PC Build
-                </a>
-
+                <p>
+                    McBeth Gaming is a family-friendly gaming community focused on survival games,
+                    livestream chaos, teamwork, and building an awesome community together.
+                    From 7 Days to Die and community events to challenge runs and creator content,
+                    the goal is simple — Fun Not Foul.
+                </p>
             </div>
 
             <div class="music-credit">
                 Theme music created by
-                <a href="https://www.tiktok.com/@skynetkids" target="_blank">
-                    @skynetkids
-                </a>
+                <a href="https://www.tiktok.com/@skynetkids" target="_blank">@skynetkids</a>
             </div>
 
-            <div class="affiliate-box">
-
+            <div class="info-box">
                 <h2>Powered By NoBull Networks</h2>
 
                 <p>
@@ -306,11 +253,8 @@
                 <a class="affiliate-btn"
                    href="https://my.nobullnetworks.com/aff.php?aff=21"
                    target="_blank">
-
                     Get Your Server Here
-
                 </a>
-
             </div>
 
         </div>
