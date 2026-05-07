@@ -20,9 +20,15 @@
     </script>
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Rajdhani', sans-serif;
@@ -55,7 +61,9 @@
             transition: 0.3s ease;
         }
 
-        .logo:hover { transform: scale(1.03); }
+        .logo:hover {
+            transform: scale(1.03);
+        }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
@@ -166,7 +174,21 @@
             font-weight: bold;
         }
 
-        .music-credit a:hover { text-decoration: underline; }
+        .music-credit a:hover {
+            text-decoration: underline;
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 999;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid rgba(0,255,100,0.5);
+            box-shadow: 0 0 20px rgba(0,255,100,0.3);
+        }
 
         footer {
             margin-top: 70px;
@@ -177,8 +199,14 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .subtitle { font-size: 1rem; }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
 
             .buttons a,
             .affiliate-btn {
@@ -186,9 +214,22 @@
                 max-width: 320px;
             }
 
-            .logo { width: 240px; }
+            .logo {
+                width: 240px;
+            }
 
-            .info-box { padding: 25px 18px; }
+            .info-box {
+                padding: 25px 18px;
+            }
+
+            .music-player {
+                left: 10px;
+                right: 10px;
+            }
+
+            .music-player audio {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -196,13 +237,18 @@
 <body>
 
     <!-- Background Music -->
-    <audio autoplay loop controls style="position:fixed; bottom:10px; right:10px; z-index:999;">
-        <source src="music/McBeth Online.mp3" type="audio/mpeg">
-    </audio>
+    <div class="music-player">
+
+        <audio id="bgMusic" loop controls>
+            <source src="music/McBeth Online.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
 
     <div class="overlay">
 
         <header>
+
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
             <h1>McBeth Gaming</h1>
@@ -210,6 +256,7 @@
             <p class="subtitle">
                 Family Friendly Streaming • Community Survival • 7 Days to Die
             </p>
+
         </header>
 
         <div class="content">
@@ -219,13 +266,27 @@
             </div>
 
             <div class="buttons">
-                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
-                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
-                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">Discord</a>
-                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">My PC Build</a>
+
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                    Twitch
+                </a>
+
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                    TikTok
+                </a>
+
+                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
+                    Discord
+                </a>
+
+                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
+                    My PC Build
+                </a>
+
             </div>
 
             <div class="info-box">
+
                 <h2>About McBeth Gaming</h2>
 
                 <p>
@@ -234,14 +295,18 @@
                     From 7 Days to Die and community events to challenge runs and creator content,
                     the goal is simple — Fun Not Foul.
                 </p>
+
             </div>
 
             <div class="music-credit">
                 Theme music created by
-                <a href="https://www.tiktok.com/@skynetkids" target="_blank">@skynetkids</a>
+                <a href="https://www.tiktok.com/@skynetkids" target="_blank">
+                    @skynetkids
+                </a>
             </div>
 
             <div class="info-box">
+
                 <h2>Powered By NoBull Networks</h2>
 
                 <p>
@@ -253,8 +318,11 @@
                 <a class="affiliate-btn"
                    href="https://my.nobullnetworks.com/aff.php?aff=21"
                    target="_blank">
+
                     Get Your Server Here
+
                 </a>
+
             </div>
 
         </div>
@@ -264,6 +332,14 @@
         </footer>
 
     </div>
+
+    <script>
+        const music = document.getElementById('bgMusic');
+
+        document.body.addEventListener('click', () => {
+            music.play();
+        }, { once: true });
+    </script>
 
 </body>
 </html>
