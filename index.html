@@ -20,6 +20,7 @@
     </script>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +35,7 @@
             font-family: 'Rajdhani', sans-serif;
             color: white;
             background:
-                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
                 url('images/background.png') center center / cover no-repeat fixed;
             min-height: 100vh;
             overflow-x: hidden;
@@ -43,7 +44,7 @@
         .overlay {
             width: 100%;
             min-height: 100vh;
-            padding-bottom: 50px;
+            padding-bottom: 60px;
         }
 
         header {
@@ -93,8 +94,7 @@
         }
 
         .server-wrap {
-            position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .server-img {
@@ -162,32 +162,46 @@
             line-height: 1.5;
         }
 
+        .music-player {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 999;
+            background: rgba(0,0,0,0.85);
+            padding: 12px;
+            border-radius: 16px;
+            border: 2px solid rgba(0,255,100,0.5);
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.3);
+            backdrop-filter: blur(6px);
+        }
+
         .music-credit {
-            margin-top: 35px;
-            font-size: 1rem;
-            color: #cccccc;
+            margin-top: 8px;
+            font-size: 0.82rem;
+            color: #d0d0d0;
+            text-align: center;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(0,255,100,0.4);
         }
 
         .music-credit a {
             color: #00ff66;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.2s ease;
         }
 
         .music-credit a:hover {
-            text-decoration: underline;
+            color: #8cffb5;
         }
 
-        .music-player {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            z-index: 999;
-            background: rgba(0,0,0,0.8);
-            padding: 10px;
-            border-radius: 15px;
-            border: 2px solid rgba(0,255,100,0.5);
-            box-shadow: 0 0 20px rgba(0,255,100,0.3);
+        .music-start {
+            color: #8cffb5;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
         footer {
@@ -231,17 +245,29 @@
                 width: 100%;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Background Music -->
+    <!-- Music Player -->
     <div class="music-player">
+
+        <div class="music-start">
+            Click anywhere for music
+        </div>
 
         <audio id="bgMusic" loop controls>
             <source src="music/McBeth Online.mp3" type="audio/mpeg">
         </audio>
+
+        <div class="music-credit">
+            Theme music created by
+            <a href="https://www.tiktok.com/@skynetkids" target="_blank">
+                @skynetkids
+            </a>
+        </div>
 
     </div>
 
@@ -298,13 +324,6 @@
 
             </div>
 
-            <div class="music-credit">
-                Theme music created by
-                <a href="https://www.tiktok.com/@skynetkids" target="_blank">
-                    @skynetkids
-                </a>
-            </div>
-
             <div class="info-box">
 
                 <h2>Powered By NoBull Networks</h2>
@@ -334,11 +353,13 @@
     </div>
 
     <script>
+
         const music = document.getElementById('bgMusic');
 
         document.body.addEventListener('click', () => {
             music.play();
         }, { once: true });
+
     </script>
 
 </body>
