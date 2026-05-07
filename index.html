@@ -1,601 +1,151 @@
-# Updated `index.html`
+<div class="info-box">
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>McBeth Gaming</title>
+    <h2>Current Server Mods</h2>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <p style="margin-bottom:20px;">
+        Here are some of the quality-of-life and gameplay mods currently used on the McBeth Gaming server.
+    </p>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-S59920LRSF');
-    </script>
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+        gap:14px;
+        margin-top:20px;
+    ">
 
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family:'Orbitron',sans-serif;
-            background:url('images/background.png') center center / cover no-repeat fixed;
-            color:white;
-            min-height:100vh;
-            overflow-x:hidden;
-            position:relative;
-        }
-
-        body::before{
-            content:'';
-            position:fixed;
-            inset:0;
-            background:rgba(0,0,0,0.72);
-            z-index:-1;
-        }
-
-        .container{
-            width:90%;
-            max-width:1400px;
-            margin:auto;
-            text-align:center;
-            padding:40px 20px;
-        }
-
-        .logo{
-            width:280px;
-            max-width:90%;
-            margin-bottom:20px;
-            filter:drop-shadow(0 0 25px #00ff66);
-        }
-
-        h1{
-            font-size:5rem;
-            font-weight:900;
-            color:#00ff66;
-            text-shadow:
-                0 0 10px #00ff66,
-                0 0 20px #00ff66,
-                0 0 40px #00ff66;
-            margin-bottom:20px;
-        }
-
-        .subtitle{
-            font-size:1.5rem;
-            color:#dddddd;
-            margin-bottom:50px;
-        }
-
-        .hero-image{
-            width:100%;
-            max-width:1200px;
-            border-radius:25px;
-            border:4px solid #00ff66;
-            box-shadow:0 0 35px rgba(0,255,100,0.7);
-            margin-bottom:50px;
-        }
-
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:25px;
-            margin-bottom:60px;
-        }
-
-        .card,
-        .info-card{
-            background:rgba(0,0,0,0.65);
-            border:2px solid rgba(0,255,100,0.25);
-            border-radius:25px;
-            padding:30px;
-            backdrop-filter:blur(6px);
-            box-shadow:0 0 20px rgba(0,255,100,0.15);
-            transition:0.3s;
-        }
-
-        .card:hover,
-        .info-card:hover{
-            transform:translateY(-5px);
-            box-shadow:0 0 30px rgba(0,255,100,0.45);
-        }
-
-        .card h2,
-        .info-card h2{
-            color:#00ff66;
-            margin-bottom:15px;
-            font-size:2rem;
-            text-shadow:0 0 12px rgba(0,255,100,0.5);
-        }
-
-        .card p,
-        .info-card p{
-            color:#d0d0d0;
-            line-height:1.7;
-            font-size:1rem;
-            font-family:Arial,sans-serif;
-        }
-
-        .info-section{
-            margin-top:60px;
-            margin-bottom:70px;
-        }
-
-        .info-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:25px;
-        }
-
-        .main-button{
-            display:inline-block;
-            margin-top:25px;
+        <a href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank" style="
             text-decoration:none;
-            color:white;
-            background:#00cc55;
-            padding:16px 30px;
-            border-radius:16px;
-            font-weight:bold;
-            transition:0.3s;
-            box-shadow:0 0 15px rgba(0,255,100,0.45);
-        }
-
-        .main-button:hover{
-            background:#00ff66;
-            color:black;
-            transform:scale(1.05);
-            box-shadow:0 0 30px rgba(0,255,100,0.8);
-        }
-
-        .nobull-logo{
-            width:320px;
-            max-width:90%;
-            margin-bottom:20px;
-            filter:drop-shadow(0 0 18px rgba(0,255,100,0.45));
-        }
-
-        .mods-section{
-            margin-top:60px;
-            margin-bottom:70px;
-        }
-
-        .mods-title{
-            font-size:2.7rem;
-            color:#00ff66;
-            margin-bottom:30px;
-            text-shadow:0 0 15px #00ff66;
-        }
-
-        .mods-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:18px;
-        }
-
-        .mods-grid a{
-            text-decoration:none;
-            color:white;
-            background:rgba(0,0,0,0.65);
-            border:2px solid rgba(0,255,100,0.25);
-            border-radius:18px;
-            padding:18px;
-            transition:0.3s;
-            box-shadow:0 0 15px rgba(0,255,100,0.15);
-            font-family:Arial,sans-serif;
-        }
-
-        .mods-grid a:hover{
-            background:#00ff66;
-            color:black;
-            transform:scale(1.03);
-            box-shadow:0 0 30px rgba(0,255,100,0.8);
-        }
-
-        .crew-section{
-            margin-top:80px;
-        }
-
-        .crew-title{
-            font-size:3rem;
-            color:#00ff66;
-            margin-bottom:40px;
-            text-shadow:0 0 15px #00ff66;
-        }
-
-        .crew-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:30px;
-        }
-
-        .crew-card{
-            background:rgba(0,0,0,0.65);
-            border:2px solid rgba(0,255,100,0.25);
-            border-radius:25px;
-            padding:35px;
-            backdrop-filter:blur(6px);
-            box-shadow:0 0 20px rgba(0,255,100,0.15);
-        }
-
-        .crew-card h3{
-            color:#00ff66;
-            font-size:2rem;
-            margin-bottom:10px;
-        }
-
-        .crew-role{
-            color:#8cffb5;
-            margin-bottom:15px;
-            font-size:1rem;
-        }
-
-        .crew-card p{
-            color:#d0d0d0;
-            line-height:1.6;
-            margin-bottom:25px;
-            font-family:Arial,sans-serif;
-        }
-
-        .crew-links{
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:15px;
-        }
-
-        .crew-links a{
-            text-decoration:none;
-            color:white;
-            background:#00cc55;
-            padding:12px 22px;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
             border-radius:14px;
-            font-weight:bold;
-            transition:0.3s;
-        }
+            padding:16px;
+            color:white;
+            transition:0.25s ease;
+        ">
+            <strong style="color:#00ff66;">12 Slot Crafting Queue</strong><br>
+            Expanded crafting queue support.
+        </a>
 
-        .crew-links a:hover{
-            background:#00ff66;
-            color:black;
-            transform:scale(1.05);
-        }
-
-        .music-player{
-            position:fixed;
-            bottom:20px;
-            right:20px;
-            background:rgba(0,0,0,0.88);
-            border:2px solid #00ff66;
-            border-radius:20px;
-            padding:10px;
-            box-shadow:0 0 20px rgba(0,255,100,0.55);
-            z-index:999;
-            text-align:center;
-        }
-
-        .music-note{
-            color:#8cffb5;
-            font-size:.8rem;
-            margin-bottom:6px;
-            font-family:Arial,sans-serif;
-        }
-
-        .music-credit{
-            margin-top:6px;
-            font-size:.7rem;
-            color:#8cffb5;
-            font-family:Arial,sans-serif;
-            letter-spacing:1px;
-            text-shadow:0 0 8px rgba(0,255,100,0.4);
-        }
-
-        .music-credit a{
-            color:#00ff66;
+        <a href="https://7daystodiemods.com/3-slot-forge/" target="_blank" style="
             text-decoration:none;
-            font-weight:bold;
-            transition:0.2s ease;
-        }
-
-        .music-credit a:hover{
-            color:#8cffb5;
-        }
-
-        footer{
-            margin-top:90px;
-            padding-bottom:40px;
-            color:#aaaaaa;
-            font-size:0.95rem;
-        }
-
-        @media(max-width:768px){
-
-            h1{
-                font-size:3rem;
-            }
-
-            .subtitle{
-                font-size:1rem;
-            }
-
-            .mods-title,
-            .crew-title{
-                font-size:2rem;
-            }
-
-            .music-player{
-                left:10px;
-                right:10px;
-                bottom:10px;
-            }
-
-            audio{
-                width:100%;
-            }
-
-        }
-
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-
-        <img src="images/logo.png" alt="McBeth Gaming Logo" class="logo">
-
-        <h1>McBeth Gaming</h1>
-
-        <div class="subtitle">
-            Family Friendly Streaming • Community Survival • 7 Days to Die
-        </div>
-
-        <img src="images/server.png" alt="McBeth Gaming Server" class="hero-image">
-
-        <div class="cards">
-
-            <div class="card">
-                <h2>Community Servers</h2>
-
-                <p>
-                    Join the McBeth Gaming community in persistent survival worlds,
-                    live events, horde nights, and future custom server experiences.
-                </p>
-            </div>
-
-            <div class="card">
-                <h2>Fun Not Foul</h2>
-
-                <p>
-                    A family-friendly gaming community built around teamwork,
-                    laughs, creativity, and good people.
-                </p>
-            </div>
-
-            <div class="card">
-                <h2>Supporter Perks</h2>
-
-                <p>
-                    VIP roles, Discord perks, supporter features,
-                    server access, and future community rewards are coming soon.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="info-section">
-
-            <div class="info-grid">
-
-                <div class="info-card">
-                    <h2>About McBeth Gaming</h2>
-
-                    <p>
-                        McBeth Gaming is a family-friendly gaming community focused on survival games,
-                        livestream chaos, teamwork, and building an awesome community together.
-                        From 7 Days to Die and community events to challenge runs and creator content,
-                        the goal is simple — Fun Not Foul.
-                    </p>
-                </div>
-
-                <div class="info-card">
-                    <h2>McBeth Gaming PC Build</h2>
-
-                    <p>
-                        Want to see the gear powering the streams, videos, editing, and survival chaos?
-                        Check out the full McBeth Gaming PC setup and recommended hardware.
-                    </p>
-
-                    <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist&ccs_id=9d1c93b6-68b4-498a-b8fd-3a445f1d7a1f" target="_blank" class="main-button">
-                        View The PC Build
-                    </a>
-                </div>
-
-                <div class="info-card">
-                    <img src="images/nobull.png" alt="NoBull Networks" class="nobull-logo">
-
-                    <h2>Powered By NoBull Networks</h2>
-
-                    <p>
-                        Looking for a great game server host for your community?
-                        McBeth Gaming is proudly powered by NoBull Networks.
-                        Fast servers, reliable support, and great performance for survival gaming communities.
-                    </p>
-
-                    <a href="https://my.nobullnetworks.com/aff.php?aff=21" target="_blank" class="main-button">
-                        Get Your Server Here
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="mods-section">
-
-            <div class="mods-title">
-                Current Server Mods
-            </div>
-
-            <div class="mods-grid">
-
-                <a href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank">
-                    12 Slot Crafting Queue
-                </a>
-
-                <a href="https://7daystodiemods.com/3-slot-forge/" target="_blank">
-                    3 Slot Forge
-                </a>
-
-                <a href="https://7daystodiemods.com/hp-bars/" target="_blank">
-                    HP Bars
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/6865" target="_blank">
-                    Mega Backpack and Storage
-                </a>
-
-                <a href="https://7daystodiemods.com/sams-car-respawner/" target="_blank">
-                    Sam's Car Respawner
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/5271" target="_blank">
-                    LittleRedSonja Fancy Home Deco
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/8525" target="_blank">
-                    Air Drops PLUS
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank">
-                    Harvest PLUS
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/6626" target="_blank">
-                    ServerSide Elevator
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/5819" target="_blank">
-                    Trader Never Closes
-                </a>
-
-                <a href="https://www.nexusmods.com/7daystodie/mods/8054" target="_blank">
-                    Nailgun Nemesis
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="crew-section">
-
-            <div class="crew-title">
-                McBeth Gaming Crew
-            </div>
-
-            <div class="crew-grid">
-
-                <div class="crew-card">
-
-                    <h3>McBeth</h3>
-
-                    <div class="crew-role">
-                        Founder • Streamer • Community Lead
-                    </div>
-
-                    <p>
-                        Building a fun, family-friendly survival gaming community
-                        focused on teamwork, chaos, and unforgettable moments.
-                    </p>
-
-                    <div class="crew-links">
-
-                        <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-                            Twitch
-                        </a>
-
-                        <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-                            TikTok
-                        </a>
-
-                        <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
-                            Discord
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="crew-card">
-
-                    <h3>BoogieFaye00</h3>
-
-                    <div class="crew-role">
-                        Crew Member • Streamer • Community Team
-                    </div>
-
-                    <p>
-                        McBeth Gaming duo partner, second-in-command, and a core part of the community server team.
-                    </p>
-
-                    <div class="crew-links">
-
-                        <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">
-                            Follow Boogie
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <footer>
-            © 2026 McBeth Gaming — Fun Not Foul
-        </footer>
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">3 Slot Forge</strong><br>
+            More forge crafting slots.
+        </a>
+
+        <a href="https://7daystodiemods.com/hp-bars/" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">HP Bars</strong><br>
+            Enemy health bar improvements.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/6865" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Mega Backpack & Storage</strong><br>
+            Expanded inventory and storage.
+        </a>
+
+        <a href="https://7daystodiemods.com/sams-car-respawner/" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Sam's Car Respawner</strong><br>
+            Better vehicle respawns.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/5271" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Fancy Home Deco</strong><br>
+            Decorative building additions.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/8525" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Air Drops PLUS</strong><br>
+            Improved airdrop rewards.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Harvest PLUS</strong><br>
+            Better harvesting balance.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/6626" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">ServerSide Elevator</strong><br>
+            Elevator system support.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/5819" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Trader Never Closes</strong><br>
+            Traders stay open 24/7.
+        </a>
+
+        <a href="https://www.nexusmods.com/7daystodie/mods/8054" target="_blank" style="
+            text-decoration:none;
+            background:rgba(0,0,0,0.45);
+            border:1px solid rgba(0,255,100,0.3);
+            border-radius:14px;
+            padding:16px;
+            color:white;
+        ">
+            <strong style="color:#00ff66;">Nailgun Nemesis</strong><br>
+            Nailgun combat enhancements.
+        </a>
 
     </div>
 
-    <div class="music-player">
-
-        <div class="music-note">
-            Click anywhere for the McBeth Gaming theme
-        </div>
-
-        <audio id="bgMusic" controls loop>
-            <source src="music/McBeth Online.mp3" type="audio/mpeg">
-        </audio>
-
-        <div class="music-credit">
-            Theme music created by
-            <a href="https://www.tiktok.com/@skynetkids" target="_blank">
-                @skynetkids
-            </a>
-        </div>
-
-    </div>
-
-    <script>
-        window.addEventListener('click', () => {
-
-            const music = document.getElementById('bgMusic');
-
-            if (music.paused) {
-                music.play();
-            }
-
-        }, { once: true });
-    </script>
-
-</body>
-</html>
-```
+</div>
