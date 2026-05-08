@@ -107,51 +107,13 @@
                 0 0 45px rgba(0,255,100,0.25);
         }
 
-        .live-box {
-            margin: 55px auto 20px;
-            max-width: 1000px;
-            background: rgba(0,0,0,0.65);
-            border: 2px solid rgba(0,255,100,0.35);
-            border-radius: 20px;
-            padding: 35px 25px;
-            box-shadow: 0 0 20px rgba(0,255,100,0.15);
-        }
-
-        .live-box h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00ff66;
-            margin-bottom: 20px;
-            font-size: 2.2rem;
-            text-shadow: 0 0 12px rgba(0,255,100,0.6);
-        }
-
-        .live-tag {
-            color: #ff3b3b;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        .twitch-frame {
-            border-radius: 18px;
-            overflow: hidden;
-            border: 2px solid rgba(0,255,100,0.4);
-            box-shadow: 0 0 20px rgba(0,255,100,0.2);
-            margin-bottom: 25px;
-        }
-
         .buttons {
             margin-top: 35px;
             margin-bottom: 50px;
         }
 
         .buttons a,
-        .affiliate-btn,
-        .live-btn {
+        .affiliate-btn {
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
@@ -168,8 +130,7 @@
         }
 
         .buttons a:hover,
-        .affiliate-btn:hover,
-        .live-btn:hover {
+        .affiliate-btn:hover {
             transform: translateY(-3px) scale(1.04);
             box-shadow:
                 0 0 20px rgba(0,255,100,0.7),
@@ -262,8 +223,7 @@
             }
 
             .buttons a,
-            .affiliate-btn,
-            .live-btn {
+            .affiliate-btn {
                 width: 85%;
                 max-width: 320px;
             }
@@ -272,8 +232,7 @@
                 width: 240px;
             }
 
-            .info-box,
-            .live-box {
+            .info-box {
                 padding: 25px 18px;
             }
 
@@ -332,37 +291,6 @@
                 <img src="images/server.png" alt="McBeth Gaming Server" class="server-img">
             </div>
 
-            <!-- LIVE SECTION -->
-
-            <div class="live-box">
-
-                <h2>
-                    <span class="live-tag">● LIVE NOW</span>
-                </h2>
-
-                <div class="twitch-frame">
-
-                    <iframe
-                        src="https://player.twitch.tv/?channel=mcbeth_gaming&parent=mcbethgaming.com&parent=www.mcbethgaming.com"
-                        height="500"
-                        width="100%"
-                        allowfullscreen>
-                    </iframe>
-
-                </div>
-
-                <a class="live-btn"
-                   href="https://www.tiktok.com/@mcbethgaming/live"
-                   target="_blank">
-
-                    Watch LIVE on TikTok
-
-                </a>
-
-            </div>
-
-            <!-- MAIN BUTTONS -->
-
             <div class="buttons">
 
                 <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
@@ -383,8 +311,6 @@
 
             </div>
 
-            <!-- ABOUT -->
-
             <div class="info-box">
 
                 <h2>About McBeth Gaming</h2>
@@ -397,8 +323,6 @@
                 </p>
 
             </div>
-
-            <!-- NOBULL -->
 
             <div class="info-box">
 
