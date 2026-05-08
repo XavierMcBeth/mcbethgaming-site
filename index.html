@@ -8,25 +8,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
-
     <script>
       window.dataLayer = window.dataLayer || [];
-
       function gtag(){
         dataLayer.push(arguments);
       }
-
       gtag('js', new Date());
       gtag('config', 'G-S59920LRSF');
     </script>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -40,11 +35,9 @@
         body {
             font-family: 'Rajdhani', sans-serif;
             color: white;
-
             background:
                 linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
                 url('images/background.png') center center / cover no-repeat fixed;
-
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -63,14 +56,9 @@
             position: absolute;
             width: 5px;
             height: 5px;
-
             background: rgba(0,255,100,0.45);
-
             border-radius: 50%;
-
-            box-shadow:
-                0 0 12px rgba(0,255,100,0.8);
-
+            box-shadow: 0 0 12px rgba(0,255,100,0.8);
             animation: floatDust 18s linear infinite;
         }
 
@@ -86,7 +74,6 @@
         .particles span:nth-child(10) { left: 97%; animation-delay: 9s; }
 
         @keyframes floatDust {
-
             0% {
                 transform: translateY(110vh) scale(0.4);
                 opacity: 0;
@@ -120,42 +107,28 @@
             position: sticky;
             top: 0;
             z-index: 999;
-
             background: rgba(0,0,0,0.88);
-
             backdrop-filter: blur(10px);
-
             border-bottom: 1px solid rgba(0,255,100,0.25);
-
             padding: 14px 20px;
-
             display: flex;
             justify-content: center;
             gap: 28px;
-
-            box-shadow:
-                0 0 20px rgba(0,255,100,0.08);
+            box-shadow: 0 0 20px rgba(0,255,100,0.08);
         }
 
         .navbar a {
-
             color: #d0d0d0;
-
             text-decoration: none;
-
             font-size: 1.05rem;
             font-weight: bold;
             letter-spacing: 1px;
-
             transition: 0.25s ease;
         }
 
         .navbar a:hover {
-
             color: #00ff66;
-
-            text-shadow:
-                0 0 12px rgba(0,255,100,0.8);
+            text-shadow: 0 0 12px rgba(0,255,100,0.8);
         }
 
         header {
@@ -167,11 +140,9 @@
             width: 320px;
             max-width: 90%;
             margin-bottom: 10px;
-
             filter:
                 drop-shadow(0 0 12px #00ff66)
                 drop-shadow(0 0 25px rgba(0,255,100,0.6));
-
             transition: 0.3s ease;
         }
 
@@ -181,19 +152,14 @@
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-
             font-size: 4.8rem;
             font-weight: 900;
-
             letter-spacing: 3px;
-
             color: #00ff66;
-
             text-shadow:
                 0 0 10px #00ff66,
                 0 0 20px #00ff66,
                 0 0 40px rgba(0,255,100,0.7);
-
             margin-bottom: 15px;
         }
 
@@ -218,15 +184,11 @@
         .server-img {
             width: 92%;
             max-width: 1000px;
-
             border-radius: 25px;
-
             border: 3px solid #00ff66;
-
             box-shadow:
                 0 0 20px rgba(0,255,100,0.4),
                 0 0 45px rgba(0,255,100,0.25);
-
             transition: 0.3s ease;
         }
 
@@ -241,25 +203,16 @@
 
         .buttons a,
         .affiliate-btn {
-
             display: inline-block;
-
             margin: 12px;
-
             padding: 16px 34px;
-
             background: linear-gradient(135deg, #00aa44, #00ff66);
-
             color: white;
             text-decoration: none;
-
             border-radius: 14px;
-
             font-size: 1.15rem;
             font-weight: bold;
-
             transition: 0.25s ease;
-
             box-shadow:
                 0 0 12px rgba(0,255,100,0.4),
                 0 0 25px rgba(0,255,100,0.2);
@@ -267,64 +220,40 @@
 
         .buttons a:hover,
         .affiliate-btn:hover {
-
             transform: translateY(-3px) scale(1.04);
-
             box-shadow:
                 0 0 20px rgba(0,255,100,0.7),
                 0 0 40px rgba(0,255,100,0.35);
         }
 
         .info-box {
-
             margin: 55px auto 20px;
-
             max-width: 1100px;
-
             background: rgba(0,0,0,0.65);
-
             border: 2px solid rgba(0,255,100,0.35);
-
             border-radius: 20px;
-
             padding: 35px 25px;
-
-            box-shadow:
-                0 0 20px rgba(0,255,100,0.15);
-
+            box-shadow: 0 0 20px rgba(0,255,100,0.15);
             transition: 0.3s ease;
         }
 
         .info-box:hover {
-
             transform: translateY(-4px);
-
-            box-shadow:
-                0 0 30px rgba(0,255,100,0.22);
+            box-shadow: 0 0 30px rgba(0,255,100,0.22);
         }
 
         .info-box h2 {
-
             font-family: 'Orbitron', sans-serif;
-
             color: #00ff66;
-
             margin-bottom: 15px;
-
             font-size: 2rem;
-
-            text-shadow:
-                0 0 12px rgba(0,255,100,0.6);
+            text-shadow: 0 0 12px rgba(0,255,100,0.6);
         }
 
         .info-box p {
-
             font-size: 1.2rem;
-
             color: #d0d0d0;
-
             margin-bottom: 25px;
-
             line-height: 1.5;
         }
 
@@ -337,107 +266,103 @@
         }
 
         .schedule-item {
-
             background: rgba(0,255,100,0.08);
-
             border: 1px solid rgba(0,255,100,0.3);
-
             border-radius: 14px;
-
             padding: 16px;
-
             font-size: 1.15rem;
-
             color: #d0d0d0;
         }
 
         .schedule-item strong {
-
             color: #00ff66;
-
             font-family: 'Orbitron', sans-serif;
         }
 
-        /* TIKTOK */
+        /* FEATURED VIDEOS */
 
-        .tiktok-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .video-link-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-top: 25px;
         }
 
-        .tiktok-card {
-            background: rgba(0,255,100,0.07);
-            border: 1px solid rgba(0,255,100,0.3);
+        .video-link-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(0,255,100,0.08);
+            border: 1px solid rgba(0,255,100,0.35);
             border-radius: 18px;
-            padding: 14px;
-            max-width: 340px;
+            padding: 24px 18px;
+            color: white;
             box-shadow: 0 0 18px rgba(0,255,100,0.12);
+            transition: 0.25s ease;
         }
 
-        .tiktok-card h3 {
+        .video-link-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 30px rgba(0,255,100,0.28);
+        }
+
+        .video-label {
+            color: #8cffb5;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .video-link-card h3 {
             color: #00ff66;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 12px;
+            font-size: 1.15rem;
+            margin: 14px 0;
         }
 
-        .tiktok-grid blockquote {
-            max-width: 325px !important;
-            min-width: 260px !important;
+        .video-link-card p {
+            color: #d0d0d0;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        .watch-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #00aa44, #00ff66);
+            border-radius: 12px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 12px rgba(0,255,100,0.25);
         }
 
         /* MUSIC PLAYER */
 
         .music-player {
-
             position: fixed;
-
             bottom: 10px;
             right: 10px;
-
             z-index: 999;
-
             background: rgba(0,0,0,0.85);
-
             padding: 12px;
-
             border-radius: 16px;
-
             border: 2px solid rgba(0,255,100,0.5);
-
-            box-shadow:
-                0 0 20px rgba(0,255,100,0.3);
-
+            box-shadow: 0 0 20px rgba(0,255,100,0.3);
             backdrop-filter: blur(6px);
         }
 
         .music-credit {
-
             margin-top: 8px;
-
             font-size: 0.82rem;
-
             color: #d0d0d0;
-
             text-align: center;
-
             letter-spacing: 1px;
-
-            text-shadow:
-                0 0 8px rgba(0,255,100,0.4);
+            text-shadow: 0 0 8px rgba(0,255,100,0.4);
         }
 
         .music-credit a {
-
             color: #00ff66;
-
             text-decoration: none;
-
             font-weight: bold;
-
             transition: 0.2s ease;
         }
 
@@ -446,33 +371,28 @@
         }
 
         .music-start {
-
             color: #8cffb5;
-
             font-size: 0.85rem;
-
             margin-bottom: 8px;
-
             text-align: center;
-
             letter-spacing: 1px;
         }
 
         footer {
-
             margin-top: 70px;
-
             text-align: center;
-
             color: #aaaaaa;
-
             font-size: 0.95rem;
-
             padding: 25px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .video-link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
+        @media (max-width: 768px) {
             .navbar {
                 gap: 16px;
                 flex-wrap: wrap;
@@ -509,15 +429,12 @@
                 width: 100%;
             }
         }
-
     </style>
-
 </head>
 
 <body>
 
     <!-- PARTICLES -->
-
     <div class="particles">
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
@@ -526,22 +443,17 @@
     <div class="overlay">
 
         <!-- NAVIGATION -->
-
         <nav class="navbar">
-
             <a href="#home">Home</a>
             <a href="#links">Links</a>
             <a href="#schedule">Schedule</a>
             <a href="#clips">Clips</a>
             <a href="#about">About</a>
             <a href="#nobull">NoBull</a>
-
         </nav>
 
         <!-- MUSIC PLAYER -->
-
         <div class="music-player">
-
             <div class="music-start">
                 Click anywhere for music
             </div>
@@ -556,13 +468,10 @@
                     @skynetkids
                 </a>
             </div>
-
         </div>
 
         <!-- HEADER -->
-
         <header id="home">
-
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
             <h1>McBeth Gaming</h1>
@@ -570,27 +479,21 @@
             <p class="subtitle">
                 Family Friendly Streaming • Community Survival • 7 Days to Die
             </p>
-
         </header>
 
         <div class="content">
 
             <!-- SERVER IMAGE -->
-
             <div class="server-wrap">
-
                 <img
                     src="images/server.png"
                     alt="McBeth Gaming Server"
                     class="server-img"
                 >
-
             </div>
 
             <!-- BUTTONS -->
-
             <div class="buttons" id="links">
-
                 <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
                     Twitch
                 </a>
@@ -606,11 +509,9 @@
                 <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
                     My PC Build
                 </a>
-
             </div>
 
             <!-- STREAM SCHEDULE -->
-
             <div class="info-box" id="schedule">
 
                 <h2>Stream Schedule</h2>
@@ -623,27 +524,18 @@
                 <div class="schedule-list">
 
                     <div class="schedule-item">
-
                         <strong>Morning Stream:</strong><br>
-
                         10:00 AM – 2:00 PM EST
-
                     </div>
 
                     <div class="schedule-item">
-
                         <strong>Night Stream:</strong><br>
-
                         8:00 PM – 10:00 PM EST
-
                     </div>
 
                     <div class="schedule-item">
-
                         <strong>Main Games:</strong><br>
-
                         7 Days to Die • Valheim • Survival Games
-
                     </div>
 
                 </div>
@@ -651,7 +543,6 @@
             </div>
 
             <!-- FEATURED TIKTOKS -->
-
             <div class="info-box" id="clips">
 
                 <h2>Featured TikToks</h2>
@@ -661,62 +552,46 @@
                     giveaways, and 7 Days to Die community content.
                 </p>
 
-                <div class="tiktok-grid">
+                <div class="video-link-grid">
 
-                    <div class="tiktok-card">
+                    <a class="video-link-card"
+                       href="https://www.tiktok.com/@mcbethgaming/video/7480668502605483294"
+                       target="_blank">
 
+                        <span class="video-label">Pinned Video</span>
                         <h3>How to Mod 7 Days to Die</h3>
+                        <p>Quick tutorial for getting mods set up and running.</p>
+                        <div class="watch-btn">Watch on TikTok</div>
 
-                        <blockquote
-                            class="tiktok-embed"
-                            cite="https://www.tiktok.com/@mcbethgaming/video/7480668502605483294"
-                            data-video-id="7480668502605483294"
-                            style="max-width: 325px; min-width: 260px;">
+                    </a>
 
-                            <section></section>
+                    <a class="video-link-card"
+                       href="https://www.tiktok.com/@mcbethgaming/video/7606514875400981790"
+                       target="_blank">
 
-                        </blockquote>
-
-                    </div>
-
-                    <div class="tiktok-card">
-
+                        <span class="video-label">Pinned Video</span>
                         <h3>PC Giveaway</h3>
+                        <p>McBeth Gaming giveaway content and community hype.</p>
+                        <div class="watch-btn">Watch on TikTok</div>
 
-                        <blockquote
-                            class="tiktok-embed"
-                            cite="https://www.tiktok.com/@mcbethgaming/video/7606514875400981790"
-                            data-video-id="7606514875400981790"
-                            style="max-width: 325px; min-width: 260px;">
+                    </a>
 
-                            <section></section>
+                    <a class="video-link-card"
+                       href="https://www.tiktok.com/@mcbethgaming/video/7609696576314805535"
+                       target="_blank">
 
-                        </blockquote>
-
-                    </div>
-
-                    <div class="tiktok-card">
-
+                        <span class="video-label">Pinned Video</span>
                         <h3>Top 5 POI's</h3>
+                        <p>Top 5 7 Days to Die POIs for players and builders.</p>
+                        <div class="watch-btn">Watch on TikTok</div>
 
-                        <blockquote
-                            class="tiktok-embed"
-                            cite="https://www.tiktok.com/@mcbethgaming/video/7609696576314805535"
-                            data-video-id="7609696576314805535"
-                            style="max-width: 325px; min-width: 260px;">
-
-                            <section></section>
-
-                        </blockquote>
-
-                    </div>
+                    </a>
 
                 </div>
 
             </div>
 
             <!-- ABOUT -->
-
             <div class="info-box" id="about">
 
                 <h2>About McBeth Gaming</h2>
@@ -734,7 +609,6 @@
             </div>
 
             <!-- NOBULL -->
-
             <div class="info-box" id="nobull">
 
                 <h2>Powered By NoBull Networks</h2>
@@ -767,18 +641,12 @@
 
     </div>
 
-    <script async src="https://www.tiktok.com/embed.js"></script>
-
     <script>
-
         const music = document.getElementById('bgMusic');
 
         document.body.addEventListener('click', () => {
-
             music.play();
-
         }, { once: true });
-
     </script>
 
 </body>
