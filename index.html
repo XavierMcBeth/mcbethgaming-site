@@ -8,6 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Google Analytics -->
@@ -39,9 +40,11 @@
         body {
             font-family: 'Rajdhani', sans-serif;
             color: white;
+
             background:
                 linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
                 url('images/background.png') center center / cover no-repeat fixed;
+
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -60,9 +63,14 @@
             position: absolute;
             width: 5px;
             height: 5px;
+
             background: rgba(0,255,100,0.45);
+
             border-radius: 50%;
-            box-shadow: 0 0 12px rgba(0,255,100,0.8);
+
+            box-shadow:
+                0 0 12px rgba(0,255,100,0.8);
+
             animation: floatDust 18s linear infinite;
         }
 
@@ -106,6 +114,50 @@
             z-index: 1;
         }
 
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+
+            background: rgba(0,0,0,0.88);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(0,255,100,0.25);
+
+            padding: 14px 20px;
+
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.08);
+        }
+
+        .navbar a {
+
+            color: #d0d0d0;
+
+            text-decoration: none;
+
+            font-size: 1.05rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            transition: 0.25s ease;
+        }
+
+        .navbar a:hover {
+
+            color: #00ff66;
+
+            text-shadow:
+                0 0 12px rgba(0,255,100,0.8);
+        }
+
         header {
             text-align: center;
             padding: 50px 20px 20px;
@@ -129,8 +181,10 @@
 
         h1 {
             font-family: 'Orbitron', sans-serif;
+
             font-size: 4.8rem;
             font-weight: 900;
+
             letter-spacing: 3px;
 
             color: #00ff66;
@@ -164,7 +218,9 @@
         .server-img {
             width: 92%;
             max-width: 1000px;
+
             border-radius: 25px;
+
             border: 3px solid #00ff66;
 
             box-shadow:
@@ -185,8 +241,11 @@
 
         .buttons a,
         .affiliate-btn {
+
             display: inline-block;
+
             margin: 12px;
+
             padding: 16px 34px;
 
             background: linear-gradient(135deg, #00aa44, #00ff66);
@@ -217,7 +276,9 @@
         }
 
         .info-box {
+
             margin: 55px auto 20px;
+
             max-width: 850px;
 
             background: rgba(0,0,0,0.65);
@@ -228,20 +289,28 @@
 
             padding: 35px 25px;
 
-            box-shadow: 0 0 20px rgba(0,255,100,0.15);
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.15);
 
             transition: 0.3s ease;
         }
 
         .info-box:hover {
+
             transform: translateY(-4px);
-            box-shadow: 0 0 30px rgba(0,255,100,0.22);
+
+            box-shadow:
+                0 0 30px rgba(0,255,100,0.22);
         }
 
         .info-box h2 {
+
             font-family: 'Orbitron', sans-serif;
+
             color: #00ff66;
+
             margin-bottom: 15px;
+
             font-size: 2rem;
 
             text-shadow:
@@ -249,9 +318,13 @@
         }
 
         .info-box p {
+
             font-size: 1.2rem;
+
             color: #d0d0d0;
+
             margin-bottom: 25px;
+
             line-height: 1.5;
         }
 
@@ -264,25 +337,36 @@
         }
 
         .schedule-item {
+
             background: rgba(0,255,100,0.08);
+
             border: 1px solid rgba(0,255,100,0.3);
+
             border-radius: 14px;
+
             padding: 16px;
+
             font-size: 1.15rem;
+
             color: #d0d0d0;
         }
 
         .schedule-item strong {
+
             color: #00ff66;
+
             font-family: 'Orbitron', sans-serif;
         }
 
         /* MUSIC PLAYER */
 
         .music-player {
+
             position: fixed;
+
             bottom: 10px;
             right: 10px;
+
             z-index: 999;
 
             background: rgba(0,0,0,0.85);
@@ -300,10 +384,15 @@
         }
 
         .music-credit {
+
             margin-top: 8px;
+
             font-size: 0.82rem;
+
             color: #d0d0d0;
+
             text-align: center;
+
             letter-spacing: 1px;
 
             text-shadow:
@@ -311,9 +400,13 @@
         }
 
         .music-credit a {
+
             color: #00ff66;
+
             text-decoration: none;
+
             font-weight: bold;
+
             transition: 0.2s ease;
         }
 
@@ -322,22 +415,37 @@
         }
 
         .music-start {
+
             color: #8cffb5;
+
             font-size: 0.85rem;
+
             margin-bottom: 8px;
+
             text-align: center;
+
             letter-spacing: 1px;
         }
 
         footer {
+
             margin-top: 70px;
+
             text-align: center;
+
             color: #aaaaaa;
+
             font-size: 0.95rem;
+
             padding: 25px;
         }
 
         @media (max-width: 768px) {
+
+            .navbar {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
 
             h1 {
                 font-size: 2.8rem;
@@ -384,30 +492,44 @@
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- MUSIC PLAYER -->
-
-    <div class="music-player">
-
-        <div class="music-start">
-            Click anywhere for music
-        </div>
-
-        <audio id="bgMusic" loop controls>
-            <source src="music/McBeth Online.mp3" type="audio/mpeg">
-        </audio>
-
-        <div class="music-credit">
-            Theme music created by
-            <a href="https://www.tiktok.com/@skynetkids" target="_blank">
-                @skynetkids
-            </a>
-        </div>
-
-    </div>
-
     <div class="overlay">
 
-        <header>
+        <!-- NAVIGATION -->
+
+        <nav class="navbar">
+
+            <a href="#home">Home</a>
+            <a href="#links">Links</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#about">About</a>
+            <a href="#nobull">NoBull</a>
+
+        </nav>
+
+        <!-- MUSIC PLAYER -->
+
+        <div class="music-player">
+
+            <div class="music-start">
+                Click anywhere for music
+            </div>
+
+            <audio id="bgMusic" loop controls>
+                <source src="music/McBeth Online.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="music-credit">
+                Theme music created by
+                <a href="https://www.tiktok.com/@skynetkids" target="_blank">
+                    @skynetkids
+                </a>
+            </div>
+
+        </div>
+
+        <!-- HEADER -->
+
+        <header id="home">
 
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
@@ -421,6 +543,8 @@
 
         <div class="content">
 
+            <!-- SERVER IMAGE -->
+
             <div class="server-wrap">
 
                 <img
@@ -433,7 +557,7 @@
 
             <!-- BUTTONS -->
 
-            <div class="buttons">
+            <div class="buttons" id="links">
 
                 <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
                     Twitch
@@ -455,7 +579,7 @@
 
             <!-- STREAM SCHEDULE -->
 
-            <div class="info-box">
+            <div class="info-box" id="schedule">
 
                 <h2>Stream Schedule</h2>
 
@@ -467,18 +591,27 @@
                 <div class="schedule-list">
 
                     <div class="schedule-item">
+
                         <strong>Morning Stream:</strong><br>
+
                         10:00 AM – 2:00 PM EST
+
                     </div>
 
                     <div class="schedule-item">
+
                         <strong>Night Stream:</strong><br>
+
                         8:00 PM – 10:00 PM EST
+
                     </div>
 
                     <div class="schedule-item">
+
                         <strong>Main Games:</strong><br>
+
                         7 Days to Die • Valheim • Survival Games
+
                     </div>
 
                 </div>
@@ -487,7 +620,7 @@
 
             <!-- ABOUT -->
 
-            <div class="info-box">
+            <div class="info-box" id="about">
 
                 <h2>About McBeth Gaming</h2>
 
@@ -505,7 +638,7 @@
 
             <!-- NOBULL -->
 
-            <div class="info-box">
+            <div class="info-box" id="nobull">
 
                 <h2>Powered By NoBull Networks</h2>
 
