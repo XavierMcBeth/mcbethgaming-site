@@ -12,9 +12,14 @@
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+
+      function gtag(){
+        dataLayer.push(arguments);
+      }
+
       gtag('js', new Date());
       gtag('config', 'G-S59920LRSF');
     </script>
@@ -41,10 +46,64 @@
             overflow-x: hidden;
         }
 
+        /* PARTICLES */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particles span {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: rgba(0,255,100,0.45);
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0,255,100,0.8);
+            animation: floatDust 18s linear infinite;
+        }
+
+        .particles span:nth-child(1) { left: 8%; animation-delay: 0s; }
+        .particles span:nth-child(2) { left: 18%; animation-delay: 3s; }
+        .particles span:nth-child(3) { left: 29%; animation-delay: 6s; }
+        .particles span:nth-child(4) { left: 41%; animation-delay: 2s; }
+        .particles span:nth-child(5) { left: 53%; animation-delay: 8s; }
+        .particles span:nth-child(6) { left: 64%; animation-delay: 4s; }
+        .particles span:nth-child(7) { left: 73%; animation-delay: 7s; }
+        .particles span:nth-child(8) { left: 82%; animation-delay: 1s; }
+        .particles span:nth-child(9) { left: 91%; animation-delay: 5s; }
+        .particles span:nth-child(10) { left: 97%; animation-delay: 9s; }
+
+        @keyframes floatDust {
+
+            0% {
+                transform: translateY(110vh) scale(0.4);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
         .overlay {
             width: 100%;
             min-height: 100vh;
             padding-bottom: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         header {
@@ -56,9 +115,11 @@
             width: 320px;
             max-width: 90%;
             margin-bottom: 10px;
+
             filter:
                 drop-shadow(0 0 12px #00ff66)
                 drop-shadow(0 0 25px rgba(0,255,100,0.6));
+
             transition: 0.3s ease;
         }
 
@@ -71,11 +132,14 @@
             font-size: 4.8rem;
             font-weight: 900;
             letter-spacing: 3px;
+
             color: #00ff66;
+
             text-shadow:
                 0 0 10px #00ff66,
                 0 0 20px #00ff66,
                 0 0 40px rgba(0,255,100,0.7);
+
             margin-bottom: 15px;
         }
 
@@ -102,9 +166,16 @@
             max-width: 1000px;
             border-radius: 25px;
             border: 3px solid #00ff66;
+
             box-shadow:
                 0 0 20px rgba(0,255,100,0.4),
                 0 0 45px rgba(0,255,100,0.25);
+
+            transition: 0.3s ease;
+        }
+
+        .server-img:hover {
+            transform: scale(1.01);
         }
 
         .buttons {
@@ -117,13 +188,19 @@
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
+
             background: linear-gradient(135deg, #00aa44, #00ff66);
+
             color: white;
             text-decoration: none;
+
             border-radius: 14px;
+
             font-size: 1.15rem;
             font-weight: bold;
+
             transition: 0.25s ease;
+
             box-shadow:
                 0 0 12px rgba(0,255,100,0.4),
                 0 0 25px rgba(0,255,100,0.2);
@@ -131,7 +208,9 @@
 
         .buttons a:hover,
         .affiliate-btn:hover {
+
             transform: translateY(-3px) scale(1.04);
+
             box-shadow:
                 0 0 20px rgba(0,255,100,0.7),
                 0 0 40px rgba(0,255,100,0.35);
@@ -140,11 +219,23 @@
         .info-box {
             margin: 55px auto 20px;
             max-width: 850px;
+
             background: rgba(0,0,0,0.65);
+
             border: 2px solid rgba(0,255,100,0.35);
+
             border-radius: 20px;
+
             padding: 35px 25px;
+
             box-shadow: 0 0 20px rgba(0,255,100,0.15);
+
+            transition: 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(0,255,100,0.22);
         }
 
         .info-box h2 {
@@ -152,7 +243,9 @@
             color: #00ff66;
             margin-bottom: 15px;
             font-size: 2rem;
-            text-shadow: 0 0 12px rgba(0,255,100,0.6);
+
+            text-shadow:
+                0 0 12px rgba(0,255,100,0.6);
         }
 
         .info-box p {
@@ -162,17 +255,47 @@
             line-height: 1.5;
         }
 
+        /* SCHEDULE */
+
+        .schedule-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .schedule-item {
+            background: rgba(0,255,100,0.08);
+            border: 1px solid rgba(0,255,100,0.3);
+            border-radius: 14px;
+            padding: 16px;
+            font-size: 1.15rem;
+            color: #d0d0d0;
+        }
+
+        .schedule-item strong {
+            color: #00ff66;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* MUSIC PLAYER */
+
         .music-player {
             position: fixed;
             bottom: 10px;
             right: 10px;
             z-index: 999;
+
             background: rgba(0,0,0,0.85);
+
             padding: 12px;
+
             border-radius: 16px;
+
             border: 2px solid rgba(0,255,100,0.5);
+
             box-shadow:
                 0 0 20px rgba(0,255,100,0.3);
+
             backdrop-filter: blur(6px);
         }
 
@@ -182,7 +305,9 @@
             color: #d0d0d0;
             text-align: center;
             letter-spacing: 1px;
-            text-shadow: 0 0 8px rgba(0,255,100,0.4);
+
+            text-shadow:
+                0 0 8px rgba(0,255,100,0.4);
         }
 
         .music-credit a {
@@ -247,11 +372,20 @@
         }
 
     </style>
+
 </head>
 
 <body>
 
-    <!-- Music Player -->
+    <!-- PARTICLES -->
+
+    <div class="particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- MUSIC PLAYER -->
+
     <div class="music-player">
 
         <div class="music-start">
@@ -288,8 +422,16 @@
         <div class="content">
 
             <div class="server-wrap">
-                <img src="images/server.png" alt="McBeth Gaming Server" class="server-img">
+
+                <img
+                    src="images/server.png"
+                    alt="McBeth Gaming Server"
+                    class="server-img"
+                >
+
             </div>
+
+            <!-- BUTTONS -->
 
             <div class="buttons">
 
@@ -311,18 +453,57 @@
 
             </div>
 
+            <!-- STREAM SCHEDULE -->
+
+            <div class="info-box">
+
+                <h2>Stream Schedule</h2>
+
+                <p>
+                    Catch McBeth Gaming live most days with family-friendly
+                    survival chaos, community events, and 7 Days to Die madness.
+                </p>
+
+                <div class="schedule-list">
+
+                    <div class="schedule-item">
+                        <strong>Morning Stream:</strong><br>
+                        10:00 AM – 2:00 PM EST
+                    </div>
+
+                    <div class="schedule-item">
+                        <strong>Night Stream:</strong><br>
+                        8:00 PM – 10:00 PM EST
+                    </div>
+
+                    <div class="schedule-item">
+                        <strong>Main Games:</strong><br>
+                        7 Days to Die • Valheim • Survival Games
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ABOUT -->
+
             <div class="info-box">
 
                 <h2>About McBeth Gaming</h2>
 
                 <p>
-                    McBeth Gaming is a family-friendly gaming community focused on survival games,
-                    livestream chaos, teamwork, and building an awesome community together.
-                    From 7 Days to Die and community events to challenge runs and creator content,
-                    the goal is simple — Fun Not Foul.
+                    McBeth Gaming is a family-friendly gaming community focused
+                    on survival games, livestream chaos, teamwork, and building
+                    an awesome community together.
+
+                    From 7 Days to Die and community events to challenge runs
+                    and creator content, the goal is simple —
+                    Fun Not Foul.
                 </p>
 
             </div>
+
+            <!-- NOBULL -->
 
             <div class="info-box">
 
@@ -330,13 +511,17 @@
 
                 <p>
                     Looking for a great game server host for your community?
+
                     McBeth Gaming is proudly powered by NoBull Networks.
-                    Fast servers, reliable support, and great performance for survival gaming communities.
+
+                    Fast servers, reliable support, and great performance
+                    for survival gaming communities.
                 </p>
 
-                <a class="affiliate-btn"
-                   href="https://my.nobullnetworks.com/aff.php?aff=21"
-                   target="_blank">
+                <a
+                    class="affiliate-btn"
+                    href="https://my.nobullnetworks.com/aff.php?aff=21"
+                    target="_blank">
 
                     Get Your Server Here
 
@@ -357,7 +542,9 @@
         const music = document.getElementById('bgMusic');
 
         document.body.addEventListener('click', () => {
+
             music.play();
+
         }, { once: true });
 
     </script>
