@@ -162,6 +162,36 @@
             line-height: 1.5;
         }
 
+        .mods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .mod-card {
+            background: rgba(0,0,0,0.45);
+            border: 1px solid rgba(0,255,100,0.25);
+            border-radius: 14px;
+            padding: 14px;
+            text-decoration: none;
+            color: white;
+            transition: 0.25s ease;
+            font-size: 0.95rem;
+        }
+
+        .mod-card:hover {
+            transform: scale(1.03);
+            border-color: #00ff66;
+            box-shadow: 0 0 18px rgba(0,255,100,0.35);
+        }
+
+        .mod-card strong {
+            display: block;
+            color: #00ff66;
+            margin-bottom: 6px;
+        }
+
         .music-player {
             position: fixed;
             bottom: 10px;
@@ -301,10 +331,6 @@
                     TikTok
                 </a>
 
-                <a href="https://discord.gg/F8MuZxKUsk" target="_blank">
-                    Discord
-                </a>
-
                 <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
                     My PC Build
                 </a>
@@ -321,6 +347,71 @@
                     From 7 Days to Die and community events to challenge runs and creator content,
                     the goal is simple — Fun Not Foul.
                 </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h2>Current Server Mods</h2>
+
+                <div class="mods-grid">
+
+                    <a class="mod-card" href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank">
+                        <strong>12 Slot Crafting Queue</strong>
+                        More crafting queue slots.
+                    </a>
+
+                    <a class="mod-card" href="https://7daystodiemods.com/3-slot-forge/" target="_blank">
+                        <strong>3 Slot Forge</strong>
+                        Extra forge crafting slots.
+                    </a>
+
+                    <a class="mod-card" href="https://7daystodiemods.com/hp-bars/" target="_blank">
+                        <strong>HP Bars</strong>
+                        Better enemy health bars.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/6865" target="_blank">
+                        <strong>Mega Backpack & Storage</strong>
+                        Bigger storage and inventory.
+                    </a>
+
+                    <a class="mod-card" href="https://7daystodiemods.com/sams-car-respawner/" target="_blank">
+                        <strong>Sam's Car Respawner</strong>
+                        Improved vehicle respawns.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/5271" target="_blank">
+                        <strong>Fancy Home Deco</strong>
+                        Decorative building additions.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/8525" target="_blank">
+                        <strong>Air Drops PLUS</strong>
+                        Better airdrop rewards.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank">
+                        <strong>Harvest PLUS</strong>
+                        Enhanced harvesting.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/6626" target="_blank">
+                        <strong>ServerSide Elevator</strong>
+                        Elevator support mod.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/5819" target="_blank">
+                        <strong>Trader Never Closes</strong>
+                        24/7 trader access.
+                    </a>
+
+                    <a class="mod-card" href="https://www.nexusmods.com/7daystodie/mods/8054" target="_blank">
+                        <strong>Nailgun Nemesis</strong>
+                        Nailgun combat upgrades.
+                    </a>
+
+                </div>
 
             </div>
 
