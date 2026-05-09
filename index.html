@@ -53,13 +53,10 @@
         #links,
         #clips,
         #mods,
-        #creator,
         #about,
         #nobull {
             scroll-margin-top: 110px;
         }
-
-        /* PARTICLES */
 
         .particles {
             position: fixed;
@@ -91,7 +88,6 @@
         .particles span:nth-child(10) { left: 97%; animation-delay: 9s; }
 
         @keyframes floatDust {
-
             0% {
                 transform: translateY(110vh) scale(0.4);
                 opacity: 0;
@@ -119,27 +115,18 @@
             z-index: 1;
         }
 
-        /* NAVIGATION */
-
         .navbar {
             position: sticky;
             top: 0;
             z-index: 999;
-
             background: rgba(0,0,0,0.88);
-
             backdrop-filter: blur(10px);
-
             border-bottom: 1px solid rgba(0,255,100,0.18);
-
             padding: 14px 20px;
-
             display: flex;
             justify-content: center;
             gap: 28px;
-
-            box-shadow:
-                0 0 14px rgba(0,255,100,0.05);
+            box-shadow: 0 0 14px rgba(0,255,100,0.05);
         }
 
         .navbar a {
@@ -153,8 +140,7 @@
 
         .navbar a:hover {
             color: #00dd66;
-            text-shadow:
-                0 0 8px rgba(0,255,100,0.35);
+            text-shadow: 0 0 8px rgba(0,255,100,0.35);
         }
 
         header {
@@ -229,7 +215,7 @@
 
         .buttons {
             margin-top: 35px;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         .buttons a,
@@ -256,6 +242,27 @@
             transform: translateY(-3px);
             box-shadow:
                 0 0 16px rgba(0,255,100,0.24);
+        }
+
+        .creator-badge-wrap {
+            margin-top: -5px;
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .creator-badge {
+            width: 100%;
+            max-width: 420px;
+            opacity: 0.92;
+            transition: 0.25s ease;
+
+            filter:
+                drop-shadow(0 0 10px rgba(0,255,100,0.12));
+        }
+
+        .creator-badge:hover {
+            transform: scale(1.02);
+            opacity: 1;
         }
 
         .info-box {
@@ -291,8 +298,6 @@
             margin-bottom: 25px;
             line-height: 1.5;
         }
-
-        /* FEATURED VIDEOS */
 
         .video-link-grid {
             display: grid;
@@ -348,8 +353,6 @@
             box-shadow: 0 0 8px rgba(0,255,100,0.12);
         }
 
-        /* MODS SECTION */
-
         .mods-section {
             margin-top: 30px;
             padding: 22px;
@@ -385,29 +388,6 @@
             border-color: rgba(0,255,100,0.28);
             transform: translateY(-2px);
         }
-
-        /* CREATOR PROGRAM */
-
-        .creator-img {
-            width: 100%;
-            max-width: 700px;
-            margin-top: 10px;
-            border-radius: 16px;
-            border: 1px solid rgba(0,255,100,0.16);
-            background: rgba(0,0,0,0.45);
-            padding: 14px;
-            box-shadow:
-                0 0 14px rgba(0,255,100,0.08);
-            transition: 0.25s ease;
-        }
-
-        .creator-img:hover {
-            transform: scale(1.01);
-            box-shadow:
-                0 0 18px rgba(0,255,100,0.14);
-        }
-
-        /* MUSIC PLAYER */
 
         .music-player {
             position: fixed;
@@ -488,6 +468,10 @@
                 width: 240px;
             }
 
+            .creator-badge {
+                max-width: 320px;
+            }
+
             .info-box {
                 padding: 25px 18px;
             }
@@ -513,8 +497,6 @@
 
 <body>
 
-    <!-- PARTICLES -->
-
     <div class="particles">
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
@@ -522,21 +504,14 @@
 
     <div class="overlay">
 
-        <!-- NAVIGATION -->
-
         <nav class="navbar">
-
             <a href="#home">Home</a>
             <a href="#links">Links</a>
             <a href="#clips">Clips</a>
             <a href="#mods">Mods</a>
-            <a href="#creator">Creator</a>
             <a href="#about">About</a>
             <a href="#nobull">NoBull</a>
-
         </nav>
-
-        <!-- MUSIC PLAYER -->
 
         <div class="music-player">
 
@@ -557,8 +532,6 @@
 
         </div>
 
-        <!-- HEADER -->
-
         <header id="home">
 
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
@@ -573,8 +546,6 @@
 
         <div class="content">
 
-            <!-- SERVER IMAGE -->
-
             <div class="server-wrap">
 
                 <img
@@ -584,8 +555,6 @@
                 >
 
             </div>
-
-            <!-- BUTTONS -->
 
             <div class="buttons" id="links">
 
@@ -603,7 +572,15 @@
 
             </div>
 
-            <!-- FEATURED TIKTOKS -->
+            <div class="creator-badge-wrap">
+
+                <img
+                    src="images/funpimpscreator.png"
+                    alt="The Fun Pimps Creator Program"
+                    class="creator-badge"
+                >
+
+            </div>
 
             <div class="info-box" id="clips">
 
@@ -674,8 +651,6 @@
 
             </div>
 
-            <!-- SERVER MODS -->
-
             <div class="info-box" id="mods">
 
                 <h2>Current Server Mods</h2>
@@ -716,7 +691,7 @@
                             Air Drops PLUS
                         </a>
 
-                        <a href="https://7daystodiemods.com/7575" target="_blank">
+                        <a href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank">
                             Harvest PLUS
                         </a>
 
@@ -738,27 +713,6 @@
 
             </div>
 
-            <!-- CREATOR PROGRAM -->
-
-            <div class="info-box" id="creator">
-
-                <h2>Official Creator Program</h2>
-
-                <p>
-                    McBeth Gaming is proudly part of
-                    The Fun Pimps Creator Program powered by Lurkit.
-                </p>
-
-                <img
-                    src="images/funpimpscreator.png"
-                    alt="The Fun Pimps Creator Program"
-                    class="creator-img"
-                >
-
-            </div>
-
-            <!-- ABOUT -->
-
             <div class="info-box" id="about">
 
                 <h2>About McBeth Gaming</h2>
@@ -774,8 +728,6 @@
                 </p>
 
             </div>
-
-            <!-- NOBULL -->
 
             <div class="info-box" id="nobull">
 
