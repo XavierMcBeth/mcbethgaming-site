@@ -1,299 +1,219 @@
-# Full `index.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>McBeth Gaming</title>
+    <title>Boog & McBeth Gaming</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
-
     <script>
       window.dataLayer = window.dataLayer || [];
-
-      function gtag(){
-        dataLayer.push(arguments);
-      }
-
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-S59920LRSF');
     </script>
 
     <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
         body{
             font-family:'Rajdhani',sans-serif;
             color:white;
             background:
-                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
-                url('images/background.png') center center / cover no-repeat fixed;
+                linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+                url('images/background.png') center/cover no-repeat fixed;
             min-height:100vh;
             overflow-x:hidden;
         }
 
-        #home,
-        #links,
-        #clips,
-        #mods,
-        #crew,
-        #about,
-        #nobull{
-            scroll-margin-top:110px;
-        }
+        #home,#links,#clips,#mods,#crew,#about,#nobull{scroll-margin-top:110px}
 
-        .particles{
-            position:fixed;
-            inset:0;
-            pointer-events:none;
-            overflow:hidden;
-            z-index:0;
-        }
-
+        .particles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
         .particles span{
-            position:absolute;
-            width:5px;
-            height:5px;
-            background:rgba(0,255,100,0.35);
-            border-radius:50%;
-            box-shadow:0 0 8px rgba(0,255,100,0.45);
+            position:absolute;width:5px;height:5px;background:rgba(0,255,100,.35);
+            border-radius:50%;box-shadow:0 0 8px rgba(0,255,100,.45);
             animation:floatDust 18s linear infinite;
         }
-
-        .particles span:nth-child(1){left:8%;animation-delay:0s;}
-        .particles span:nth-child(2){left:18%;animation-delay:3s;}
-        .particles span:nth-child(3){left:29%;animation-delay:6s;}
-        .particles span:nth-child(4){left:41%;animation-delay:2s;}
-        .particles span:nth-child(5){left:53%;animation-delay:8s;}
-        .particles span:nth-child(6){left:64%;animation-delay:4s;}
-        .particles span:nth-child(7){left:73%;animation-delay:7s;}
-        .particles span:nth-child(8){left:82%;animation-delay:1s;}
-        .particles span:nth-child(9){left:91%;animation-delay:5s;}
-        .particles span:nth-child(10){left:97%;animation-delay:9s;}
+        .particles span:nth-child(1){left:8%;animation-delay:0s}
+        .particles span:nth-child(2){left:18%;animation-delay:3s}
+        .particles span:nth-child(3){left:29%;animation-delay:6s}
+        .particles span:nth-child(4){left:41%;animation-delay:2s}
+        .particles span:nth-child(5){left:53%;animation-delay:8s}
+        .particles span:nth-child(6){left:64%;animation-delay:4s}
+        .particles span:nth-child(7){left:73%;animation-delay:7s}
+        .particles span:nth-child(8){left:82%;animation-delay:1s}
+        .particles span:nth-child(9){left:91%;animation-delay:5s}
+        .particles span:nth-child(10){left:97%;animation-delay:9s}
 
         @keyframes floatDust{
-            0%{
-                transform:translateY(110vh) scale(.4);
-                opacity:0;
-            }
-
-            20%{
-                opacity:.6;
-            }
-
-            80%{
-                opacity:.6;
-            }
-
-            100%{
-                transform:translateY(-10vh) scale(1.1);
-                opacity:0;
-            }
+            0%{transform:translateY(110vh) scale(.4);opacity:0}
+            20%,80%{opacity:.6}
+            100%{transform:translateY(-10vh) scale(1.1);opacity:0}
         }
 
-        .overlay{
-            width:100%;
-            min-height:100vh;
-            padding-bottom:60px;
-            position:relative;
-            z-index:1;
-        }
+        .overlay{width:100%;min-height:100vh;padding-bottom:60px;position:relative;z-index:1}
 
         .navbar{
-            position:sticky;
-            top:0;
-            z-index:999;
-            background:rgba(0,0,0,0.88);
+            position:sticky;top:0;z-index:999;
+            background:rgba(0,0,0,.88);
             backdrop-filter:blur(10px);
-            border-bottom:1px solid rgba(0,255,100,0.18);
+            border-bottom:1px solid rgba(0,255,100,.18);
             padding:14px 20px;
-            display:flex;
-            justify-content:center;
-            gap:28px;
-            flex-wrap:wrap;
-            box-shadow:0 0 14px rgba(0,255,100,0.05);
+            display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
         }
-
         .navbar a{
-            color:#cfcfcf;
-            text-decoration:none;
-            font-size:1.05rem;
-            font-weight:bold;
-            letter-spacing:1px;
-            transition:.25s ease;
+            color:#cfcfcf;text-decoration:none;font-size:1.05rem;
+            font-weight:bold;letter-spacing:1px;transition:.25s;
         }
+        .navbar a:hover{color:#00dd66;text-shadow:0 0 8px rgba(0,255,100,.35)}
 
-        .navbar a:hover{
-            color:#00dd66;
-            text-shadow:0 0 8px rgba(0,255,100,0.35);
-        }
-
-        header{
-            text-align:center;
-            padding:50px 20px 20px;
-        }
-
+        header{text-align:center;padding:50px 20px 20px}
         .logo{
-            width:320px;
-            max-width:90%;
-            margin-bottom:10px;
-            filter:
-                drop-shadow(0 0 6px rgba(0,255,100,0.35))
-                drop-shadow(0 0 12px rgba(0,255,100,0.18));
-            transition:.3s ease;
+            width:320px;max-width:90%;margin-bottom:10px;
+            filter:drop-shadow(0 0 6px rgba(0,255,100,.35)) drop-shadow(0 0 12px rgba(0,255,100,.18));
+            transition:.3s;
         }
-
-        .logo:hover{
-            transform:scale(1.02);
-        }
+        .logo:hover{transform:scale(1.02)}
 
         h1{
             font-family:'Orbitron',sans-serif;
-            font-size:4.8rem;
-            font-weight:900;
-            letter-spacing:3px;
+            font-size:4.8rem;font-weight:900;letter-spacing:3px;
             color:#00dd66;
-            text-shadow:
-                0 0 4px rgba(0,255,100,0.35),
-                0 0 10px rgba(0,255,100,0.18);
+            text-shadow:0 0 4px rgba(0,255,100,.35),0 0 10px rgba(0,255,100,.18);
             margin-bottom:15px;
         }
+        .subtitle{font-size:1.4rem;color:#c9c9c9;margin-bottom:40px;letter-spacing:1px}
 
-        .subtitle{
-            font-size:1.4rem;
-            color:#c9c9c9;
-            margin-bottom:40px;
-            letter-spacing:1px;
-        }
-
-        .content{
-            max-width:1200px;
-            margin:auto;
-            padding:20px;
-            text-align:center;
-        }
-
-        .server-wrap{
-            margin-bottom:45px;
-        }
+        .content{max-width:1200px;margin:auto;padding:20px;text-align:center}
 
         .server-img{
-            width:92%;
-            max-width:1000px;
-            border-radius:25px;
-            border:2px solid rgba(0,255,100,0.4);
-            box-shadow:
-                0 0 14px rgba(0,255,100,0.18),
-                0 0 28px rgba(0,255,100,0.08);
-            transition:.3s ease;
+            width:92%;max-width:1000px;border-radius:25px;
+            border:2px solid rgba(0,255,100,.4);
+            box-shadow:0 0 14px rgba(0,255,100,.18),0 0 28px rgba(0,255,100,.08);
+            transition:.3s;
         }
+        .server-img:hover{transform:scale(1.005)}
 
-        .buttons{
-            margin-top:35px;
-            margin-bottom:35px;
-        }
-
-        .buttons a,
-        .affiliate-btn,
-        .crew-links a{
-            display:inline-block;
-            margin:12px;
-            padding:16px 34px;
+        .buttons{margin:35px 0}
+        .buttons a,.affiliate-btn,.crew-links a{
+            display:inline-block;margin:12px;padding:16px 34px;
             background:linear-gradient(135deg,#008c44,#00cc66);
-            color:white;
-            text-decoration:none;
-            border-radius:14px;
-            font-size:1.15rem;
-            font-weight:bold;
-            transition:.25s ease;
-            box-shadow:0 0 10px rgba(0,255,100,0.16);
+            color:white;text-decoration:none;border-radius:14px;
+            font-size:1.15rem;font-weight:bold;transition:.25s;
+            box-shadow:0 0 10px rgba(0,255,100,.16);
         }
+        .buttons a:hover,.affiliate-btn:hover,.crew-links a:hover{
+            transform:translateY(-3px);
+            box-shadow:0 0 16px rgba(0,255,100,.24);
+        }
+
+        .creator-badge-wrap{margin:-5px 0 45px;text-align:center}
+        .creator-badge{
+            width:100%;max-width:420px;opacity:.92;transition:.25s;
+            filter:drop-shadow(0 0 10px rgba(0,255,100,.12));
+        }
+        .creator-badge:hover{transform:scale(1.02);opacity:1}
 
         .info-box{
-            margin:55px auto 20px;
-            max-width:1100px;
-            background:rgba(0,0,0,0.62);
-            border:1px solid rgba(0,255,100,0.22);
-            border-radius:20px;
-            padding:35px 25px;
+            margin:55px auto 20px;max-width:1100px;
+            background:rgba(0,0,0,.62);
+            border:1px solid rgba(0,255,100,.22);
+            border-radius:20px;padding:35px 25px;
+            box-shadow:0 0 16px rgba(0,255,100,.08);
+            transition:.3s;
         }
-
+        .info-box:hover{transform:translateY(-3px);box-shadow:0 0 20px rgba(0,255,100,.12)}
         .info-box h2{
-            font-family:'Orbitron',sans-serif;
-            color:#00dd66;
-            margin-bottom:15px;
-            font-size:2rem;
+            font-family:'Orbitron',sans-serif;color:#00dd66;
+            margin-bottom:15px;font-size:2rem;
+            text-shadow:0 0 6px rgba(0,255,100,.18);
+        }
+        .info-box p{font-size:1.2rem;color:#d0d0d0;margin-bottom:25px;line-height:1.5}
+
+        .video-link-grid,.crew-grid{
+            display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:25px;
+        }
+        .video-link-grid{grid-template-columns:repeat(3,1fr)}
+
+        .video-link-card,.crew-card{
+            display:block;text-decoration:none;
+            background:rgba(0,255,100,.05);
+            border:1px solid rgba(0,255,100,.2);
+            border-radius:18px;padding:24px 18px;color:white;
+            box-shadow:0 0 12px rgba(0,255,100,.06);
+            transition:.25s;
+        }
+        .video-link-card:hover,.crew-card:hover{
+            transform:translateY(-4px);
+            box-shadow:0 0 18px rgba(0,255,100,.14);
+        }
+        .video-label{color:#8cffb5;font-size:.9rem;letter-spacing:1px;text-transform:uppercase}
+        .video-link-card h3,.crew-card h3{
+            color:#00dd66;font-family:'Orbitron',sans-serif;
+            font-size:1.15rem;margin:14px 0;
+        }
+        .crew-card h3{font-size:1.6rem}
+        .crew-role{color:#8cffb5;font-weight:bold;margin-bottom:15px;letter-spacing:1px}
+        .video-link-card p,.crew-card p{color:#d0d0d0;font-size:1rem;margin-bottom:18px}
+        .watch-btn{
+            display:inline-block;padding:10px 18px;
+            background:linear-gradient(135deg,#008c44,#00cc66);
+            border-radius:12px;font-weight:bold;color:white;
         }
 
-        .mods-grid{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:10px;
-        }
-
-        .mods-grid a{
-            text-decoration:none;
-            color:#d8d8d8;
-            background:rgba(0,255,100,0.05);
-            border:1px solid rgba(0,255,100,0.14);
-            padding:8px 14px;
-            border-radius:10px;
-            font-size:.92rem;
-        }
-
-        .crew-grid{
-            display:grid;
-            grid-template-columns:repeat(2,1fr);
-            gap:24px;
-            margin-top:25px;
-        }
-
-        .crew-card{
-            background:rgba(0,255,100,0.05);
-            border:1px solid rgba(0,255,100,0.2);
+        .mods-section{
+            margin-top:30px;padding:22px;
+            background:rgba(0,255,100,.04);
+            border:1px solid rgba(0,255,100,.16);
             border-radius:18px;
-            padding:24px 18px;
+        }
+        .mods-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+        .mods-grid a{
+            text-decoration:none;color:#d8d8d8;
+            background:rgba(0,255,100,.05);
+            border:1px solid rgba(0,255,100,.14);
+            padding:8px 14px;border-radius:10px;
+            font-size:.92rem;transition:.2s;white-space:nowrap;
+        }
+        .mods-grid a:hover{
+            color:white;background:rgba(0,255,100,.12);
+            border-color:rgba(0,255,100,.28);
+            transform:translateY(-2px);
         }
 
-        .crew-card h3{
-            color:#00dd66;
-            font-family:'Orbitron',sans-serif;
-            font-size:1.6rem;
-            margin:14px 0;
+        .music-player{
+            position:fixed;bottom:10px;right:10px;z-index:999;
+            background:rgba(0,0,0,.85);
+            padding:12px;border-radius:16px;
+            border:1px solid rgba(0,255,100,.22);
+            box-shadow:0 0 14px rgba(0,255,100,.08);
+            backdrop-filter:blur(6px);
         }
+        .music-start{color:#8cffb5;font-size:.85rem;margin-bottom:8px;text-align:center;letter-spacing:1px}
+        .music-credit{margin-top:8px;font-size:.82rem;color:#d0d0d0;text-align:center;letter-spacing:1px}
+        .music-credit a{color:#00dd66;text-decoration:none;font-weight:bold}
+        .music-credit a:hover{color:#8cffb5}
 
-        .crew-role{
-            color:#8cffb5;
-            font-weight:bold;
-            margin-bottom:15px;
-            letter-spacing:1px;
+        footer{margin-top:70px;text-align:center;color:#aaa;font-size:.95rem;padding:25px}
+
+        @media(max-width:900px){
+            .video-link-grid,.crew-grid{grid-template-columns:1fr}
         }
-
-        footer{
-            margin-top:70px;
-            text-align:center;
-            color:#aaaaaa;
-            font-size:.95rem;
-            padding:25px;
+        @media(max-width:768px){
+            h1{font-size:2.8rem}
+            .subtitle{font-size:1rem}
+            .buttons a,.affiliate-btn{width:85%;max-width:320px}
+            .logo{width:240px}
+            .creator-badge{max-width:320px}
+            .info-box{padding:25px 18px}
+            .mods-grid a{white-space:normal;width:100%}
+            .music-player{left:10px;right:10px}
+            .music-player audio{width:100%}
         }
-
     </style>
 </head>
 
@@ -309,115 +229,157 @@
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#links">Links</a>
+            <a href="#clips">Clips</a>
             <a href="#mods">Mods</a>
             <a href="#crew">Crew</a>
             <a href="#about">About</a>
+            <a href="#nobull">NoBull</a>
         </nav>
 
+        <div class="music-player">
+            <div class="music-start">Click anywhere for music</div>
+            <audio id="bgMusic" loop controls>
+                <source src="music/McBeth Online.mp3" type="audio/mpeg">
+            </audio>
+            <div class="music-credit">
+                Theme music created by
+                <a href="https://www.tiktok.com/@skynetkids" target="_blank">@skynetkids</a>
+            </div>
+        </div>
+
         <header id="home">
-
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
-
-            <h1>McBeth Gaming</h1>
-
-            <p class="subtitle">
-                Family Friendly Streaming • Community Survival • 7 Days to Die
-            </p>
-
+            <h1>Boog & McBeth</h1>
+            <p class="subtitle">Two Creators • One Community • 7 Days to Die Chaos</p>
         </header>
 
         <div class="content">
 
-            <div class="server-wrap">
-                <img src="images/server.png" alt="McBeth Gaming Server" class="server-img">
-            </div>
+            <img src="images/server.png" alt="Boog and McBeth Server" class="server-img">
 
             <div class="buttons" id="links">
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">McBeth Twitch</a>
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">McBeth TikTok</a>
+                <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">Boog TikTok</a>
+                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">McBeth PC Build</a>
+            </div>
 
-                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-                    Twitch
-                </a>
+            <div class="creator-badge-wrap">
+                <img src="images/funpimpscreator.png" alt="The Fun Pimps Creator Program" class="creator-badge">
+            </div>
 
-                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-                    TikTok
-                </a>
+            <div class="info-box" id="clips">
+                <h2>Featured TikToks</h2>
+                <p>Check out pinned McBeth Gaming videos — tutorials, giveaways, and 7 Days to Die community content.</p>
 
-                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
-                    My PC Build
-                </a>
+                <div class="video-link-grid">
+                    <a class="video-link-card" href="https://www.tiktok.com/@mcbethgaming/video/7480668502605483294" target="_blank">
+                        <span class="video-label">Pinned Video</span>
+                        <h3>How to Mod 7 Days to Die</h3>
+                        <p>Quick tutorial for getting mods set up and running.</p>
+                        <div class="watch-btn">Watch on TikTok</div>
+                    </a>
 
+                    <a class="video-link-card" href="https://www.tiktok.com/@mcbethgaming/video/7606514875400981790" target="_blank">
+                        <span class="video-label">Pinned Video</span>
+                        <h3>PC Giveaway</h3>
+                        <p>McBeth Gaming giveaway content and community hype.</p>
+                        <div class="watch-btn">Watch on TikTok</div>
+                    </a>
+
+                    <a class="video-link-card" href="https://www.tiktok.com/@mcbethgaming/video/7609696576314805535" target="_blank">
+                        <span class="video-label">Pinned Video</span>
+                        <h3>Top 5 POI's</h3>
+                        <p>Top 5 7 Days to Die POIs for players and builders.</p>
+                        <div class="watch-btn">Watch on TikTok</div>
+                    </a>
+                </div>
             </div>
 
             <div class="info-box" id="mods">
-
                 <h2>Current Server Mods</h2>
+                <p>Mods currently running on the Boog & McBeth community server.</p>
 
-                <div class="mods-grid">
-
-                    <a href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank">
-                        12 Slot Crafting Queue
-                    </a>
-
-                    <a href="https://7daystodiemods.com/3-slot-forge/" target="_blank">
-                        3 Slot Forge
-                    </a>
-
-                    <a href="https://7daystodiemods.com/hp-bars/" target="_blank">
-                        HP Bars
-                    </a>
-
+                <div class="mods-section">
+                    <div class="mods-grid">
+                        <a href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank">12 Slot Crafting Queue</a>
+                        <a href="https://7daystodiemods.com/3-slot-forge/" target="_blank">3 Slot Forge</a>
+                        <a href="https://7daystodiemods.com/hp-bars/" target="_blank">HP Bars</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/6865" target="_blank">Mega Backpack & Storage</a>
+                        <a href="https://7daystodiemods.com/sams-car-respawner/" target="_blank">Sam's Car Respawner</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/5271" target="_blank">Fancy Home Deco</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/8525" target="_blank">Air Drops PLUS</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank">Harvest PLUS</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/6626" target="_blank">ServerSide Elevator</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/5819" target="_blank">Trader Never Closes</a>
+                        <a href="https://www.nexusmods.com/7daystodie/mods/8054" target="_blank">Nailgun Nemesis</a>
+                    </div>
                 </div>
-
             </div>
 
             <div class="info-box" id="crew">
-
-                <h2>McBeth Gaming Crew</h2>
+                <h2>Boog & McBeth Crew</h2>
+                <p>Two creators building a family-friendly survival community full of teamwork, chaos, and laughs.</p>
 
                 <div class="crew-grid">
-
                     <div class="crew-card">
-
                         <h3>McBeth</h3>
-
-                        <div class="crew-role">
-                            Founder • Streamer • Community Lead
+                        <div class="crew-role">Founder • Streamer • Community Lead</div>
+                        <p>Building a fun, family-friendly survival gaming community focused on teamwork, chaos, and unforgettable moments.</p>
+                        <div class="crew-links">
+                            <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">Twitch</a>
+                            <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">TikTok</a>
                         </div>
-
                     </div>
 
                     <div class="crew-card">
-
                         <h3>BoogieFaye00</h3>
-
-                        <div class="crew-role">
-                            Duo Partner • Second-in-Command • Streamer
+                        <div class="crew-role">Duo Partner • Second-in-Command • Streamer</div>
+                        <p>McBeth Gaming duo partner, second-in-command, and a core part of the community server team.</p>
+                        <div class="crew-links">
+                            <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">Follow Boog</a>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
             <div class="info-box" id="about">
-
-                <h2>About McBeth Gaming</h2>
-
+                <h2>About Boog & McBeth</h2>
                 <p>
-                    McBeth Gaming is a family-friendly gaming community focused on survival games, livestream chaos, teamwork, and building an awesome community together.
+                    Boog & McBeth is a family-friendly gaming community focused on survival games,
+                    livestream chaos, teamwork, and building an awesome community together.
+                    From 7 Days to Die and community events to challenge runs and creator content,
+                    the goal is simple — Fun Not Foul.
                 </p>
+            </div>
 
+            <div class="info-box" id="nobull">
+                <h2>Powered By NoBull Networks</h2>
+                <p>
+                    Looking for a great game server host for your community?
+                    McBeth Gaming is proudly powered by NoBull Networks.
+                    Fast servers, reliable support, and great performance for survival gaming communities.
+                </p>
+                <a class="affiliate-btn" href="https://my.nobullnetworks.com/aff.php?aff=21" target="_blank">
+                    Get Your Server Here
+                </a>
             </div>
 
         </div>
 
         <footer>
-            © 2026 McBeth Gaming — Fun Not Foul
+            © 2026 Boog & McBeth Gaming — Fun Not Foul
         </footer>
 
     </div>
 
+    <script>
+        const music = document.getElementById('bgMusic');
+
+        document.body.addEventListener('click', () => {
+            music.play();
+        }, { once: true });
+    </script>
+
 </body>
 </html>
-```
