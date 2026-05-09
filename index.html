@@ -152,9 +152,11 @@
             width: 320px;
             max-width: 90%;
             margin-bottom: 10px;
+
             filter:
                 drop-shadow(0 0 6px rgba(0,255,100,0.35))
                 drop-shadow(0 0 12px rgba(0,255,100,0.18));
+
             transition: 0.3s ease;
         }
 
@@ -168,9 +170,11 @@
             font-weight: 900;
             letter-spacing: 3px;
             color: #00dd66;
+
             text-shadow:
                 0 0 4px rgba(0,255,100,0.35),
                 0 0 10px rgba(0,255,100,0.18);
+
             margin-bottom: 15px;
         }
 
@@ -197,9 +201,11 @@
             max-width: 1000px;
             border-radius: 25px;
             border: 2px solid rgba(0,255,100,0.4);
+
             box-shadow:
                 0 0 14px rgba(0,255,100,0.18),
                 0 0 28px rgba(0,255,100,0.08);
+
             transition: 0.3s ease;
         }
 
@@ -209,7 +215,7 @@
 
         .buttons {
             margin-top: 35px;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         .buttons a,
@@ -217,20 +223,46 @@
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
+
             background: linear-gradient(135deg, #008c44, #00cc66);
+
             color: white;
             text-decoration: none;
             border-radius: 14px;
             font-size: 1.15rem;
             font-weight: bold;
             transition: 0.25s ease;
-            box-shadow: 0 0 10px rgba(0,255,100,0.16);
+
+            box-shadow:
+                0 0 10px rgba(0,255,100,0.16);
         }
 
         .buttons a:hover,
         .affiliate-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 16px rgba(0,255,100,0.24);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.24);
+        }
+
+        .creator-badge-wrap {
+            margin-top: -5px;
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .creator-badge {
+            width: 100%;
+            max-width: 420px;
+            opacity: 0.92;
+            transition: 0.25s ease;
+
+            filter:
+                drop-shadow(0 0 10px rgba(0,255,100,0.12));
+        }
+
+        .creator-badge:hover {
+            transform: scale(1.02);
+            opacity: 1;
         }
 
         .info-box {
@@ -240,13 +272,15 @@
             border: 1px solid rgba(0,255,100,0.22);
             border-radius: 20px;
             padding: 35px 25px;
-            box-shadow: 0 0 16px rgba(0,255,100,0.08);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.08);
             transition: 0.3s ease;
         }
 
         .info-box:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0,255,100,0.12);
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.12);
         }
 
         .info-box h2 {
@@ -254,7 +288,8 @@
             color: #00dd66;
             margin-bottom: 15px;
             font-size: 2rem;
-            text-shadow: 0 0 6px rgba(0,255,100,0.18);
+            text-shadow:
+                0 0 6px rgba(0,255,100,0.18);
         }
 
         .info-box p {
@@ -324,7 +359,8 @@
             background: rgba(0,255,100,0.04);
             border: 1px solid rgba(0,255,100,0.16);
             border-radius: 18px;
-            box-shadow: 0 0 10px rgba(0,255,100,0.05);
+            box-shadow:
+                0 0 10px rgba(0,255,100,0.05);
         }
 
         .mods-grid {
@@ -432,6 +468,10 @@
                 width: 240px;
             }
 
+            .creator-badge {
+                max-width: 320px;
+            }
+
             .info-box {
                 padding: 25px 18px;
             }
@@ -529,6 +569,16 @@
                 <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
                     My PC Build
                 </a>
+
+            </div>
+
+            <div class="creator-badge-wrap">
+
+                <img
+                    src="images/funpimpscreator.png"
+                    alt="The Fun Pimps Creator Program"
+                    class="creator-badge"
+                >
 
             </div>
 
