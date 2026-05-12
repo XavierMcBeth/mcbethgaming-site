@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>McBeth Gaming</title>
-    <meta name="description" content="McBeth Gaming is a family-friendly gaming community focused on 7 Days to Die, survival games, community events, and Fun Not Foul content.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
+
+      function gtag(){
+        dataLayer.push(arguments);
+      }
+
       gtag('js', new Date());
       gtag('config', 'G-S59920LRSF');
     </script>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -35,18 +40,18 @@
         body {
             font-family: 'Rajdhani', sans-serif;
             color: white;
+
             background:
                 linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
                 url('images/background.png') center center / cover no-repeat fixed;
+
             min-height: 100vh;
             overflow-x: hidden;
         }
 
         #home,
         #links,
-        #support,
         #clips,
-        #mods,
         #about,
         #nobull {
             scroll-margin-top: 110px;
@@ -82,10 +87,23 @@
         .particles span:nth-child(10) { left: 97%; animation-delay: 9s; }
 
         @keyframes floatDust {
-            0% { transform: translateY(110vh) scale(0.4); opacity: 0; }
-            20% { opacity: 0.6; }
-            80% { opacity: 0.6; }
-            100% { transform: translateY(-10vh) scale(1.1); opacity: 0; }
+            0% {
+                transform: translateY(110vh) scale(0.4);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.6;
+            }
+
+            80% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.1);
+                opacity: 0;
+            }
         }
 
         .overlay {
@@ -106,8 +124,7 @@
             padding: 14px 20px;
             display: flex;
             justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
+            gap: 28px;
             box-shadow: 0 0 14px rgba(0,255,100,0.05);
         }
 
@@ -134,9 +151,11 @@
             width: 320px;
             max-width: 90%;
             margin-bottom: 10px;
+
             filter:
                 drop-shadow(0 0 6px rgba(0,255,100,0.35))
                 drop-shadow(0 0 12px rgba(0,255,100,0.18));
+
             transition: 0.3s ease;
         }
 
@@ -150,9 +169,11 @@
             font-weight: 900;
             letter-spacing: 3px;
             color: #00dd66;
+
             text-shadow:
                 0 0 4px rgba(0,255,100,0.35),
                 0 0 10px rgba(0,255,100,0.18);
+
             margin-bottom: 15px;
         }
 
@@ -179,9 +200,11 @@
             max-width: 1000px;
             border-radius: 25px;
             border: 2px solid rgba(0,255,100,0.4);
+
             box-shadow:
                 0 0 14px rgba(0,255,100,0.18),
                 0 0 28px rgba(0,255,100,0.08);
+
             transition: 0.3s ease;
         }
 
@@ -195,26 +218,29 @@
         }
 
         .buttons a,
-        .affiliate-btn,
-        .patreon-main-btn {
+        .affiliate-btn {
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
+
             background: linear-gradient(135deg, #008c44, #00cc66);
+
             color: white;
             text-decoration: none;
             border-radius: 14px;
             font-size: 1.15rem;
             font-weight: bold;
             transition: 0.25s ease;
-            box-shadow: 0 0 10px rgba(0,255,100,0.16);
+
+            box-shadow:
+                0 0 10px rgba(0,255,100,0.16);
         }
 
         .buttons a:hover,
-        .affiliate-btn:hover,
-        .patreon-main-btn:hover {
+        .affiliate-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 16px rgba(0,255,100,0.24);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.24);
         }
 
         .creator-badge-wrap {
@@ -228,7 +254,9 @@
             max-width: 420px;
             opacity: 0.92;
             transition: 0.25s ease;
-            filter: drop-shadow(0 0 10px rgba(0,255,100,0.12));
+
+            filter:
+                drop-shadow(0 0 10px rgba(0,255,100,0.12));
         }
 
         .creator-badge:hover {
@@ -243,13 +271,15 @@
             border: 1px solid rgba(0,255,100,0.22);
             border-radius: 20px;
             padding: 35px 25px;
-            box-shadow: 0 0 16px rgba(0,255,100,0.08);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.08);
             transition: 0.3s ease;
         }
 
         .info-box:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0,255,100,0.12);
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.12);
         }
 
         .info-box h2 {
@@ -257,7 +287,6 @@
             color: #00dd66;
             margin-bottom: 15px;
             font-size: 2rem;
-            text-shadow: 0 0 6px rgba(0,255,100,0.18);
         }
 
         .info-box p {
@@ -265,73 +294,6 @@
             color: #d0d0d0;
             margin-bottom: 25px;
             line-height: 1.5;
-        }
-
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-top: 25px;
-        }
-
-        .tier-card {
-            background: rgba(0,255,100,0.05);
-            border: 1px solid rgba(0,255,100,0.22);
-            border-radius: 20px;
-            padding: 28px 22px;
-            text-align: left;
-            box-shadow: 0 0 14px rgba(0,255,100,0.07);
-            transition: 0.25s ease;
-        }
-
-        .tier-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 20px rgba(0,255,100,0.14);
-        }
-
-        .tier-card.featured {
-            border-color: rgba(0,255,100,0.45);
-            background: rgba(0,255,100,0.08);
-        }
-
-        .tier-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00dd66;
-            font-size: 1.45rem;
-            margin-bottom: 8px;
-        }
-
-        .tier-price {
-            color: #8cffb5;
-            font-size: 1.15rem;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-
-        .tier-card ul {
-            list-style: none;
-            margin-bottom: 22px;
-        }
-
-        .tier-card li {
-            color: #e0e0e0;
-            font-size: 1.08rem;
-            margin-bottom: 12px;
-            line-height: 1.35;
-        }
-
-        .tier-note {
-            color: #cfcfcf;
-            font-size: 1rem;
-            line-height: 1.45;
-            margin-top: 10px;
-        }
-
-        .patreon-main-btn {
-            margin-top: 28px;
-            background: linear-gradient(135deg, #00a651, #00e676);
-            color: #061014;
-            font-weight: 900;
         }
 
         .video-link-grid {
@@ -385,42 +347,6 @@
             border-radius: 12px;
             font-weight: bold;
             color: white;
-            box-shadow: 0 0 8px rgba(0,255,100,0.12);
-        }
-
-        .mods-section {
-            margin-top: 30px;
-            padding: 22px;
-            background: rgba(0,255,100,0.04);
-            border: 1px solid rgba(0,255,100,0.16);
-            border-radius: 18px;
-            box-shadow: 0 0 10px rgba(0,255,100,0.05);
-        }
-
-        .mods-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .mods-grid a {
-            text-decoration: none;
-            color: #d8d8d8;
-            background: rgba(0,255,100,0.05);
-            border: 1px solid rgba(0,255,100,0.14);
-            padding: 8px 14px;
-            border-radius: 10px;
-            font-size: 0.92rem;
-            transition: 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .mods-grid a:hover {
-            color: white;
-            background: rgba(0,255,100,0.12);
-            border-color: rgba(0,255,100,0.28);
-            transform: translateY(-2px);
         }
 
         .music-player {
@@ -432,7 +358,6 @@
             padding: 12px;
             border-radius: 16px;
             border: 1px solid rgba(0,255,100,0.22);
-            box-shadow: 0 0 14px rgba(0,255,100,0.08);
             backdrop-filter: blur(6px);
         }
 
@@ -448,11 +373,6 @@
             color: #00dd66;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.2s ease;
-        }
-
-        .music-credit a:hover {
-            color: #8cffb5;
         }
 
         .music-start {
@@ -472,13 +392,13 @@
         }
 
         @media (max-width: 900px) {
-            .video-link-grid,
-            .support-grid {
+            .video-link-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
+
             .navbar {
                 gap: 16px;
                 flex-wrap: wrap;
@@ -493,8 +413,7 @@
             }
 
             .buttons a,
-            .affiliate-btn,
-            .patreon-main-btn {
+            .affiliate-btn {
                 width: 85%;
                 max-width: 320px;
             }
@@ -511,11 +430,6 @@
                 padding: 25px 18px;
             }
 
-            .mods-grid a {
-                white-space: normal;
-                width: 100%;
-            }
-
             .music-player {
                 left: 10px;
                 right: 10px;
@@ -525,7 +439,9 @@
                 width: 100%;
             }
         }
+
     </style>
+
 </head>
 
 <body>
@@ -540,7 +456,6 @@
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#links">Links</a>
-            <a href="#support">Support</a>
             <a href="#clips">Clips</a>
             <a href="mods.html">Mods</a>
             <a href="#about">About</a>
@@ -548,6 +463,7 @@
         </nav>
 
         <div class="music-player">
+
             <div class="music-start">
                 Click anywhere for music
             </div>
@@ -562,9 +478,11 @@
                     @skynetkids
                 </a>
             </div>
+
         </div>
 
         <header id="home">
+
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
 
             <h1>McBeth Gaming</h1>
@@ -572,19 +490,23 @@
             <p class="subtitle">
                 Family Friendly Streaming • Community Survival • 7 Days to Die
             </p>
+
         </header>
 
         <div class="content">
 
             <div class="server-wrap">
+
                 <img
                     src="images/server.png"
                     alt="McBeth Gaming Server"
                     class="server-img"
                 >
+
             </div>
 
             <div class="buttons" id="links">
+
                 <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
                     Twitch
                 </a>
@@ -593,77 +515,24 @@
                     TikTok
                 </a>
 
-                <a href="https://www.patreon.com/15154410/join" target="_blank">
-                    Patreon
-                </a>
-
                 <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
                     My PC Build
                 </a>
+
             </div>
 
             <div class="creator-badge-wrap">
+
                 <img
                     src="images/funpimpscreator.png"
                     alt="The Fun Pimps Creator Program"
                     class="creator-badge"
                 >
-            </div>
 
-            <div class="info-box" id="support">
-                <h2>Support McBeth Gaming</h2>
-
-                <p>
-                    Join the McBeth Gaming community and help support future content,
-                    community events, and a fun, family-friendly gaming experience.
-                </p>
-
-                <div class="support-grid">
-
-                    <div class="tier-card">
-                        <h3>Supporter</h3>
-                        <div class="tier-price">$5 / Month</div>
-
-                        <ul>
-                            <li>⚡ Priority queue access</li>
-                            <li>💬 Supporter Discord role</li>
-                            <li>📦 One-time Builders Bundle per server wipe</li>
-                        </ul>
-
-                        <div class="tier-note">
-                            This tier is designed to offer a few small quality-of-life perks
-                            while helping us maintain a fun, regulated, non-toxic community.
-                        </div>
-                    </div>
-
-                    <div class="tier-card featured">
-                        <h3>VIP Supporter</h3>
-                        <div class="tier-price">$10 / Month</div>
-
-                        <ul>
-                            <li>🚪 Reserved server slot access</li>
-                            <li>📦 One-time VIP Starter Kit per server wipe</li>
-                            <li>⚡ Priority queue access</li>
-                            <li>💬 VIP Discord role</li>
-                        </ul>
-
-                        <div class="tier-note">
-                            Take your experience to the next level while supporting
-                            future McBeth Gaming content and community events.
-                        </div>
-                    </div>
-
-                </div>
-
-                <a
-                    class="patreon-main-btn"
-                    href="https://www.patreon.com/15154410/join"
-                    target="_blank">
-                    Become a Supporter
-                </a>
             </div>
 
             <div class="info-box" id="clips">
+
                 <h2>Featured TikToks</h2>
 
                 <p>
@@ -688,6 +557,7 @@
                         <div class="watch-btn">
                             Watch on TikTok
                         </div>
+
                     </a>
 
                     <a class="video-link-card"
@@ -705,6 +575,7 @@
                         <div class="watch-btn">
                             Watch on TikTok
                         </div>
+
                     </a>
 
                     <a class="video-link-card"
@@ -722,91 +593,58 @@
                         <div class="watch-btn">
                             Watch on TikTok
                         </div>
+
                     </a>
 
                 </div>
+
             </div>
 
-            <div class="info-box" id="mods">
-                <h2>Current Server Mods</h2>
+            <div class="info-box">
+
+                <h2>Server Mods</h2>
 
                 <p>
-                    Mods currently running on the McBeth Gaming community server.
+                    The McBeth Gaming community server runs a curated mod collection
+                    focused on quality-of-life upgrades, better building, improved loot,
+                    and smoother community gameplay.
                 </p>
 
-                <div class="mods-section">
-                    <div class="mods-grid">
+                <a
+                    class="affiliate-btn"
+                    href="mods.html">
 
-                        <a href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank">
-                            12 Slot Crafting Queue
-                        </a>
+                    View Full Mods Page
 
-                        <a href="https://7daystodiemods.com/3-slot-forge/" target="_blank">
-                            3 Slot Forge
-                        </a>
+                </a>
 
-                        <a href="https://7daystodiemods.com/hp-bars/" target="_blank">
-                            HP Bars
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/6865" target="_blank">
-                            Mega Backpack & Storage
-                        </a>
-
-                        <a href="https://7daystodiemods.com/sams-car-respawner/" target="_blank">
-                            Sam's Car Respawner
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/5271" target="_blank">
-                            Fancy Home Deco
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/8525" target="_blank">
-                            Air Drops PLUS
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank">
-                            Harvest PLUS
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/6626" target="_blank">
-                            ServerSide Elevator
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/5819" target="_blank">
-                            Trader Never Closes
-                        </a>
-
-                        <a href="https://www.nexusmods.com/7daystodie/mods/8054" target="_blank">
-                            Nailgun Nemesis
-                        </a>
-
-                    </div>
-                </div>
             </div>
 
             <div class="info-box" id="about">
+
                 <h2>About McBeth Gaming</h2>
 
                 <p>
                     McBeth Gaming is a family-friendly gaming community focused
                     on survival games, livestream chaos, teamwork, and building
                     an awesome community together.
-                    <br><br>
+
                     From 7 Days to Die and community events to challenge runs
                     and creator content, the goal is simple —
                     Fun Not Foul.
                 </p>
+
             </div>
 
             <div class="info-box" id="nobull">
+
                 <h2>Powered By NoBull Networks</h2>
 
                 <p>
                     Looking for a great game server host for your community?
-                    <br><br>
+
                     McBeth Gaming is proudly powered by NoBull Networks.
-                    <br><br>
+
                     Fast servers, reliable support, and great performance
                     for survival gaming communities.
                 </p>
@@ -817,7 +655,9 @@
                     target="_blank">
 
                     Get Your Server Here
+
                 </a>
+
             </div>
 
         </div>
@@ -829,11 +669,15 @@
     </div>
 
     <script>
+
         const music = document.getElementById('bgMusic');
 
         document.body.addEventListener('click', () => {
+
             music.play();
+
         }, { once: true });
+
     </script>
 
 </body>
