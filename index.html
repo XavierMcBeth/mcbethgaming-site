@@ -687,7 +687,41 @@
         </footer>
 
     </div>
+<script>
 
+    let secretCode = "";
+    const targetCode = "7DAYSTODIE";
+
+    document.addEventListener("keydown", (e) => {
+
+        secretCode += e.key.toUpperCase();
+
+        if (secretCode.length > targetCode.length) {
+            secretCode = secretCode.slice(-targetCode.length);
+        }
+
+        if (secretCode === targetCode) {
+            window.location.href = "secret.html";
+        }
+
+    });
+
+</script>
+
+<script>
+
+    const music = document.getElementById('bgMusic');
+
+    document.body.addEventListener('click', () => {
+
+        music.play();
+
+    }, { once: true });
+
+</script>
+
+</body>
+</html>
     <script>
 
         const music = document.getElementById('bgMusic');
