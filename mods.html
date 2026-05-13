@@ -1,256 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>McBeth Gaming Mods</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>McBeth Gaming | Server Mods</title>
+
+    <!-- GOOGLE FONTS -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
         * {
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body {
+
             font-family: 'Rajdhani', sans-serif;
+
             color: white;
 
             background:
-                linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.9)),
-                url('images/background.png') center center / cover no-repeat fixed;
+                linear-gradient(
+                    rgba(0,0,0,0.82),
+                    rgba(0,0,0,0.92)
+                ),
+                url('images/background.png')
+                center center / cover no-repeat fixed;
 
             min-height: 100vh;
+
+            overflow-x: hidden;
         }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 999;
+        html {
 
-            background: rgba(0,0,0,0.88);
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid rgba(0,255,100,0.18);
-
-            padding: 14px 20px;
-
-            display: flex;
-            justify-content: center;
-            gap: 28px;
+            scroll-behavior: smooth;
         }
 
-        .navbar a {
-            color: #cfcfcf;
-            text-decoration: none;
-            font-size: 1.05rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: 0.25s ease;
+        /* PARTICLES */
+
+        .particles {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
         }
 
-        .navbar a:hover,
-        .navbar a.active {
-            color: #00dd66;
-            text-shadow: 0 0 8px rgba(0,255,100,0.35);
+        .particles span {
+
+            position: absolute;
+
+            width: 4px;
+            height: 4px;
+
+            background: rgba(0,255,100,0.35);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 8px rgba(0,255,100,0.4);
+
+            animation:
+                dustFloat 18s linear infinite;
         }
 
-        header {
+        .particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particles span:nth-child(2) { left: 22%; animation-delay: 3s; }
+        .particles span:nth-child(3) { left: 34%; animation-delay: 6s; }
+        .particles span:nth-child(4) { left: 48%; animation-delay: 2s; }
+        .particles span:nth-child(5) { left: 58%; animation-delay: 7s; }
+        .particles span:nth-child(6) { left: 70%; animation-delay: 4s; }
+        .particles span:nth-child(7) { left: 82%; animation-delay: 1s; }
+        .particles span:nth-child(8) { left: 92%; animation-delay: 5s; }
+
+        @keyframes dustFloat {
+
+            0% {
+
+                transform:
+                    translateY(110vh)
+                    scale(0.4);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.55;
+            }
+
+            80% {
+                opacity: 0.55;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-10vh)
+                    scale(1);
+
+                opacity: 0;
+            }
+        }
+
+        .page {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 40px 20px 80px;
+        }
+
+        /* HEADER */
+
+        .header {
+
             text-align: center;
-            padding: 55px 20px 25px;
+
+            margin-bottom: 50px;
         }
 
-        .logo {
-            width: 240px;
-            max-width: 90%;
-            margin-bottom: 10px;
+        .header h1 {
 
-            filter:
-                drop-shadow(0 0 6px rgba(0,255,100,0.35))
-                drop-shadow(0 0 12px rgba(0,255,100,0.18));
-        }
-
-        h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            letter-spacing: 3px;
+
+            font-size: 5rem;
+
             color: #00dd66;
+
+            letter-spacing: 4px;
 
             text-shadow:
-                0 0 4px rgba(0,255,100,0.35),
-                0 0 10px rgba(0,255,100,0.18);
+                0 0 8px rgba(0,255,100,0.28),
+                0 0 22px rgba(0,255,100,0.16);
 
             margin-bottom: 15px;
         }
 
-        .subtitle {
-            font-size: 1.25rem;
-            color: #c9c9c9;
-            margin-bottom: 20px;
+        .header p {
+
+            font-size: 1.35rem;
+
+            color: #d0d0d0;
+
             letter-spacing: 1px;
         }
 
-        .content {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+        /* DESCRIPTION */
+
+        .mods-description {
+
+            max-width: 1100px;
+
+            margin: auto auto 55px;
+
+            padding: 40px;
+
+            background:
+                rgba(0,0,0,0.58);
+
+            border:
+                1px solid rgba(0,255,100,0.16);
+
+            border-radius: 26px;
+
+            backdrop-filter: blur(6px);
+
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.06);
         }
 
-        .intro-box {
-            text-align: center;
-            margin: 25px auto 35px;
+        .mods-description h2 {
 
-            max-width: 1000px;
-
-            background: rgba(0,0,0,0.62);
-
-            border: 1px solid rgba(0,255,100,0.22);
-
-            border-radius: 20px;
-
-            padding: 28px 24px;
-
-            box-shadow: 0 0 16px rgba(0,255,100,0.08);
-        }
-
-        .intro-box h2 {
             font-family: 'Orbitron', sans-serif;
+
             color: #00dd66;
+
+            font-size: 2.5rem;
+
+            text-align: center;
+
             margin-bottom: 12px;
-            font-size: 1.8rem;
+
+            text-shadow:
+                0 0 10px rgba(0,255,100,0.14);
         }
 
-        .intro-box p {
-            color: #d0d0d0;
-            font-size: 1.15rem;
-            line-height: 1.5;
+        .mods-subtitle {
+
+            text-align: center;
+
+            color: #8cffb5;
+
+            font-size: 1rem;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 30px;
+
+            opacity: 0.88;
         }
+
+        .mods-description-text {
+
+            background:
+                rgba(0,0,0,0.42);
+
+            border:
+                1px solid rgba(0,255,100,0.10);
+
+            border-radius: 18px;
+
+            padding: 28px;
+        }
+
+        .mods-description-text p {
+
+            color: #d8d8d8;
+
+            font-size: 1.14rem;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+
+            text-align: center;
+        }
+
+        .mods-description-text p:last-child {
+
+            margin-bottom: 0;
+        }
+
+        /* MOD GRID */
 
         .mods-grid {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 24px;
         }
 
+        /* MOD CARD */
+
         .mod-card {
-            background: rgba(0,0,0,0.62);
 
-            border: 1px solid rgba(0,255,100,0.2);
+            background:
+                rgba(0,0,0,0.55);
 
-            border-radius: 20px;
+            border:
+                1px solid rgba(0,255,100,0.12);
+
+            border-radius: 22px;
 
             padding: 24px;
 
-            box-shadow: 0 0 14px rgba(0,255,100,0.06);
-
             transition: 0.25s ease;
+
+            backdrop-filter: blur(4px);
+
+            box-shadow:
+                0 0 14px rgba(0,255,100,0.05);
         }
 
         .mod-card:hover {
-            transform: translateY(-4px);
 
-            border-color: rgba(0,255,100,0.4);
+            transform: translateY(-5px);
 
-            box-shadow: 0 0 20px rgba(0,255,100,0.12);
+            border-color:
+                rgba(0,255,100,0.24);
+
+            box-shadow:
+                0 0 20px rgba(0,255,100,0.12);
         }
 
         .mod-type {
-            display: inline-block;
 
-            margin-bottom: 14px;
+            display: inline-block;
 
             padding: 6px 12px;
 
+            margin-bottom: 16px;
+
             border-radius: 999px;
 
-            background: rgba(0,255,100,0.1);
+            background:
+                rgba(0,255,100,0.08);
 
-            border: 1px solid rgba(0,255,100,0.2);
+            border:
+                1px solid rgba(0,255,100,0.16);
 
             color: #8cffb5;
 
             font-size: 0.82rem;
 
+            font-weight: bold;
+
             text-transform: uppercase;
 
             letter-spacing: 1px;
-
-            font-weight: bold;
         }
 
         .mod-card h3 {
+
             font-family: 'Orbitron', sans-serif;
+
             color: #00dd66;
-            font-size: 1.15rem;
-            margin-bottom: 12px;
+
+            font-size: 1.4rem;
+
+            margin-bottom: 16px;
+
+            line-height: 1.4;
         }
 
         .mod-card p {
-            color: #d0d0d0;
-            font-size: 1.03rem;
-            line-height: 1.45;
-            margin-bottom: 18px;
+
+            color: #d4d4d4;
+
+            font-size: 1.02rem;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
         }
 
         .mod-card a {
+
             display: inline-block;
 
-            text-decoration: none;
+            padding: 12px 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #008c44,
+                    #00cc66
+                );
 
             color: white;
 
-            font-weight: bold;
-
-            background: linear-gradient(135deg, #008c44, #00cc66);
+            text-decoration: none;
 
             border-radius: 12px;
 
-            padding: 11px 16px;
+            font-weight: bold;
+
+            transition: 0.25s ease;
+
+            box-shadow:
+                0 0 10px rgba(0,255,100,0.12);
+        }
+
+        .mod-card a:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 18px rgba(0,255,100,0.22);
+        }
+
+        /* BACK BUTTON */
+
+        .back-home {
+
+            text-align: center;
+
+            margin-top: 60px;
+        }
+
+        .back-home a {
+
+            display: inline-block;
+
+            padding: 16px 32px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(0,255,100,0.08);
+
+            border:
+                1px solid rgba(0,255,100,0.16);
+
+            color: #00dd66;
+
+            text-decoration: none;
+
+            font-weight: bold;
 
             transition: 0.25s ease;
         }
 
-        .mod-card a:hover {
-            transform: translateY(-2px);
+        .back-home a:hover {
+
+            background:
+                rgba(0,255,100,0.14);
+
+            transform: translateY(-3px);
         }
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #aaaaaa;
-            font-size: 0.95rem;
-            padding: 25px;
-        }
+        /* MOBILE */
 
-        @media (max-width: 1000px) {
-            .mods-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        @media (max-width: 768px) {
 
-        @media (max-width: 700px) {
+            .header h1 {
 
-            .navbar {
-                gap: 16px;
-                flex-wrap: wrap;
+                font-size: 3rem;
             }
 
-            h1 {
-                font-size: 2.6rem;
+            .header p {
+
+                font-size: 1rem;
             }
 
-            .subtitle {
+            .mods-description {
+
+                padding: 24px;
+            }
+
+            .mods-description h2 {
+
+                font-size: 1.8rem;
+            }
+
+            .mods-description-text p {
+
                 font-size: 1rem;
             }
 
             .mods-grid {
+
                 grid-template-columns: 1fr;
             }
         }
@@ -261,261 +476,427 @@
 
 <body>
 
-    <nav class="navbar">
+    <!-- PARTICLES -->
 
-        <a href="index.html">Home</a>
-        <a href="index.html#links">Links</a>
-        <a href="index.html#clips">Clips</a>
-        <a class="active" href="mods.html">Mods</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#nobull">NoBull</a>
+    <div class="particles">
 
-    </nav>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
 
-    <header>
+    </div>
 
-        <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
+    <div class="page">
 
-        <h1>Server Mods</h1>
+        <!-- HEADER -->
 
-        <p class="subtitle">
-            McBeth Gaming 7 Days to Die Community Server
-        </p>
+        <div class="header">
 
-    </header>
-
-    <main class="content">
-
-        <section class="intro-box">
-
-            <h2>Current Server Mod List</h2>
+            <h1>Server Mods</h1>
 
             <p>
-                These are the mods currently running on the McBeth Gaming community server.
-                This page gives players one clean place to check the mod list and grab links.
+
+                McBeth Gaming 7 Days to Die Community Server
+
             </p>
+
+        </div>
+
+        <!-- DESCRIPTION -->
+
+        <section class="mods-description">
+
+            <h2>Current Server Mods</h2>
+
+            <div class="mods-subtitle">
+
+                Server-side friendly quality-of-life enhancements
+                for the McBeth Gaming community server.
+
+            </div>
+
+            <div class="mods-description-text">
+
+                <p>
+                    The McBeth Gaming mod collection is designed to improve
+                    the 7 Days to Die experience with better quality-of-life
+                    features, smoother progression, expanded storage,
+                    enhanced building systems, improved loot,
+                    and more fun community gameplay.
+                </p>
+
+                <p>
+                    Most of these mods are server-side and client-friendly,
+                    meaning players can join and play without needing
+                    to download anything extra.
+                </p>
+
+                <p>
+                    Large overhaul mods, such as Darkness Falls,
+                    require players to install the mod pack before joining
+                    due to the massive gameplay, progression,
+                    and world changes they introduce.
+                </p>
+
+            </div>
 
         </section>
 
-       <section class="mods-grid">
+        <!-- MOD GRID -->
 
-    <article class="mod-card">
+        <section class="mods-grid">
 
-        <span class="mod-type">Overhaul</span>
+            <!-- MOD -->
 
-        <h3>Darkness Falls v1.4</h3>
+            <article class="mod-card">
 
-        <p>
-            One of McBeth Gaming’s favorite overhaul experiences for
-            7 Days to Die. Darkness Falls completely expands the game with
-            new classes, tougher enemies, advanced crafting, farming,
-            endgame progression, custom weapons, dangerous POIs,
-            and a much deeper survival challenge.
-        </p>
+                <span class="mod-type">
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/235?tab=files" target="_blank">
-            View Mod
-        </a>
+                    Crafting
 
-    </article>
+                </span>
 
-    <article class="mod-card">
+                <h3>
 
-        <span class="mod-type">Crafting</span>
+                    12 Slot Crafting Queue
 
-        <h3>12 Slot Crafting Queue</h3>
+                </h3>
 
-        <p>
-            Expands crafting queues so survivors can craft more items at once.
-            Perfect for large builds, ammo production, and reducing downtime
-            during busy community gameplay sessions.
-        </p>
+                <p>
+                    Expands crafting queues so players can craft more items
+                    at once, reducing downtime and making large projects
+                    much smoother.
+                </p>
 
-        <a href="https://7daystodiemods.com/12-slot-crafting-queue/" target="_blank">
-            View Mod
-        </a>
+                <a
+                    href="https://7daystodiemods.com/12-slot-crafting-queue/"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
 
-    </article>
+            </article>
 
-    <article class="mod-card">
+            <!-- MOD -->
 
-        <span class="mod-type">Forge</span>
+            <article class="mod-card">
 
-        <h3>3 Slot Forge</h3>
+                <span class="mod-type">
 
-        <p>
-            Adds an additional forge crafting slot to improve smelting speed
-            and production flow. Great for active servers with heavy crafting
-            and large community projects.
-        </p>
+                    Forge
 
-        <a href="https://7daystodiemods.com/3-slot-forge/" target="_blank">
-            View Mod
-        </a>
+                </span>
 
-    </article>
+                <h3>
 
-    <article class="mod-card">
+                    3 Slot Forge
 
-        <span class="mod-type">UI</span>
+                </h3>
 
-        <h3>HP Bars</h3>
+                <p>
+                    Adds additional forge crafting slots to improve smelting
+                    and production speed for busy community gameplay.
+                </p>
 
-        <p>
-            Displays zombie and enemy health bars during combat, helping
-            players track damage more effectively during hordes,
-            boss fights, and chaotic encounters.
-        </p>
+                <a
+                    href="https://7daystodiemods.com/3-slot-forge/"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
 
-        <a href="https://7daystodiemods.com/hp-bars/" target="_blank">
-            View Mod
-        </a>
+            </article>
 
-    </article>
+            <!-- MOD -->
 
-    <article class="mod-card">
+            <article class="mod-card">
 
-        <span class="mod-type">Storage</span>
+                <span class="mod-type">
 
-        <h3>Mega Backpack & Storage</h3>
+                    Combat UI
 
-        <p>
-            Greatly expands backpack and storage capacity for better inventory
-            management, longer loot runs, and smoother community survival gameplay.
-        </p>
+                </span>
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/6865" target="_blank">
-            View Mod
-        </a>
+                <h3>
 
-    </article>
+                    HP Bars
 
-    <article class="mod-card">
+                </h3>
 
-        <span class="mod-type">World</span>
+                <p>
+                    Displays enemy health bars during combat so players can
+                    better track damage during hordes and difficult fights.
+                </p>
 
-        <h3>Sam's Car Respawner</h3>
+                <a
+                    href="https://7daystodiemods.com/hp-bars/"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
 
-        <p>
-            Keeps the world feeling alive by allowing destroyed vehicle loot
-            locations to eventually respawn over time, helping exploration stay rewarding.
-        </p>
+            </article>
 
-        <a href="https://7daystodiemods.com/sams-car-respawner/" target="_blank">
-            View Mod
-        </a>
+            <!-- MOD -->
 
-    </article>
+            <article class="mod-card">
 
-    <article class="mod-card">
+                <span class="mod-type">
 
-        <span class="mod-type">Building</span>
+                    Storage
 
-        <h3>Fancy Home Deco</h3>
+                </span>
 
-        <p>
-            Adds decorative furniture, props, and building pieces for players
-            who enjoy detailed base building, roleplay, and creative survival designs.
-        </p>
+                <h3>
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/5271" target="_blank">
-            View Mod
-        </a>
+                    Mega Backpack & Storage
 
-    </article>
+                </h3>
 
-    <article class="mod-card">
+                <p>
+                    Greatly increases inventory and storage capacity,
+                    making looting and long-term survival much more enjoyable.
+                </p>
 
-        <span class="mod-type">Loot</span>
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/6865"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
 
-        <h3>Air Drops PLUS</h3>
+            </article>
 
-        <p>
-            Enhances air drops with improved rewards, better loot opportunities,
-            and more exciting reasons to explore and compete for supply drops.
-        </p>
+            <!-- MOD -->
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/8525" target="_blank">
-            View Mod
-        </a>
+            <article class="mod-card">
 
-    </article>
+                <span class="mod-type">
 
-    <article class="mod-card">
+                    World
 
-        <span class="mod-type">Harvesting</span>
+                </span>
 
-        <h3>Harvest PLUS</h3>
+                <h3>
 
-        <p>
-            Improves harvesting balance and resource gathering rates so players
-            spend less time grinding and more time surviving, building, and exploring.
-        </p>
+                    Sam's Car Respawner
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/7575" target="_blank">
-            View Mod
-        </a>
+                </h3>
 
-    </article>
+                <p>
+                    Allows destroyed vehicles to eventually respawn,
+                    helping the world feel alive and keeping exploration rewarding.
+                </p>
 
-    <article class="mod-card">
+                <a
+                    href="https://7daystodiemods.com/sams-car-respawner/"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
 
-        <span class="mod-type">Building</span>
+            </article>
 
-        <h3>ServerSide Elevator</h3>
+            <!-- MOD -->
 
-        <p>
-            Adds functional elevators for massive community builds, towers,
-            underground bunkers, and large-scale creative base designs.
-        </p>
+            <article class="mod-card">
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/6626" target="_blank">
-            View Mod
-        </a>
+                <span class="mod-type">
 
-    </article>
+                    Building
 
-    <article class="mod-card">
+                </span>
 
-        <span class="mod-type">Trader</span>
+                <h3>
 
-        <h3>Trader Never Closes</h3>
+                    Fancy Home Deco
 
-        <p>
-            Keeps traders available 24/7 so survivors can access quests,
-            vending, supplies, and trading no matter when they play.
-        </p>
+                </h3>
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/5819" target="_blank">
-            View Mod
-        </a>
+                <p>
+                    Adds decorative furniture and building pieces
+                    for players who enjoy detailed bases and creative builds.
+                </p>
 
-    </article>
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/5271"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
 
-    <article class="mod-card">
+            </article>
 
-        <span class="mod-type">Weapon</span>
+            <!-- MOD -->
 
-        <h3>Nailgun Nemesis</h3>
+            <article class="mod-card">
 
-        <p>
-            Enhances the nailgun with improved utility and functionality,
-            making repairs, upgrades, and large building projects much faster and smoother.
-        </p>
+                <span class="mod-type">
 
-        <a href="https://www.nexusmods.com/7daystodie/mods/8054" target="_blank">
-            View Mod
-        </a>
+                    Loot
 
-    </article>
+                </span>
 
-</section>
+                <h3>
 
-    </main>
+                    Air Drops PLUS
 
-    <footer>
-        © 2026 McBeth Gaming — Fun Not Foul
-    </footer>
+                </h3>
+
+                <p>
+                    Improves airdrops with better rewards and more exciting
+                    loot opportunities for explorers and teams.
+                </p>
+
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/8525"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
+
+            </article>
+
+            <!-- MOD -->
+
+            <article class="mod-card">
+
+                <span class="mod-type">
+
+                    Harvesting
+
+                </span>
+
+                <h3>
+
+                    Harvest PLUS
+
+                </h3>
+
+                <p>
+                    Increases resource gathering efficiency so players spend
+                    less time grinding and more time building and surviving.
+                </p>
+
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/7575"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
+
+            </article>
+
+            <!-- MOD -->
+
+            <article class="mod-card">
+
+                <span class="mod-type">
+
+                    Building
+
+                </span>
+
+                <h3>
+
+                    ServerSide Elevator
+
+                </h3>
+
+                <p>
+                    Adds functional elevators for massive community builds
+                    and large vertical base designs.
+                </p>
+
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/6626"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
+
+            </article>
+
+            <!-- MOD -->
+
+            <article class="mod-card">
+
+                <span class="mod-type">
+
+                    Trader
+
+                </span>
+
+                <h3>
+
+                    Trader Never Closes
+
+                </h3>
+
+                <p>
+                    Keeps traders available 24/7 so players can access quests,
+                    supplies, and trading at any time.
+                </p>
+
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/5819"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
+
+            </article>
+
+            <!-- MOD -->
+
+            <article class="mod-card">
+
+                <span class="mod-type">
+
+                    Building Tool
+
+                </span>
+
+                <h3>
+
+                    Nailgun Nemesis
+
+                </h3>
+
+                <p>
+                    Enhances nailgun functionality for faster repairs,
+                    upgrades, and large community construction projects.
+                </p>
+
+                <a
+                    href="https://www.nexusmods.com/7daystodie/mods/8054"
+                    target="_blank"
+                >
+                    View Mod
+                </a>
+
+            </article>
+
+        </section>
+
+        <!-- BACK BUTTON -->
+
+        <div class="back-home">
+
+            <a href="index.html">
+
+                ← Return Home
+
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
