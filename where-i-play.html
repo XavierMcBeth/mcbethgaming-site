@@ -235,11 +235,24 @@
             margin-bottom: 30px;
         }
 
+        /* BUTTONS */
+
+        .button-wrap {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 16px;
+        }
+
         .amazon-btn {
 
             display: inline-block;
 
-            padding: 18px 36px;
+            padding: 18px 34px;
 
             background:
                 linear-gradient(
@@ -270,6 +283,16 @@
 
             box-shadow:
                 0 0 20px rgba(0,255,100,0.22);
+        }
+
+        .secondary-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #005f2f,
+                    #00aa55
+                );
         }
 
         /* GALLERY */
@@ -403,6 +426,20 @@
 
                 grid-template-columns: 1fr;
             }
+
+            .button-wrap {
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .amazon-btn {
+
+                width: 100%;
+
+                max-width: 320px;
+            }
         }
 
     </style>
@@ -448,25 +485,40 @@
 
         <section class="build-box">
 
-            <h2>McBeth Gaming PC Build</h2>
+            <h2>McBeth Gaming Setup</h2>
 
             <p>
 
                 Want to see the hardware behind the streams?
                 Check out the full Amazon build list featuring
-                the gear and components used in the McBeth Gaming setup.
+                the PC, gear, peripherals, and equipment used
+                in the McBeth Gaming setup.
 
             </p>
 
-            <a
-                class="amazon-btn"
-                href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist&ccs_id=9d1c93b6-68b4-498a-b8fd-3a445f1d7a1f"
-                target="_blank"
-            >
+            <div class="button-wrap">
 
-                View Full Amazon Build
+                <a
+                    class="amazon-btn"
+                    href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist&ccs_id=9d1c93b6-68b4-498a-b8fd-3a445f1d7a1f"
+                    target="_blank"
+                >
 
-            </a>
+                    View Full PC Build
+
+                </a>
+
+                <a
+                    class="amazon-btn secondary-btn"
+                    href="https://amzn.to/49KciFJ"
+                    target="_blank"
+                >
+
+                    View Gaming Peripherals
+
+                </a>
+
+            </div>
 
         </section>
 
