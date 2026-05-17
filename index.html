@@ -535,8 +535,8 @@
                     TikTok
                 </a>
 
-                <a href="https://www.amazon.com/shop/mcbethgaming/list/M6WJAWI6N7O3?ref_=aipsflist" target="_blank">
-                    My PC Build
+                <a href="where-i-play.html">
+    My PC Build
                 </a>
 
             </div>
@@ -687,7 +687,41 @@
         </footer>
 
     </div>
+<script>
 
+    let secretCode = "";
+    const targetCode = "7DAYSTODIE";
+
+    document.addEventListener("keydown", (e) => {
+
+        secretCode += e.key.toUpperCase();
+
+        if (secretCode.length > targetCode.length) {
+            secretCode = secretCode.slice(-targetCode.length);
+        }
+
+        if (secretCode === targetCode) {
+            window.location.href = "legend.html";
+        }
+
+    });
+
+</script>
+
+<script>
+
+    const music = document.getElementById('bgMusic');
+
+    document.body.addEventListener('click', () => {
+
+        music.play();
+
+    }, { once: true });
+
+</script>
+
+</body>
+</html>
     <script>
 
         const music = document.getElementById('bgMusic');
