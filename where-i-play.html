@@ -136,7 +136,7 @@
 
             z-index: 1;
 
-            max-width: 1400px;
+            max-width: 1500px;
 
             margin: auto;
 
@@ -190,7 +190,7 @@
 
             max-width: 1100px;
 
-            margin: auto auto 55px;
+            margin: auto auto 65px;
 
             padding: 40px;
 
@@ -219,9 +219,6 @@
             font-size: 2.5rem;
 
             margin-bottom: 18px;
-
-            text-shadow:
-                0 0 10px rgba(0,255,100,0.14);
         }
 
         .build-box p {
@@ -303,27 +300,27 @@
 
             font-size: 2.5rem;
 
-            margin-bottom: 35px;
-
-            text-shadow:
-                0 0 8px rgba(0,255,100,0.12);
+            margin-bottom: 40px;
         }
 
         .gallery {
 
             display: grid;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(12, 1fr);
 
-            gap: 28px;
+            gap: 24px;
+
+            max-width: 1350px;
+
+            margin: auto;
         }
 
-        .gallery img {
+        .gallery-item {
 
-            width: 100%;
+            overflow: hidden;
 
-            border-radius: 22px;
+            border-radius: 24px;
 
             border:
                 1px solid rgba(0,255,100,0.14);
@@ -331,22 +328,53 @@
             background:
                 rgba(0,0,0,0.45);
 
-            padding: 10px;
-
-            transition: 0.3s ease;
+            padding: 8px;
 
             box-shadow:
                 0 0 14px rgba(0,255,100,0.06);
+
+            transition: 0.3s ease;
         }
 
-        .gallery img:hover {
+        .gallery-item:hover {
 
             transform:
-                scale(1.02)
-                translateY(-4px);
+                translateY(-4px)
+                scale(1.02);
 
             box-shadow:
                 0 0 24px rgba(0,255,100,0.16);
+        }
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            display: block;
+        }
+
+        /* CUSTOM LAYOUT */
+
+        .wide {
+            grid-column: span 6;
+            height: 320px;
+        }
+
+        .tall {
+            grid-column: span 3;
+            grid-row: span 2;
+            height: 664px;
+        }
+
+        .square {
+            grid-column: span 3;
+            height: 320px;
         }
 
         /* BACK BUTTON */
@@ -391,6 +419,25 @@
 
         /* MOBILE */
 
+        @media (max-width: 1000px) {
+
+            .gallery {
+
+                grid-template-columns: 1fr;
+            }
+
+            .wide,
+            .tall,
+            .square {
+
+                grid-column: auto;
+
+                grid-row: auto;
+
+                height: auto;
+            }
+        }
+
         @media (max-width: 768px) {
 
             .header h1 {
@@ -416,11 +463,6 @@
             .gallery-title {
 
                 font-size: 2rem;
-            }
-
-            .gallery {
-
-                grid-template-columns: 1fr;
             }
 
             .button-wrap {
@@ -528,25 +570,39 @@
 
         <section class="gallery">
 
-            <img
-                src="images/pc1.jpg"
-                alt="McBeth Gaming PC Setup 1"
-            >
+            <!-- TOP ROW -->
 
-            <img
-                src="images/pc2.jpg"
-                alt="McBeth Gaming PC Setup 2"
-            >
+            <div class="gallery-item wide">
+                <img src="images/pc1.jpg">
+            </div>
 
-            <img
-                src="images/pc3.jpg"
-                alt="McBeth Gaming PC Setup 3"
-            >
+            <div class="gallery-item tall">
+                <img src="images/pc2.jpg">
+            </div>
 
-            <img
-                src="images/pc4.jpg"
-                alt="McBeth Gaming PC Setup 4"
-            >
+            <div class="gallery-item square">
+                <img src="images/pc3.jpg">
+            </div>
+
+            <!-- SECOND ROW -->
+
+            <div class="gallery-item square">
+                <img src="images/pc4.jpg">
+            </div>
+
+            <div class="gallery-item square">
+                <img src="images/pc5.jpg">
+            </div>
+
+            <!-- BOTTOM ROW -->
+
+            <div class="gallery-item wide">
+                <img src="images/pc6.jpg">
+            </div>
+
+            <div class="gallery-item wide">
+                <img src="images/pc7.jpg">
+            </div>
 
         </section>
 
