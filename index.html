@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>McBeth Gaming</title>
 
     <!-- Google Fonts -->
@@ -25,6 +27,25 @@
       gtag('config', 'G-S59920LRSF');
     </script>
 
+    <!-- GOOGLE SCHEMA -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "McBeth Gaming",
+      "url": "https://www.mcbethgaming.com",
+      "logo": "https://www.mcbethgaming.com/images/logo.png",
+      "sameAs": [
+        "https://www.tiktok.com/@mcbethgaming",
+        "https://www.twitch.tv/mcbeth_gaming"
+      ],
+      "description": "McBeth Gaming is a family-friendly gaming creator focused on 7 Days to Die gameplay, livestreams, tutorials, mods, survival content, and community events."
+    }
+    </script>
+
+    <link rel="icon" href="/full-logo-favicon.ico">
+
     <style>
 
         * {
@@ -38,27 +59,28 @@
         }
 
         body {
-    font-family: 'Rajdhani', sans-serif;
-    color: white;
 
-    background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
-        url('images/background.png') center center / cover no-repeat fixed;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
 
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
+                url('images/background.png') center center / cover no-repeat fixed;
 
-.secret-letter {
-    color: inherit;
-    cursor: default;
-    transition: 0.2s ease;
-}
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-.secret-letter:hover {
-    color: #00dd66;
-    text-shadow: 0 0 8px rgba(0,255,100,0.35);
-}
+        .secret-letter {
+            color: inherit;
+            cursor: default;
+            transition: 0.2s ease;
+        }
+
+        .secret-letter:hover {
+            color: #00dd66;
+            text-shadow: 0 0 8px rgba(0,255,100,0.35);
+        }
 
         #home,
         #links,
@@ -98,6 +120,7 @@
         .particles span:nth-child(10) { left: 97%; animation-delay: 9s; }
 
         @keyframes floatDust {
+
             0% {
                 transform: translateY(110vh) scale(0.4);
                 opacity: 0;
@@ -126,20 +149,28 @@
         }
 
         .navbar {
+
             position: sticky;
             top: 0;
             z-index: 999;
+
             background: rgba(0,0,0,0.88);
+
             backdrop-filter: blur(10px);
+
             border-bottom: 1px solid rgba(0,255,100,0.18);
+
             padding: 14px 20px;
+
             display: flex;
             justify-content: center;
             gap: 28px;
+
             box-shadow: 0 0 14px rgba(0,255,100,0.05);
         }
 
         .navbar a {
+
             color: #cfcfcf;
             text-decoration: none;
             font-size: 1.05rem;
@@ -149,6 +180,7 @@
         }
 
         .navbar a:hover {
+
             color: #00dd66;
             text-shadow: 0 0 8px rgba(0,255,100,0.35);
         }
@@ -159,6 +191,7 @@
         }
 
         .logo {
+
             width: 320px;
             max-width: 90%;
             margin-bottom: 10px;
@@ -175,6 +208,7 @@
         }
 
         h1 {
+
             font-family: 'Orbitron', sans-serif;
             font-size: 4.8rem;
             font-weight: 900;
@@ -189,6 +223,7 @@
         }
 
         .subtitle {
+
             font-size: 1.4rem;
             color: #c9c9c9;
             margin-bottom: 40px;
@@ -196,6 +231,7 @@
         }
 
         .content {
+
             max-width: 1200px;
             margin: auto;
             padding: 20px;
@@ -204,11 +240,14 @@
 
         .server-wrap {
             margin-bottom: 45px;
+            position: relative;
         }
 
         .server-img {
+
             width: 92%;
             max-width: 1000px;
+
             border-radius: 25px;
             border: 2px solid rgba(0,255,100,0.4);
 
@@ -223,6 +262,57 @@
             transform: scale(1.005);
         }
 
+        .server-coming {
+
+            position: absolute;
+
+            top: 28px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: rgba(0,0,0,0.72);
+
+            border: 1px solid rgba(0,255,100,0.22);
+
+            color: #8cffb5;
+
+            padding: 12px 22px;
+
+            border-radius: 14px;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 1rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            backdrop-filter: blur(6px);
+
+            box-shadow:
+                0 0 14px rgba(0,255,100,0.08);
+        }
+
+        .tower-clue {
+
+            position: absolute;
+            bottom: 12px;
+            right: 8%;
+
+            font-size: 0.72rem;
+
+            color: rgba(120,255,170,0.16);
+
+            letter-spacing: 2px;
+
+            font-style: italic;
+
+            pointer-events: none;
+        }
+
         .buttons {
             margin-top: 35px;
             margin-bottom: 35px;
@@ -230,6 +320,7 @@
 
         .buttons a,
         .affiliate-btn {
+
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
@@ -238,9 +329,12 @@
 
             color: white;
             text-decoration: none;
+
             border-radius: 14px;
+
             font-size: 1.15rem;
             font-weight: bold;
+
             transition: 0.25s ease;
 
             box-shadow:
@@ -249,7 +343,9 @@
 
         .buttons a:hover,
         .affiliate-btn:hover {
+
             transform: translateY(-3px);
+
             box-shadow:
                 0 0 16px rgba(0,255,100,0.24);
         }
@@ -261,9 +357,11 @@
         }
 
         .creator-badge {
+
             width: 100%;
             max-width: 420px;
             opacity: 0.92;
+
             transition: 0.25s ease;
 
             filter:
@@ -276,24 +374,35 @@
         }
 
         .info-box {
+
             margin: 55px auto 20px;
+
             max-width: 1100px;
+
             background: rgba(0,0,0,0.62);
+
             border: 1px solid rgba(0,255,100,0.22);
+
             border-radius: 20px;
+
             padding: 35px 25px;
+
             box-shadow:
                 0 0 16px rgba(0,255,100,0.08);
+
             transition: 0.3s ease;
         }
 
         .info-box:hover {
+
             transform: translateY(-3px);
+
             box-shadow:
                 0 0 20px rgba(0,255,100,0.12);
         }
 
         .info-box h2 {
+
             font-family: 'Orbitron', sans-serif;
             color: #00dd66;
             margin-bottom: 15px;
@@ -301,6 +410,7 @@
         }
 
         .info-box p {
+
             font-size: 1.2rem;
             color: #d0d0d0;
             margin-bottom: 25px;
@@ -308,6 +418,7 @@
         }
 
         .video-link-grid {
+
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
@@ -315,23 +426,34 @@
         }
 
         .video-link-card {
+
             display: block;
             text-decoration: none;
+
             background: rgba(0,255,100,0.05);
+
             border: 1px solid rgba(0,255,100,0.2);
+
             border-radius: 18px;
+
             padding: 24px 18px;
+
             color: white;
+
             box-shadow: 0 0 12px rgba(0,255,100,0.06);
+
             transition: 0.25s ease;
         }
 
         .video-link-card:hover {
+
             transform: translateY(-4px);
+
             box-shadow: 0 0 18px rgba(0,255,100,0.14);
         }
 
         .video-label {
+
             color: #8cffb5;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -339,6 +461,7 @@
         }
 
         .video-link-card h3 {
+
             color: #00dd66;
             font-family: 'Orbitron', sans-serif;
             font-size: 1.15rem;
@@ -346,63 +469,90 @@
         }
 
         .video-link-card p {
+
             color: #d0d0d0;
             font-size: 1rem;
             margin-bottom: 18px;
         }
 
         .watch-btn {
+
             display: inline-block;
             padding: 10px 18px;
+
             background: linear-gradient(135deg, #008c44, #00cc66);
+
             border-radius: 12px;
+
             font-weight: bold;
             color: white;
         }
 
         .music-player {
+
             position: fixed;
             bottom: 10px;
             right: 10px;
+
             z-index: 999;
+
             background: rgba(0,0,0,0.85);
+
             padding: 12px;
+
             border-radius: 16px;
+
             border: 1px solid rgba(0,255,100,0.22);
+
             backdrop-filter: blur(6px);
         }
 
         .music-credit {
+
             margin-top: 8px;
+
             font-size: 0.82rem;
+
             color: #d0d0d0;
+
             text-align: center;
+
             letter-spacing: 1px;
         }
 
         .music-credit a {
+
             color: #00dd66;
             text-decoration: none;
             font-weight: bold;
         }
 
         .music-start {
+
             color: #8cffb5;
             font-size: 0.85rem;
+
             margin-bottom: 8px;
+
             text-align: center;
             letter-spacing: 1px;
         }
 
         footer {
+
             margin-top: 70px;
+
             text-align: center;
+
             color: #aaaaaa;
+
             font-size: 0.95rem;
+
             padding: 25px;
         }
 
         @media (max-width: 900px) {
+
             .video-link-grid {
                 grid-template-columns: 1fr;
             }
@@ -449,6 +599,11 @@
             .music-player audio {
                 width: 100%;
             }
+
+            .server-coming {
+                font-size: 0.72rem;
+                width: 90%;
+            }
         }
 
     </style>
@@ -458,29 +613,33 @@
 <body>
 
     <div class="particles">
+
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
+
     </div>
 
     <div class="overlay">
 
         <nav class="navbar">
 
-    <a href="#home">Home</a>
+            <a href="#home">Home</a>
 
-    <a href="#links">Links</a>
+            <a href="#links">Links</a>
 
-    <a href="#clips">Clips</a>
+            <a href="server.html">Server</a>
 
-    <a href="mods.html">Mods</a>
+            <a href="#clips">Clips</a>
 
-    <a href="#about">About</a>
+            <a href="mods.html">Mods</a>
 
-    <a href="#nobull">
-        N<span class="secret-letter" onclick="window.location.href='secret.html'">o</span>Bull
-    </a>
+            <a href="#about">About</a>
 
-</nav>
+            <a href="#nobull">
+                N<span class="secret-letter" onclick="window.location.href='secret.html'">o</span>Bull
+            </a>
+
+        </nav>
 
         <div class="music-player">
 
@@ -493,10 +652,13 @@
             </audio>
 
             <div class="music-credit">
+
                 Theme music created by
+
                 <a href="https://www.tiktok.com/@skynetkids" target="_blank">
                     @skynetkids
                 </a>
+
             </div>
 
         </div>
@@ -523,6 +685,14 @@
                     class="server-img"
                 >
 
+                <div class="server-coming">
+                    COMMUNITY SERVER COMING SOON
+                </div>
+
+                <div class="tower-clue">
+                    ...listen carefully to the tower.
+                </div>
+
             </div>
 
             <div class="buttons" id="links">
@@ -535,8 +705,12 @@
                     TikTok
                 </a>
 
+                <a href="server.html">
+                    Join Server
+                </a>
+
                 <a href="where-i-play.html">
-    My PC Build
+                    My PC Build
                 </a>
 
             </div>
@@ -687,6 +861,7 @@
         </footer>
 
     </div>
+
 <script>
 
     let secretCode = "";
@@ -719,20 +894,6 @@
     }, { once: true });
 
 </script>
-
-</body>
-</html>
-    <script>
-
-        const music = document.getElementById('bgMusic');
-
-        document.body.addEventListener('click', () => {
-
-            music.play();
-
-        }, { once: true });
-
-    </script>
 
 </body>
 </html>
