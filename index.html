@@ -218,20 +218,17 @@
         .server-wrap {
             margin-bottom: 45px;
             position: relative;
-            display: inline-block;
-            width: 92%;
-            max-width: 1000px;
         }
 
         .server-img {
-            width: 100%;
+            width: 92%;
+            max-width: 1000px;
             border-radius: 25px;
             border: 2px solid rgba(0,255,100,0.4);
             box-shadow:
                 0 0 14px rgba(0,255,100,0.18),
                 0 0 28px rgba(0,255,100,0.08);
             transition: 0.3s ease;
-            display: block;
         }
 
         .server-img:hover {
@@ -254,7 +251,6 @@
             text-transform: uppercase;
             backdrop-filter: blur(6px);
             box-shadow: 0 0 14px rgba(0,255,100,0.08);
-            z-index: 3;
         }
 
         .tower-clue {
@@ -266,51 +262,6 @@
             letter-spacing: 2px;
             font-style: italic;
             pointer-events: none;
-            z-index: 3;
-        }
-
-        .torch-light {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,160,50,0.7);
-            box-shadow:
-                0 0 8px rgba(255,150,40,0.9),
-                0 0 18px rgba(255,100,20,0.5);
-            z-index: 2;
-            pointer-events: none;
-            opacity: 0.45;
-            transform: translate(-50%, -50%);
-        }
-
-        .tower-morse-light {
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: rgba(0,255,120,0.85);
-            box-shadow:
-                0 0 8px rgba(0,255,120,0.9),
-                0 0 20px rgba(0,255,120,0.55),
-                0 0 32px rgba(0,255,120,0.25);
-            z-index: 4;
-            pointer-events: none;
-            opacity: 0.25;
-            transform: translate(-50%, -50%);
-        }
-
-        .torch-1 { left: 38%; top: 56%; }
-        .torch-2 { left: 50%; top: 55%; }
-        .torch-3 { left: 62%; top: 58%; }
-        .torch-4 { left: 75%; top: 63%; }
-        .torch-5 { left: 85%; top: 70%; }
-        .torch-6 { left: 30%; top: 70%; }
-        .torch-7 { left: 55%; top: 72%; }
-
-        .tower-morse-light {
-            left: 55%;
-            top: 20%;
         }
 
         .buttons {
@@ -535,16 +486,6 @@
                 font-size: 0.72rem;
                 width: 90%;
             }
-
-            .torch-light {
-                width: 6px;
-                height: 6px;
-            }
-
-            .tower-morse-light {
-                width: 7px;
-                height: 7px;
-            }
         }
 
     </style>
@@ -619,16 +560,6 @@
                 <div class="server-coming">
                     COMMUNITY SERVER COMING SOON
                 </div>
-
-                <div class="torch-light torch-1"></div>
-                <div class="torch-light torch-2"></div>
-                <div class="torch-light torch-3"></div>
-                <div class="torch-light torch-4"></div>
-                <div class="torch-light torch-5"></div>
-                <div class="torch-light torch-6"></div>
-                <div class="torch-light torch-7"></div>
-
-                <div class="tower-morse-light" id="towerMorseLight"></div>
 
                 <div class="tower-clue">
                     ...listen carefully to the tower.
@@ -835,115 +766,6 @@
     document.body.addEventListener('click', () => {
         music.play();
     }, { once: true });
-
-</script>
-
-<script>
-
-    const torches = document.querySelectorAll('.torch-light');
-
-    function flickerTorches() {
-        torches.forEach((torch) => {
-            const opacity = 0.25 + Math.random() * 0.65;
-            const size = 6 + Math.random() * 5;
-            const blur = 10 + Math.random() * 18;
-
-            torch.style.opacity = opacity;
-            torch.style.width = `${size}px`;
-            torch.style.height = `${size}px`;
-            torch.style.boxShadow = `
-                0 0 ${blur}px rgba(255,150,40,0.9),
-                0 0 ${blur * 1.8}px rgba(255,90,20,0.45)
-            `;
-        });
-
-        setTimeout(flickerTorches, 120 + Math.random() * 280);
-    }
-
-    flickerTorches();
-
-    const towerLight = document.getElementById('towerMorseLight');
-
-    const morsePattern = [
-        // 7 = --...
-        "dash", "dash", "dot", "dot", "dot", "letter",
-
-        // D = -..
-        "dash", "dot", "dot", "letter",
-
-        // 2 = ..---
-        "dot", "dot", "dash", "dash", "dash", "letter",
-
-        // D = -..
-        "dash", "dot", "dot", "word"
-    ];
-
-    const dot = 220;
-    const dash = dot * 3;
-    const gap = dot;
-    const letterGap = dot * 3;
-    const wordGap = dot * 7;
-
-    function lightOn(duration) {
-        towerLight.style.opacity = "1";
-        towerLight.style.boxShadow = `
-            0 0 10px rgba(0,255,120,1),
-            0 0 26px rgba(0,255,120,0.8),
-            0 0 46px rgba(0,255,120,0.35)
-        `;
-
-        return new Promise(resolve => {
-            setTimeout(() => {
-                towerLight.style.opacity = "0.18";
-                towerLight.style.boxShadow = `
-                    0 0 8px rgba(0,255,120,0.6),
-                    0 0 20px rgba(0,255,120,0.25)
-                `;
-                setTimeout(resolve, gap);
-            }, duration);
-        });
-    }
-
-    function pause(duration) {
-        return new Promise(resolve => setTimeout(resolve, duration));
-    }
-
-    async function playMorse() {
-        await pause(9000 + Math.random() * 9000);
-
-        for (const signal of morsePattern) {
-            if (signal === "dot") {
-                await lightOn(dot);
-            }
-
-            if (signal === "dash") {
-                await lightOn(dash);
-            }
-
-            if (signal === "letter") {
-                await pause(letterGap);
-            }
-
-            if (signal === "word") {
-                await pause(wordGap);
-            }
-        }
-
-        playMorse();
-    }
-
-    function randomTowerFlicker() {
-        if (Math.random() > 0.72) {
-            towerLight.style.opacity = "0.45";
-        } else {
-            towerLight.style.opacity = "0.18";
-        }
-
-        setTimeout(randomTowerFlicker, 500 + Math.random() * 1400);
-    }
-
-    randomTowerFlicker();
-    playMorse();
 
 </script>
 
