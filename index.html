@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="12pf6kzkZkrbp6_Z1S2zCrUp20cegivbliJWTSSeHY0" />
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>McBeth Gaming | 7 Days to Die Streams, Mods & Community</title>
-<meta name="description" content="Family friendly 7 Days to Die streams, mods, clips, community server content, Easter eggs, and survival gaming from McBeth Gaming." />
 
-<meta property="og:title" content="McBeth Gaming | 7 Days to Die Streams, Mods & Community" />
-<meta property="og:description" content="Family friendly 7 Days to Die content, mods, clips, community server updates, and hidden Easter eggs." />
-<meta property="og:image" content="https://www.mcbethgaming.com/images/logo.png" />
-<meta property="og:url" content="https://www.mcbethgaming.com/" />
-<meta property="og:type" content="website" />
+    <title>McBeth Gaming</title>
+
+    <meta name="description" content="McBeth Gaming is a family-friendly 7 Days to Die gaming creator focused on livestreams, mods, community servers, survival gameplay, tutorials, and creator events." />
+
+    <meta property="og:title" content="McBeth Gaming | 7 Days to Die Streams, Mods & Community" />
+    <meta property="og:description" content="Family-friendly 7 Days to Die content, mods, clips, community server updates, and hidden Easter eggs." />
+    <meta property="og:image" content="https://www.mcbethgaming.com/images/logo.png" />
+    <meta property="og:url" content="https://www.mcbethgaming.com/" />
+    <meta property="og:type" content="website" />
+
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "McBeth Gaming",
-  "url": "https://www.mcbethgaming.com",
-  "logo": "https://www.mcbethgaming.com/images/logo.png",
-  "sameAs": [
-    "https://www.tiktok.com/@mcbethgaming",
-    "https://www.twitch.tv/mcbeth_gaming"
-  ],
-  "description": "McBeth Gaming is a family-friendly gaming creator focused on 7 Days to Die gameplay, livestreams, tutorials, mods, survival content, and community events."
-}
-</script>
-<link rel="icon" href="/full-logo-favicon.ico">
-    
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "McBeth Gaming",
+      "url": "https://www.mcbethgaming.com",
+      "logo": "https://www.mcbethgaming.com/images/logo.png",
+      "sameAs": [
+        "https://www.tiktok.com/@mcbethgaming",
+        "https://www.twitch.tv/mcbeth_gaming"
+      ],
+      "description": "McBeth Gaming is a family-friendly gaming creator focused on 7 Days to Die gameplay, livestreams, tutorials, mods, survival content, community servers, and creator events."
+    }
+    </script>
 
-    <!-- Google Fonts -->
+    <link rel="icon" href="/full-logo-favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
 
     <script>
       window.dataLayer = window.dataLayer || [];
-
-      function gtag(){
-        dataLayer.push(arguments);
-      }
-
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-S59920LRSF');
     </script>
@@ -63,32 +58,29 @@
         }
 
         body {
-    font-family: 'Rajdhani', sans-serif;
-    color: white;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
+                url('images/background.png') center center / cover no-repeat fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
-        url('images/background.png') center center / cover no-repeat fixed;
+        .secret-letter {
+            color: inherit;
+            cursor: default;
+            transition: 0.2s ease;
+        }
 
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-.secret-letter {
-    color: inherit;
-    cursor: default;
-    transition: 0.2s ease;
-}
-
-.secret-letter:hover {
-    color: #00dd66;
-    text-shadow: 0 0 8px rgba(0,255,100,0.35);
-}
+        .secret-letter:hover {
+            color: #00dd66;
+            text-shadow: 0 0 8px rgba(0,255,100,0.35);
+        }
 
         #home,
         #links,
         #clips,
-        #about,
         #nobull {
             scroll-margin-top: 110px;
         }
@@ -187,11 +179,9 @@
             width: 320px;
             max-width: 90%;
             margin-bottom: 10px;
-
             filter:
                 drop-shadow(0 0 6px rgba(0,255,100,0.35))
                 drop-shadow(0 0 12px rgba(0,255,100,0.18));
-
             transition: 0.3s ease;
         }
 
@@ -205,11 +195,9 @@
             font-weight: 900;
             letter-spacing: 3px;
             color: #00dd66;
-
             text-shadow:
                 0 0 4px rgba(0,255,100,0.35),
                 0 0 10px rgba(0,255,100,0.18);
-
             margin-bottom: 15px;
         }
 
@@ -229,6 +217,7 @@
 
         .server-wrap {
             margin-bottom: 45px;
+            position: relative;
         }
 
         .server-img {
@@ -236,16 +225,43 @@
             max-width: 1000px;
             border-radius: 25px;
             border: 2px solid rgba(0,255,100,0.4);
-
             box-shadow:
                 0 0 14px rgba(0,255,100,0.18),
                 0 0 28px rgba(0,255,100,0.08);
-
             transition: 0.3s ease;
         }
 
         .server-img:hover {
             transform: scale(1.005);
+        }
+
+        .server-coming {
+            position: absolute;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.72);
+            border: 1px solid rgba(0,255,100,0.22);
+            color: #8cffb5;
+            padding: 12px 22px;
+            border-radius: 14px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 14px rgba(0,255,100,0.08);
+        }
+
+        .tower-clue {
+            position: absolute;
+            bottom: 12px;
+            right: 8%;
+            font-size: 0.72rem;
+            color: rgba(120,255,170,0.16);
+            letter-spacing: 2px;
+            font-style: italic;
+            pointer-events: none;
         }
 
         .buttons {
@@ -258,25 +274,20 @@
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
-
             background: linear-gradient(135deg, #008c44, #00cc66);
-
             color: white;
             text-decoration: none;
             border-radius: 14px;
             font-size: 1.15rem;
             font-weight: bold;
             transition: 0.25s ease;
-
-            box-shadow:
-                0 0 10px rgba(0,255,100,0.16);
+            box-shadow: 0 0 10px rgba(0,255,100,0.16);
         }
 
         .buttons a:hover,
         .affiliate-btn:hover {
             transform: translateY(-3px);
-            box-shadow:
-                0 0 16px rgba(0,255,100,0.24);
+            box-shadow: 0 0 16px rgba(0,255,100,0.24);
         }
 
         .creator-badge-wrap {
@@ -290,9 +301,7 @@
             max-width: 420px;
             opacity: 0.92;
             transition: 0.25s ease;
-
-            filter:
-                drop-shadow(0 0 10px rgba(0,255,100,0.12));
+            filter: drop-shadow(0 0 10px rgba(0,255,100,0.12));
         }
 
         .creator-badge:hover {
@@ -307,15 +316,13 @@
             border: 1px solid rgba(0,255,100,0.22);
             border-radius: 20px;
             padding: 35px 25px;
-            box-shadow:
-                0 0 16px rgba(0,255,100,0.08);
+            box-shadow: 0 0 16px rgba(0,255,100,0.08);
             transition: 0.3s ease;
         }
 
         .info-box:hover {
             transform: translateY(-3px);
-            box-shadow:
-                0 0 20px rgba(0,255,100,0.12);
+            box-shadow: 0 0 20px rgba(0,255,100,0.12);
         }
 
         .info-box h2 {
@@ -474,6 +481,11 @@
             .music-player audio {
                 width: 100%;
             }
+
+            .server-coming {
+                font-size: 0.72rem;
+                width: 90%;
+            }
         }
 
     </style>
@@ -491,21 +503,18 @@
 
         <nav class="navbar">
 
-    <a href="#home">Home</a>
+            <a href="#home">Home</a>
+            <a href="#links">Links</a>
+            <a href="server.html">Server</a>
+            <a href="#clips">Clips</a>
+            <a href="mods.html">Mods</a>
+            <a href="about.html">About</a>
 
-    <a href="#links">Links</a>
+            <a href="#nobull">
+                N<span class="secret-letter" onclick="window.location.href='secret.html'">o</span>Bull
+            </a>
 
-    <a href="#clips">Clips</a>
-
-    <a href="mods.html">Mods</a>
-
-    <a href="#about">About</a>
-
-    <a href="#nobull">
-        N<span class="secret-letter" onclick="window.location.href='secret.html'">o</span>Bull
-    </a>
-
-</nav>
+        </nav>
 
         <div class="music-player">
 
@@ -548,6 +557,14 @@
                     class="server-img"
                 >
 
+                <div class="server-coming">
+                    COMMUNITY SERVER COMING SOON
+                </div>
+
+                <div class="tower-clue">
+                    ...listen carefully to the tower.
+                </div>
+
             </div>
 
             <div class="buttons" id="links">
@@ -560,8 +577,12 @@
                     TikTok
                 </a>
 
+                <a href="server.html">
+                    Join Server
+                </a>
+
                 <a href="where-i-play.html">
-    My PC Build
+                    My PC Build
                 </a>
 
             </div>
@@ -665,19 +686,23 @@
 
             </div>
 
-            <div class="info-box" id="about">
+            <div class="info-box">
 
                 <h2>About McBeth Gaming</h2>
 
                 <p>
-                    McBeth Gaming is a family-friendly gaming community focused
-                    on survival games, livestream chaos, teamwork, and building
-                    an awesome community together.
-
-                    From 7 Days to Die and community events to challenge runs
-                    and creator content, the goal is simple —
-                    Fun Not Foul.
+                    McBeth Gaming is a family-friendly 7 Days to Die gaming creator
+                    focused on survival gameplay, livestreams, tutorials, mods,
+                    community servers, creator events, and building a fun community.
                 </p>
+
+                <a
+                    class="affiliate-btn"
+                    href="about.html">
+
+                    Learn More
+
+                </a>
 
             </div>
 
@@ -712,6 +737,7 @@
         </footer>
 
     </div>
+
 <script>
 
     let secretCode = "";
@@ -738,9 +764,7 @@
     const music = document.getElementById('bgMusic');
 
     document.body.addEventListener('click', () => {
-
         music.play();
-
     }, { once: true });
 
 </script>

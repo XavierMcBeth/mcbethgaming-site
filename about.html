@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About McBeth Gaming</title>
+
+    <meta name="description" content="Learn more about McBeth Gaming, a family-friendly 7 Days to Die creator focused on survival gameplay, livestreams, mods, community servers, and creator events." />
+
+    <link rel="icon" href="/full-logo-favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.92)),
+                url('images/background.png') center center / cover no-repeat fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .overlay {
+            width: 100%;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(0,0,0,0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,255,100,0.15);
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .navbar a {
+            color: #d0d0d0;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.25s ease;
+        }
+
+        .navbar a:hover {
+            color: #00dd66;
+            text-shadow: 0 0 10px rgba(0,255,100,0.35);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.2rem;
+            color: #00dd66;
+            letter-spacing: 3px;
+            text-shadow:
+                0 0 5px rgba(0,255,100,0.35),
+                0 0 15px rgba(0,255,100,0.12);
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #cfcfcf;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .about-box {
+            background: rgba(0,0,0,0.68);
+            border: 1px solid rgba(0,255,100,0.18);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.08);
+        }
+
+        .about-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            font-size: 2rem;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #d5d5d5;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #8cffb5;
+            font-weight: bold;
+        }
+
+        .official-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .official-link-card {
+            display: block;
+            text-decoration: none;
+            padding: 24px 20px;
+            background: rgba(0,255,100,0.05);
+            border: 1px solid rgba(0,255,100,0.18);
+            border-radius: 18px;
+            transition: 0.25s ease;
+            text-align: center;
+        }
+
+        .official-link-card:hover {
+            transform: translateY(-4px);
+            background: rgba(0,255,100,0.09);
+            box-shadow:
+                0 0 18px rgba(0,255,100,0.12);
+        }
+
+        .official-link-card span {
+            display: block;
+            color: #8cffb5;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .official-link-card strong {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(0,255,100,0.04);
+            border: 1px solid rgba(0,255,100,0.14);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.25s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.10);
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            margin-bottom: 14px;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #d0d0d0;
+        }
+
+        .button-wrap {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .return-btn {
+            display: inline-block;
+            padding: 16px 34px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #008c44, #00cc66);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.25s ease;
+            box-shadow:
+                0 0 12px rgba(0,255,100,0.14);
+        }
+
+        .return-btn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 0 18px rgba(0,255,100,0.22);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+
+            .feature-grid,
+            .official-links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-box {
+                padding: 28px 22px;
+            }
+
+            .about-box p {
+                font-size: 1.05rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+        <a href="mods.html">Mods</a>
+        <a href="server.html">Server</a>
+        <a href="where-i-play.html">Where I Play</a>
+
+    </nav>
+
+    <header>
+
+        <h1>About McBeth Gaming</h1>
+
+        <p class="subtitle">
+            Family Friendly Streaming • Community Survival • 7 Days to Die
+        </p>
+
+    </header>
+
+    <div class="content">
+
+        <div class="about-box">
+
+            <h2>Who Is McBeth Gaming?</h2>
+
+            <p>
+                McBeth Gaming is a <span class="highlight">family-friendly gaming creator</span>
+                centered around the survival world of
+                <span class="highlight">7 Days to Die</span>.
+            </p>
+
+            <p>
+                The channel focuses on livestream gameplay, community events,
+                server projects, tutorials, mods, survival challenges,
+                base building, and bringing players together for a fun
+                community-driven experience.
+            </p>
+
+            <p>
+                Whether it’s surviving Horde Night, testing crazy mods,
+                building massive bases, or preparing for the next creator event,
+                the goal has always been simple:
+                <span class="highlight">Fun Not Foul.</span>
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <h2>What You'll Find</h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <h3>Livestreams</h3>
+
+                    <p>
+                        Survival gameplay, horde nights, community events,
+                        challenge runs, and fun moments streamed live.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>Mods & Servers</h3>
+
+                    <p>
+                        Quality-of-life mods, server-side enhancements,
+                        custom community worlds, and future overhaul adventures.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>Community</h3>
+
+                    <p>
+                        Family-friendly gaming focused on teamwork,
+                        helping new players, and building a welcoming community.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="about-box">
+
+            <h2>Official Links</h2>
+
+            <p>
+                These are the main official McBeth Gaming links.
+            </p>
+
+            <div class="official-links-grid">
+
+                <a class="official-link-card"
+                   href="https://www.mcbethgaming.com">
+
+                    <span>Website</span>
+
+                    <strong>mcbethgaming.com</strong>
+
+                </a>
+
+                <a class="official-link-card"
+                   href="https://www.tiktok.com/@mcbethgaming"
+                   target="_blank">
+
+                    <span>TikTok</span>
+
+                    <strong>@mcbethgaming</strong>
+
+                </a>
+
+                <a class="official-link-card"
+                   href="https://www.twitch.tv/mcbeth_gaming"
+                   target="_blank">
+
+                    <span>Twitch</span>
+
+                    <strong>mcbeth_gaming</strong>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="button-wrap">
+
+            <a class="return-btn" href="index.html">
+                ← Return Home
+            </a>
+
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 McBeth Gaming — Fun Not Foul
+    </footer>
+
+</div>
+
+</body>
+</html>
