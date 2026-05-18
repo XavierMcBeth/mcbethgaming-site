@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>McBeth Gaming | Community Server</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.93)),
+                url('images/background.png') center center / cover no-repeat fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particles span {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0,255,100,0.32);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0,255,100,0.35);
+            animation: floatDust 18s linear infinite;
+        }
+
+        .particles span:nth-child(1) { left: 8%; animation-delay: 0s; }
+        .particles span:nth-child(2) { left: 18%; animation-delay: 3s; }
+        .particles span:nth-child(3) { left: 29%; animation-delay: 6s; }
+        .particles span:nth-child(4) { left: 41%; animation-delay: 2s; }
+        .particles span:nth-child(5) { left: 53%; animation-delay: 8s; }
+        .particles span:nth-child(6) { left: 64%; animation-delay: 4s; }
+        .particles span:nth-child(7) { left: 73%; animation-delay: 7s; }
+        .particles span:nth-child(8) { left: 82%; animation-delay: 1s; }
+        .particles span:nth-child(9) { left: 91%; animation-delay: 5s; }
+
+        @keyframes floatDust {
+            0% {
+                transform: translateY(110vh) scale(0.4);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.55;
+            }
+
+            80% {
+                opacity: 0.55;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 20px 80px;
+            text-align: center;
+        }
+
+        .server-status {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(0,255,100,0.22);
+            background: rgba(0,255,100,0.07);
+            color: #8cffb5;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 0 12px rgba(0,255,100,0.08);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            color: #00dd66;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+            text-shadow:
+                0 0 8px rgba(0,255,100,0.28),
+                0 0 22px rgba(0,255,100,0.14);
+        }
+
+        .subtitle {
+            max-width: 850px;
+            margin: 0 auto 45px;
+            color: #d0d0d0;
+            font-size: 1.35rem;
+            line-height: 1.7;
+        }
+
+        .hero-card,
+        .info-card {
+            background: rgba(0,0,0,0.62);
+            border: 1px solid rgba(0,255,100,0.18);
+            border-radius: 26px;
+            padding: 38px 28px;
+            margin-bottom: 35px;
+            box-shadow: 0 0 18px rgba(0,255,100,0.07);
+            backdrop-filter: blur(6px);
+        }
+
+        .hero-card h2,
+        .info-card h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .hero-card p,
+        .info-card p {
+            color: #d6d6d6;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .feature-box {
+            background: rgba(0,255,100,0.045);
+            border: 1px solid rgba(0,255,100,0.14);
+            border-radius: 18px;
+            padding: 22px;
+            transition: 0.25s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-4px);
+            background: rgba(0,255,100,0.075);
+            box-shadow: 0 0 16px rgba(0,255,100,0.1);
+        }
+
+        .feature-box h3 {
+            color: #8cffb5;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            font-size: 1rem;
+            color: #d0d0d0;
+            margin-bottom: 0;
+        }
+
+        .rules-list {
+            max-width: 760px;
+            margin: 25px auto 0;
+            text-align: left;
+        }
+
+        .rules-list li {
+            list-style: none;
+            margin-bottom: 14px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(0,255,100,0.045);
+            border: 1px solid rgba(0,255,100,0.1);
+            color: #d8d8d8;
+            font-size: 1.08rem;
+        }
+
+        .rules-list li::before {
+            content: "☣ ";
+            color: #00dd66;
+            font-weight: bold;
+        }
+
+        .button-wrap {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .main-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 220px;
+            padding: 16px 28px;
+            background: linear-gradient(135deg, #008c44, #00cc66);
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: bold;
+            font-size: 1.08rem;
+            transition: 0.25s ease;
+            box-shadow: 0 0 14px rgba(0,255,100,0.14);
+        }
+
+        .main-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 22px rgba(0,255,100,0.22);
+        }
+
+        .ghost-btn {
+            background: rgba(0,255,100,0.07);
+            border: 1px solid rgba(0,255,100,0.16);
+            color: #8cffb5;
+        }
+
+        .small-note {
+            margin-top: 22px;
+            color: rgba(216,216,216,0.75);
+            font-size: 0.98rem;
+        }
+
+        .terminal {
+            margin-top: 25px;
+            background: rgba(0,0,0,0.72);
+            border: 1px solid rgba(0,255,100,0.16);
+            border-radius: 18px;
+            padding: 22px;
+            text-align: left;
+            font-family: monospace;
+            color: #8cffb5;
+            box-shadow: inset 0 0 16px rgba(0,255,100,0.04);
+        }
+
+        .terminal p {
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: #8cffb5;
+            margin-bottom: 8px;
+        }
+
+        .back-home {
+            margin-top: 55px;
+        }
+
+        footer {
+            margin-top: 55px;
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+            .server-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .hero-card,
+            .info-card {
+                padding: 28px 20px;
+            }
+
+            .button-wrap {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <main class="page">
+
+        <div class="server-status">
+            Server Coming Soon
+        </div>
+
+        <h1>Join the Server</h1>
+
+        <p class="subtitle">
+            The McBeth Gaming Community Server is being built for followers,
+            survivors, and community members who want a family-friendly
+            7 Days to Die experience full of teamwork, chaos, and horde-night memories.
+        </p>
+
+        <section class="hero-card">
+
+            <h2>McBeth Gaming Community Server</h2>
+
+            <p>
+                This server is being created for the McBeth Gaming community —
+                followers, supporters, and familiar survivors who want to play,
+                build, loot, fight, and survive together.
+            </p>
+
+            <p>
+                Access will be community-focused instead of wide-open public.
+                That helps keep the server safer, more respectful, and more fun
+                for everyone who joins.
+            </p>
+
+            <div class="server-grid">
+
+                <div class="feature-box">
+                    <h3>Follower Focused</h3>
+                    <p>
+                        Built for people who follow and support the McBeth Gaming community.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Family Friendly</h3>
+                    <p>
+                        Keep it fun, respectful, and clean. Fun Not Foul.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>7 Days to Die</h3>
+                    <p>
+                        Survival, building, looting, horde nights, events, and community chaos.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="info-card">
+
+            <h2>How Access Will Work</h2>
+
+            <p>
+                When the server opens, access details will be shared with approved
+                community members. This helps protect the server from trolls,
+                griefing, and random players who are not part of the community.
+            </p>
+
+            <p>
+                Followers and active community members will be the first group
+                considered for access.
+            </p>
+
+            <div class="terminal">
+                <p>&gt; SERVER STATUS: BUILDING...</p>
+                <p>&gt; ACCESS TYPE: COMMUNITY FOCUSED</p>
+                <p>&gt; WORLD TYPE: MODDED SURVIVAL</p>
+                <p>&gt; RULESET: FAMILY FRIENDLY</p>
+                <p>&gt; HORDE THREAT: INCOMING...</p>
+            </div>
+
+        </section>
+
+        <section class="info-card">
+
+            <h2>Server Rules</h2>
+
+            <p>
+                The final rules will be posted before launch, but the goal is simple:
+                keep the server fun, fair, and welcoming.
+            </p>
+
+            <ul class="rules-list">
+                <li>Keep it family friendly.</li>
+                <li>No griefing, stealing, or ruining other players’ builds.</li>
+                <li>Respect other survivors and community members.</li>
+                <li>Follow server announcements and event rules.</li>
+                <li>Help keep the McBeth Gaming community fun and welcoming.</li>
+            </ul>
+
+        </section>
+
+        <section class="info-card">
+
+            <h2>Want In?</h2>
+
+            <p>
+                Follow McBeth Gaming and keep an eye on stream announcements,
+                TikTok updates, and the website for launch details.
+            </p>
+
+            <div class="button-wrap">
+
+                <a
+                    class="main-btn"
+                    href="https://www.tiktok.com/@mcbethgaming"
+                    target="_blank"
+                >
+                    Follow on TikTok
+                </a>
+
+                <a
+                    class="main-btn"
+                    href="https://www.twitch.tv/mcbeth_gaming"
+                    target="_blank"
+                >
+                    Follow on Twitch
+                </a>
+
+                <a
+                    class="main-btn ghost-btn"
+                    href="mods.html"
+                >
+                    View Server Mods
+                </a>
+
+            </div>
+
+            <div class="small-note">
+                Server login details will not be posted publicly.
+            </div>
+
+        </section>
+
+        <div class="back-home">
+            <a class="main-btn ghost-btn" href="index.html">
+                ← Return Home
+            </a>
+        </div>
+
+        <footer>
+            © 2026 McBeth Gaming — Fun Not Foul
+        </footer>
+
+    </main>
+
+</body>
+</html>
