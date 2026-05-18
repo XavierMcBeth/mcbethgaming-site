@@ -7,33 +7,13 @@
 
     <title>About McBeth Gaming</title>
 
-    <meta name="description" content="About McBeth Gaming, a family-friendly 7 Days to Die gaming creator focused on livestreams, mods, community servers, tutorials, survival gameplay, and creator events." />
-
-    <meta property="og:title" content="About McBeth Gaming" />
-    <meta property="og:description" content="McBeth Gaming is a family-friendly 7 Days to Die gaming creator focused on livestreams, mods, survival gameplay, tutorials, and community events." />
-    <meta property="og:image" content="https://www.mcbethgaming.com/images/logo.png" />
-    <meta property="og:url" content="https://www.mcbethgaming.com/about.html" />
-    <meta property="og:type" content="website" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "McBeth Gaming",
-      "url": "https://www.mcbethgaming.com",
-      "logo": "https://www.mcbethgaming.com/images/logo.png",
-      "sameAs": [
-        "https://www.tiktok.com/@mcbethgaming",
-        "https://www.twitch.tv/mcbeth_gaming"
-      ],
-      "description": "McBeth Gaming is a family-friendly gaming creator focused on 7 Days to Die gameplay, livestreams, tutorials, mods, survival content, community servers, and creator events."
-    }
-    </script>
+    <meta name="description" content="Learn more about McBeth Gaming, a family-friendly 7 Days to Die creator focused on survival gameplay, livestreams, mods, community servers, and creator events." />
 
     <link rel="icon" href="/full-logo-favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -44,202 +24,236 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Rajdhani', sans-serif;
             color: white;
             background:
-                linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.93)),
+                linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.92)),
                 url('images/background.png') center center / cover no-repeat fixed;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .particles {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
+        .overlay {
+            width: 100%;
+            min-height: 100vh;
+            padding-bottom: 80px;
         }
 
-        .particles span {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background: rgba(0,255,100,0.32);
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0,255,100,0.40);
-            animation: floatDust 18s linear infinite;
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(0,0,0,0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,255,100,0.15);
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
         }
 
-        .particles span:nth-child(1) { left: 8%; animation-delay: 0s; }
-        .particles span:nth-child(2) { left: 18%; animation-delay: 3s; }
-        .particles span:nth-child(3) { left: 29%; animation-delay: 6s; }
-        .particles span:nth-child(4) { left: 41%; animation-delay: 2s; }
-        .particles span:nth-child(5) { left: 53%; animation-delay: 8s; }
-        .particles span:nth-child(6) { left: 64%; animation-delay: 4s; }
-        .particles span:nth-child(7) { left: 73%; animation-delay: 7s; }
-        .particles span:nth-child(8) { left: 82%; animation-delay: 1s; }
-        .particles span:nth-child(9) { left: 91%; animation-delay: 5s; }
-
-        @keyframes floatDust {
-            0% {
-                transform: translateY(110vh) scale(0.4);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 0.55;
-            }
-
-            80% {
-                opacity: 0.55;
-            }
-
-            100% {
-                transform: translateY(-10vh) scale(1.1);
-                opacity: 0;
-            }
+        .navbar a {
+            color: #d0d0d0;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.25s ease;
         }
 
-        .page {
-            position: relative;
-            z-index: 1;
-            max-width: 1150px;
-            margin: auto;
-            padding: 45px 20px 80px;
+        .navbar a:hover {
+            color: #00dd66;
+            text-shadow: 0 0 10px rgba(0,255,100,0.35);
+        }
+
+        header {
             text-align: center;
-        }
-
-        .logo {
-            width: 260px;
-            max-width: 90%;
-            margin-bottom: 25px;
-            filter:
-                drop-shadow(0 0 6px rgba(0,255,100,0.35))
-                drop-shadow(0 0 12px rgba(0,255,100,0.18));
+            padding: 60px 20px 30px;
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4.4rem;
+            font-size: 4.2rem;
             color: #00dd66;
             letter-spacing: 3px;
-            margin-bottom: 18px;
             text-shadow:
-                0 0 8px rgba(0,255,100,0.28),
-                0 0 22px rgba(0,255,100,0.14);
+                0 0 5px rgba(0,255,100,0.35),
+                0 0 15px rgba(0,255,100,0.12);
+            margin-bottom: 12px;
         }
 
         .subtitle {
-            max-width: 850px;
-            margin: 0 auto 45px;
-            color: #d0d0d0;
-            font-size: 1.35rem;
-            line-height: 1.7;
+            color: #cfcfcf;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
 
-        .info-card {
-            background: rgba(0,0,0,0.62);
+        .content {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .about-box {
+            background: rgba(0,0,0,0.68);
             border: 1px solid rgba(0,255,100,0.18);
-            border-radius: 26px;
-            padding: 38px 28px;
+            border-radius: 24px;
+            padding: 40px;
             margin-bottom: 35px;
-            box-shadow: 0 0 18px rgba(0,255,100,0.07);
-            backdrop-filter: blur(6px);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.08);
         }
 
-        .info-card h2 {
+        .about-box h2 {
             font-family: 'Orbitron', sans-serif;
             color: #00dd66;
             font-size: 2rem;
             margin-bottom: 18px;
+            text-align: center;
         }
 
-        .info-card p {
-            color: #d6d6d6;
-            font-size: 1.18rem;
+        .about-box p {
+            color: #d5d5d5;
+            font-size: 1.15rem;
             line-height: 1.7;
             margin-bottom: 18px;
+            text-align: center;
         }
 
-        .identity-box {
-            margin-top: 25px;
-            padding: 24px;
-            background: rgba(0,255,100,0.045);
-            border: 1px solid rgba(0,255,100,0.12);
+        .highlight {
+            color: #8cffb5;
+            font-weight: bold;
+        }
+
+        .official-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .official-link-card {
+            display: block;
+            text-decoration: none;
+            padding: 24px 20px;
+            background: rgba(0,255,100,0.05);
+            border: 1px solid rgba(0,255,100,0.18);
             border-radius: 18px;
+            transition: 0.25s ease;
+            text-align: center;
         }
 
-        .identity-box p {
+        .official-link-card:hover {
+            transform: translateY(-4px);
+            background: rgba(0,255,100,0.09);
+            box-shadow:
+                0 0 18px rgba(0,255,100,0.12);
+        }
+
+        .official-link-card span {
+            display: block;
+            color: #8cffb5;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             margin-bottom: 10px;
-            font-size: 1.08rem;
+        }
+
+        .official-link-card strong {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(0,255,100,0.04);
+            border: 1px solid rgba(0,255,100,0.14);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.25s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 0 16px rgba(0,255,100,0.10);
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            margin-bottom: 14px;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #d0d0d0;
         }
 
         .button-wrap {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 16px;
+            text-align: center;
+            margin-top: 40px;
         }
 
-        .main-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 220px;
-            padding: 16px 28px;
+        .return-btn {
+            display: inline-block;
+            padding: 16px 34px;
+            border-radius: 14px;
             background: linear-gradient(135deg, #008c44, #00cc66);
             color: white;
             text-decoration: none;
-            border-radius: 14px;
             font-weight: bold;
-            font-size: 1.08rem;
+            font-size: 1.1rem;
             transition: 0.25s ease;
-            box-shadow: 0 0 14px rgba(0,255,100,0.14);
+            box-shadow:
+                0 0 12px rgba(0,255,100,0.14);
         }
 
-        .main-btn:hover {
+        .return-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 22px rgba(0,255,100,0.22);
-        }
-
-        .ghost-btn {
-            background: rgba(0,255,100,0.07);
-            border: 1px solid rgba(0,255,100,0.16);
-            color: #8cffb5;
+            box-shadow:
+                0 0 18px rgba(0,255,100,0.22);
         }
 
         footer {
-            margin-top: 55px;
-            color: #aaaaaa;
+            text-align: center;
+            margin-top: 70px;
+            color: #999;
             font-size: 0.95rem;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+
+            .feature-grid,
+            .official-links-grid {
+                grid-template-columns: 1fr;
+            }
 
             h1 {
                 font-size: 2.8rem;
             }
 
-            .subtitle {
+            .about-box {
+                padding: 28px 22px;
+            }
+
+            .about-box p {
                 font-size: 1.05rem;
             }
 
-            .info-card {
-                padding: 28px 20px;
-            }
-
-            .button-wrap {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .main-btn {
-                width: 100%;
-                max-width: 320px;
-            }
         }
 
     </style>
@@ -248,61 +262,99 @@
 
 <body>
 
-    <div class="particles">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
+<div class="overlay">
 
-    <main class="page">
+    <nav class="navbar">
 
-        <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
+        <a href="index.html">Home</a>
+        <a href="mods.html">Mods</a>
+        <a href="server.html">Server</a>
+        <a href="where-i-play.html">Where I Play</a>
+
+    </nav>
+
+    <header>
 
         <h1>About McBeth Gaming</h1>
 
         <p class="subtitle">
-            McBeth Gaming is a family-friendly gaming creator and community
-            focused on 7 Days to Die, survival gameplay, livestreams,
-            tutorials, mods, community servers, and creator events.
+            Family Friendly Streaming • Community Survival • 7 Days to Die
         </p>
 
-        <section class="info-card">
+    </header>
+
+    <div class="content">
+
+        <div class="about-box">
 
             <h2>Who Is McBeth Gaming?</h2>
 
             <p>
-                McBeth Gaming creates family-friendly gaming content built around
-                survival games, community gameplay, livestream moments,
-                tutorials, base builds, server updates, and 7 Days to Die content.
+                McBeth Gaming is a <span class="highlight">family-friendly gaming creator</span>
+                centered around the survival world of
+                <span class="highlight">7 Days to Die</span>.
             </p>
 
             <p>
-                The channel focuses on keeping gaming fun, welcoming, and community-driven.
-                Whether it is a horde night, a mod showcase, a server event,
-                or a funny stream moment, the goal is simple:
-                Fun Not Foul.
-            </p>
-
-        </section>
-
-        <section class="info-card">
-
-            <h2>7 Days to Die Community</h2>
-
-            <p>
-                McBeth Gaming is heavily focused on 7 Days to Die content,
-                including survival gameplay, modding, tutorials, POI highlights,
-                server updates, community events, and future follower-focused
-                server experiences.
+                The channel focuses on livestream gameplay, community events,
+                server projects, tutorials, mods, survival challenges,
+                base building, and bringing players together for a fun
+                community-driven experience.
             </p>
 
             <p>
-                McBeth Gaming is also part of The Fun Pimps Creator Program
-                powered by Lurkit.
+                Whether it’s surviving Horde Night, testing crazy mods,
+                building massive bases, or preparing for the next creator event,
+                the goal has always been simple:
+                <span class="highlight">Fun Not Foul.</span>
             </p>
 
-        </section>
+        </div>
 
-        <section class="info-card">
+        <div class="about-box">
+
+            <h2>What You'll Find</h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <h3>Livestreams</h3>
+
+                    <p>
+                        Survival gameplay, horde nights, community events,
+                        challenge runs, and fun moments streamed live.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>Mods & Servers</h3>
+
+                    <p>
+                        Quality-of-life mods, server-side enhancements,
+                        custom community worlds, and future overhaul adventures.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>Community</h3>
+
+                    <p>
+                        Family-friendly gaming focused on teamwork,
+                        helping new players, and building a welcoming community.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="about-box">
 
             <h2>Official Links</h2>
 
@@ -310,48 +362,56 @@
                 These are the main official McBeth Gaming links.
             </p>
 
-            <div class="identity-box">
+            <div class="official-links-grid">
 
-                <p><strong>Website:</strong> mcbethgaming.com</p>
-                <p><strong>TikTok:</strong> @mcbethgaming</p>
-                <p><strong>Twitch:</strong> mcbeth_gaming</p>
+                <a class="official-link-card"
+                   href="https://www.mcbethgaming.com">
+
+                    <span>Website</span>
+
+                    <strong>mcbethgaming.com</strong>
+
+                </a>
+
+                <a class="official-link-card"
+                   href="https://www.tiktok.com/@mcbethgaming"
+                   target="_blank">
+
+                    <span>TikTok</span>
+
+                    <strong>@mcbethgaming</strong>
+
+                </a>
+
+                <a class="official-link-card"
+                   href="https://www.twitch.tv/mcbeth_gaming"
+                   target="_blank">
+
+                    <span>Twitch</span>
+
+                    <strong>mcbeth_gaming</strong>
+
+                </a>
 
             </div>
 
-            <div class="button-wrap">
+        </div>
 
-                <a
-                    class="main-btn"
-                    href="https://www.tiktok.com/@mcbethgaming"
-                    target="_blank"
-                >
-                    TikTok
-                </a>
+        <div class="button-wrap">
 
-                <a
-                    class="main-btn"
-                    href="https://www.twitch.tv/mcbeth_gaming"
-                    target="_blank"
-                >
-                    Twitch
-                </a>
+            <a class="return-btn" href="index.html">
+                ← Return Home
+            </a>
 
-                <a
-                    class="main-btn ghost-btn"
-                    href="index.html"
-                >
-                    ← Return Home
-                </a>
+        </div>
 
-            </div>
+    </div>
 
-        </section>
+    <footer>
+        © 2026 McBeth Gaming — Fun Not Foul
+    </footer>
 
-        <footer>
-            © 2026 McBeth Gaming — Fun Not Foul
-        </footer>
-
-    </main>
+</div>
 
 </body>
 </html>
