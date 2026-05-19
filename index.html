@@ -81,6 +81,7 @@
         #home,
         #links,
         #clips,
+        #crew,
         #nobull {
             scroll-margin-top: 110px;
         }
@@ -392,6 +393,66 @@
             color: white;
         }
 
+        .crew-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .crew-card {
+            background: rgba(0,255,100,0.05);
+            border: 1px solid rgba(0,255,100,0.18);
+            border-radius: 20px;
+            padding: 28px 22px;
+            box-shadow: 0 0 12px rgba(0,255,100,0.06);
+            transition: 0.25s ease;
+        }
+
+        .crew-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 18px rgba(0,255,100,0.14);
+            background: rgba(0,255,100,0.075);
+        }
+
+        .crew-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .crew-role {
+            color: #8cffb5;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .crew-card p {
+            font-size: 1.05rem;
+            color: #d0d0d0;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        .crew-links a {
+            display: inline-block;
+            margin: 6px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #008c44, #00cc66);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s ease;
+        }
+
+        .crew-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 14px rgba(0,255,100,0.2);
+        }
+
         .music-player {
             position: fixed;
             bottom: 10px;
@@ -435,7 +496,8 @@
         }
 
         @media (max-width: 900px) {
-            .video-link-grid {
+            .video-link-grid,
+            .crew-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -508,6 +570,7 @@
             <a href="server.html">Server</a>
             <a href="#clips">Clips</a>
             <a href="mods.html">Mods</a>
+            <a href="#crew">Crew</a>
             <a href="about.html">About</a>
 
             <a href="#nobull">
@@ -661,6 +724,70 @@
                         </div>
 
                     </a>
+
+                </div>
+
+            </div>
+
+            <div class="info-box" id="crew">
+
+                <h2>McBeth Gaming Crew</h2>
+
+                <p>
+                    Meet the crew behind the McBeth Gaming community.
+                </p>
+
+                <div class="crew-grid">
+
+                    <div class="crew-card">
+
+                        <h3>McBeth</h3>
+
+                        <div class="crew-role">
+                            Founder • Streamer • Community Lead
+                        </div>
+
+                        <p>
+                            Family-friendly 7 Days to Die creator focused on survival,
+                            livestreams, mods, community servers, and Fun Not Foul gaming.
+                        </p>
+
+                        <div class="crew-links">
+
+                            <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                                TikTok
+                            </a>
+
+                            <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                                Twitch
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="crew-card">
+
+                        <h3>BoogieFaye00</h3>
+
+                        <div class="crew-role">
+                            Duo Partner • Second in Command • Streamer
+                        </div>
+
+                        <p>
+                            McBeth Gaming crew member, duo partner, and community team member
+                            helping bring the chaos, laughs, and survival energy.
+                        </p>
+
+                        <div class="crew-links">
+
+                            <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">
+                                TikTok
+                            </a>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
