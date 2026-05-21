@@ -627,8 +627,9 @@
                         <h3>PC Giveaway</h3>
 
                         <p>
-                            McBeth Gaming giveaway content and community hype.
-                        </p>
+    McBeth Gaming giveaway content and community hype rising from the
+    <span class="hidden-word">ash</span>.
+</p>
 
                         <div class="watch-btn">
                             Watch on TikTok
@@ -683,10 +684,11 @@
                 <h2>About McBeth Gaming</h2>
 
                 <p>
-                    McBeth Gaming is a family-friendly 7 Days to Die gaming creator
-                    focused on survival gameplay, livestreams, tutorials, mods,
-                    community servers, creator events, and building a fun community.
-                </p>
+    McBeth Gaming is a family-friendly 7 Days to Die gaming creator
+    focused on survival gameplay, livestreams, tutorials, mods,
+    community servers, creator events, and building a fun community
+    forever <span class="hidden-word">bound</span> to survival.
+</p>
 
                 <a
                     class="affiliate-btn"
@@ -733,30 +735,34 @@
 <script>
 
     let secretCode = "";
-    const targetCode = "7DAYSTODIE";
 
     document.addEventListener("keydown", (e) => {
 
         const key = e.key.toUpperCase().replace(/[^A-Z0-9]/g, "");
 
-        if (!key) {
-            return;
-        }
+        if (!key) return;
 
         secretCode += key;
 
-        if (secretCode.length > targetCode.length) {
-            secretCode = secretCode.slice(-targetCode.length);
+        if (secretCode.length > 30) {
+            secretCode = secretCode.slice(-30);
         }
 
-        if (secretCode === targetCode) {
+        /* LEGEND SECRET */
+
+        if (secretCode.includes("7DAYSTODIE")) {
             window.location.href = "legend.html";
+        }
+
+        /* INFERNAL SECRET */
+
+        if (secretCode.includes("ASHBOUND")) {
+            window.location.href = "infernal.html";
         }
 
     });
 
 </script>
-
 <script>
 
     const music = document.getElementById('bgMusic');
