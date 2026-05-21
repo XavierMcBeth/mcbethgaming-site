@@ -216,7 +216,7 @@
         }
 
         .server-wrap {
-            margin-bottom: 45px;
+            margin-bottom: 30px;
             position: relative;
         }
 
@@ -253,15 +253,33 @@
             box-shadow: 0 0 14px rgba(0,255,100,0.08);
         }
 
-        .tower-clue {
-            position: absolute;
-            bottom: 12px;
-            right: 8%;
-            font-size: 0.72rem;
-            color: rgba(120,255,170,0.16);
+        .signal-clue {
+            max-width: 760px;
+            margin: 0 auto 45px;
+            padding: 16px 22px;
+            background: rgba(0,0,0,0.42);
+            border: 1px solid rgba(0,255,100,0.10);
+            border-radius: 14px;
+            color: rgba(210,210,210,0.72);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(0,255,100,0.04);
+        }
+
+        .signal-clue strong {
+            color: rgba(140,255,181,0.78);
+            font-weight: bold;
+            text-shadow: 0 0 6px rgba(0,255,100,0.16);
+        }
+
+        .signal-label {
+            display: block;
+            color: rgba(140,255,181,0.55);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
             letter-spacing: 2px;
-            font-style: italic;
-            pointer-events: none;
+            margin-bottom: 6px;
         }
 
         .buttons {
@@ -486,6 +504,11 @@
                 font-size: 0.72rem;
                 width: 90%;
             }
+
+            .signal-clue {
+                font-size: 0.85rem;
+                padding: 14px 16px;
+            }
         }
 
     </style>
@@ -561,10 +584,13 @@
                     COMMUNITY SERVER COMING SOON
                 </div>
 
-                <div class="tower-clue">
-                    ...listen carefully to the tower.
-                </div>
+            </div>
 
+            <div class="signal-clue">
+                <span class="signal-label">/// WEAK SIGNAL RECEIVED ///</span>
+                Some survivors say the first rule is to <strong>type</strong> when the world goes quiet.
+                They counted <strong>7</strong> long <strong>days</strong> before learning where <strong>to</strong>
+                make their final stand... or <strong>die</strong>.
             </div>
 
             <div class="buttons" id="links">
@@ -745,7 +771,13 @@
 
     document.addEventListener("keydown", (e) => {
 
-        secretCode += e.key.toUpperCase();
+        const key = e.key.toUpperCase().replace(/[^A-Z0-9]/g, "");
+
+        if (!key) {
+            return;
+        }
+
+        secretCode += key;
 
         if (secretCode.length > targetCode.length) {
             secretCode = secretCode.slice(-targetCode.length);
