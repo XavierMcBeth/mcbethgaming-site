@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Infernal Contract | McBeth Gaming</title>
+
+    <link rel="icon" href="/full-logo-favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at center, rgba(255,70,0,0.20), rgba(0,0,0,0.95) 55%),
+                linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.95)),
+                url('images/background.png') center center / cover no-repeat fixed;
+            overflow-x: hidden;
+        }
+
+        .embers {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .embers span {
+            position: absolute;
+            bottom: -20px;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,100,0,0.75);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255,90,0,0.9);
+            animation: emberRise 9s linear infinite;
+        }
+
+        .embers span:nth-child(1) { left: 8%; animation-delay: 0s; }
+        .embers span:nth-child(2) { left: 18%; animation-delay: 2s; }
+        .embers span:nth-child(3) { left: 28%; animation-delay: 4s; }
+        .embers span:nth-child(4) { left: 42%; animation-delay: 1s; }
+        .embers span:nth-child(5) { left: 55%; animation-delay: 5s; }
+        .embers span:nth-child(6) { left: 67%; animation-delay: 3s; }
+        .embers span:nth-child(7) { left: 78%; animation-delay: 6s; }
+        .embers span:nth-child(8) { left: 90%; animation-delay: 2.5s; }
+
+        @keyframes emberRise {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contract {
+            width: 100%;
+            max-width: 850px;
+            background:
+                linear-gradient(rgba(30,5,0,0.88), rgba(0,0,0,0.92));
+            border: 1px solid rgba(255,85,0,0.42);
+            border-radius: 26px;
+            padding: 45px 32px;
+            box-shadow:
+                0 0 22px rgba(255,70,0,0.22),
+                inset 0 0 35px rgba(255,60,0,0.08);
+        }
+
+        .warning {
+            font-family: 'Orbitron', sans-serif;
+            color: rgba(255,150,80,0.82);
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.8rem;
+            color: #ff4b1f;
+            text-shadow:
+                0 0 8px rgba(255,70,0,0.55),
+                0 0 22px rgba(255,40,0,0.25);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.35rem;
+            color: #f0c0a0;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .contract-body {
+            max-width: 700px;
+            margin: auto;
+            color: #e6d0c5;
+            font-size: 1.22rem;
+            line-height: 1.7;
+        }
+
+        .reward {
+            margin: 35px auto;
+            padding: 24px;
+            max-width: 600px;
+            background: rgba(255,70,0,0.08);
+            border: 1px solid rgba(255,100,0,0.35);
+            border-radius: 18px;
+            box-shadow: inset 0 0 18px rgba(255,70,0,0.08);
+        }
+
+        .reward strong {
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.7rem;
+            color: #ff8a3d;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(255,90,0,0.32);
+        }
+
+        .code-box {
+            margin: 30px auto;
+            padding: 18px 24px;
+            max-width: 360px;
+            border: 1px dashed rgba(255,120,0,0.5);
+            border-radius: 16px;
+            color: #ffb27a;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 4px;
+            font-size: 1.45rem;
+            background: rgba(0,0,0,0.42);
+        }
+
+        .claim {
+            margin-top: 30px;
+        }
+
+        .claim a {
+            display: inline-block;
+            padding: 16px 34px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #7a1200, #ff4b1f);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15rem;
+            box-shadow:
+                0 0 16px rgba(255,70,0,0.35);
+            transition: 0.25s ease;
+        }
+
+        .claim a:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 0 24px rgba(255,70,0,0.55);
+        }
+
+        .small-print {
+            margin-top: 28px;
+            color: rgba(230,200,190,0.62);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .return-home {
+            margin-top: 28px;
+        }
+
+        .return-home a {
+            color: #ff9c66;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .return-home a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.6rem;
+            }
+
+            .contract {
+                padding: 34px 22px;
+            }
+
+            .contract-body {
+                font-size: 1.05rem;
+            }
+
+            .reward strong {
+                font-size: 1.3rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="embers">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <main class="page">
+
+        <section class="contract">
+
+            <div class="warning">
+                /// INFERNAL CONTRACT FOUND ///
+            </div>
+
+            <h1>ASHBOUND</h1>
+
+            <p class="subtitle">
+                You found something that should have stayed buried.
+            </p>
+
+            <div class="contract-body">
+
+                <p>
+                    The wasteland remembers your name.
+                    By uncovering this contract, you have earned the right
+                    to unleash chaos during the next McBeth Gaming livestream.
+                </p>
+
+                <div class="reward">
+                    <strong>Reward Unlocked</strong>
+                    100 Infernal Zombie spawns on the next stream.
+                </div>
+
+                <p>
+                    Present this contract code during the next livestream
+                    or send it to McBeth Gaming before the stream begins.
+                </p>
+
+                <div class="code-box">
+                    ASHBOUND
+                </div>
+
+                <div class="claim">
+                    <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                        Claim Your Chaos
+                    </a>
+                </div>
+
+                <p class="small-print">
+                    One Infernal Contract may be claimed per stream unless McBeth says otherwise.
+                    The contract holder accepts all consequences, including panic,
+                    screaming, questionable survival decisions, and possible total base failure.
+                </p>
+
+                <div class="return-home">
+                    <a href="index.html">← Return Home</a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
