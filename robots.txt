@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /legend.html
+Disallow: /infernal.html
+Disallow: /secret.html
+
 Sitemap: https://www.mcbethgaming.com/sitemap.xml
