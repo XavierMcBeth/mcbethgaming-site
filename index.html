@@ -79,6 +79,13 @@
             text-shadow: 0 0 8px rgba(0,255,100,0.35);
         }
 
+        .hidden-word {
+            font-family: 'Orbitron', sans-serif;
+            color: rgba(140,255,181,0.9);
+            font-style: italic;
+            text-shadow: 0 0 6px rgba(0,255,100,0.18);
+        }
+
         #home,
         #links,
         #clips,
@@ -217,7 +224,7 @@
         }
 
         .server-wrap {
-            margin-bottom: 30px;
+            margin-bottom: 45px;
             position: relative;
         }
 
@@ -252,35 +259,6 @@
             text-transform: uppercase;
             backdrop-filter: blur(6px);
             box-shadow: 0 0 14px rgba(0,255,100,0.08);
-        }
-
-        .signal-clue {
-            max-width: 760px;
-            margin: 0 auto 45px;
-            padding: 16px 22px;
-            background: rgba(0,0,0,0.42);
-            border: 1px solid rgba(0,255,100,0.10);
-            border-radius: 14px;
-            color: rgba(210,210,210,0.72);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(0,255,100,0.04);
-        }
-
-        .signal-clue em {
-            color: rgba(140,255,181,0.78);
-            font-style: italic;
-            text-shadow: 0 0 6px rgba(0,255,100,0.16);
-        }
-
-        .signal-label {
-            display: block;
-            color: rgba(140,255,181,0.55);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
         }
 
         .buttons {
@@ -505,11 +483,6 @@
                 font-size: 0.72rem;
                 width: 90%;
             }
-
-            .signal-clue {
-                font-size: 0.85rem;
-                padding: 14px 16px;
-            }
         }
 
     </style>
@@ -566,7 +539,7 @@
             <h1>McBeth Gaming</h1>
 
             <p class="subtitle">
-                Family Friendly Streaming • Community Survival • 7 Days to Die
+                Family Friendly Streaming • Community Survival • <span class="hidden-word">7</span> <span class="hidden-word">Days</span> to Die
             </p>
 
         </header>
@@ -584,20 +557,6 @@
                 <div class="server-coming">
                     COMMUNITY SERVER COMING SOON
                 </div>
-
-            </div>
-
-            <div class="signal-clue">
-
-                <span class="signal-label">
-                    /// WEAK SIGNAL RECEIVED ///
-                </span>
-
-                Most survivors learned quickly that broken radio signals only made sense when pieced
-                <em>together</em>. The old military archives warned civilians to travel
-                <em>without</em> stopping once the infection spread beyond the cities.
-                By the time the broadcasts ended, nobody remembered how the world looked with
-                <em>spaces</em> between the dead.
 
             </div>
 
@@ -637,7 +596,7 @@
 
                 <p>
                     Check out some pinned McBeth Gaming videos — tutorials,
-                    giveaways, and 7 Days to Die community content.
+                    giveaways, and every <span class="hidden-word">type</span> of 7 Days to Die community content.
                 </p>
 
                 <div class="video-link-grid">
@@ -648,7 +607,7 @@
 
                         <span class="video-label">Pinned Video</span>
 
-                        <h3>How to Mod 7 Days to Die</h3>
+                        <h3>How <span class="hidden-word">to</span> Mod 7 Days to Die</h3>
 
                         <p>
                             Quick tutorial for getting mods set up and running.
@@ -687,7 +646,7 @@
                         <h3>Top 5 POI's</h3>
 
                         <p>
-                            Top 5 7 Days to Die POIs for players and builders.
+                            Top 5 7 Days to <span class="hidden-word">Die</span> POIs for players and builders.
                         </p>
 
                         <div class="watch-btn">
