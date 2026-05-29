@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bunker Breach | McBeth Gaming</title>
+
+    <link rel="icon" href="/full-logo-favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.95)),
+                url('images/background.png') center center / cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            overflow-x: hidden;
+        }
+
+        .bunker-box {
+            max-width: 850px;
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,0.72);
+            border: 2px solid rgba(0,255,100,0.35);
+            border-radius: 24px;
+            padding: 45px 28px;
+            box-shadow:
+                0 0 18px rgba(0,255,100,0.18),
+                inset 0 0 18px rgba(0,255,100,0.06);
+            animation: pulseBox 6s infinite ease-in-out;
+        }
+
+        @keyframes pulseBox {
+            0%, 100% {
+                box-shadow:
+                    0 0 18px rgba(0,255,100,0.18),
+                    inset 0 0 18px rgba(0,255,100,0.06);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 26px rgba(0,255,100,0.28),
+                    inset 0 0 22px rgba(0,255,100,0.10);
+            }
+        }
+
+        .status {
+            color: #8cffb5;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            font-size: 3rem;
+            margin-bottom: 18px;
+            text-shadow:
+                0 0 6px rgba(0,255,100,0.45),
+                0 0 16px rgba(0,255,100,0.22);
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #d0d0d0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .reward {
+            margin: 34px auto;
+            padding: 28px;
+            max-width: 650px;
+            border-radius: 18px;
+            border: 1px solid rgba(0,255,100,0.28);
+            background: rgba(0,255,100,0.05);
+            box-shadow:
+                inset 0 0 14px rgba(0,255,100,0.05);
+        }
+
+        .reward h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+        }
+
+        .challenge {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        .code-box {
+            margin: 28px auto 10px;
+            padding: 18px 25px;
+            max-width: 420px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.85);
+            border: 1px dashed rgba(0,255,100,0.55);
+            color: #8cffb5;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.7rem;
+            letter-spacing: 4px;
+            box-shadow: 0 0 14px rgba(0,255,100,0.12);
+        }
+
+        .small {
+            font-size: 1rem;
+            color: #aaaaaa;
+            margin-top: 18px;
+        }
+
+        .warning {
+            margin-top: 25px;
+            color: #7dffb0;
+            font-style: italic;
+            opacity: 0.92;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #008c44, #00cc66);
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 0 12px rgba(0,255,100,0.18);
+            transition: 0.25s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 18px rgba(0,255,100,0.28);
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            p {
+                font-size: 1.05rem;
+            }
+
+            .challenge {
+                font-size: 1.1rem;
+            }
+
+            .code-box {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+
+            .bunker-box {
+                padding: 35px 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bunker-box">
+
+        <div class="status">
+            HIDDEN BUNKER TERMINAL ACCESSED
+        </div>
+
+        <h1>Bunker Breach</h1>
+
+        <p>
+            You found the hidden system glitch buried inside the McBeth Gaming bunker network.
+        </p>
+
+        <div class="reward">
+
+            <h2>Unlocked Challenge</h2>
+
+            <p class="challenge">
+                Spawn <strong>300 zombies</strong> that McBeth must eliminate using only a <strong>Stun Baton</strong>.
+            </p>
+
+            <div class="code-box">
+                BUNKERBREACH
+            </div>
+
+            <p class="small">
+                Screenshot this page or send the code to McBeth Gaming to activate the challenge.
+            </p>
+
+        </div>
+
+        <p class="warning">
+            One baton. 300 zombies. No escape.
+        </p>
+
+        <a class="home-btn" href="index.html">
+            Return to Base
+        </a>
+
+    </div>
+
+</body>
+</html>
