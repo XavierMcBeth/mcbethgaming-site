@@ -34,8 +34,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
 
@@ -56,6 +58,26 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 100, 0.2);
+            border-radius: 5px;
+            border: 1px solid rgba(0, 255, 100, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 100, 0.4);
+            box-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
         }
 
         body {
@@ -88,6 +110,7 @@
         #home,
         #links,
         #clips,
+        #crew,
         #nobull {
             scroll-margin-top: 110px;
         }
@@ -176,6 +199,10 @@
             color: #00dd66;
             text-shadow: 0 0 8px rgba(0,255,100,0.35);
         }
+
+        /* =========================
+           MODS GLITCH EASTER EGG
+        ========================= */
 
         .glitch-link {
             position: relative;
@@ -301,17 +328,17 @@
             top: 28px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.72);
-            border: 1px solid rgba(0,255,100,0.22);
-            color: #8cffb5;
+            background: rgba(20, 0, 0, 0.82);
+            border: 1px solid rgba(255, 50, 50, 0.5);
+            color: #ff8c8c;
             padding: 12px 22px;
             border-radius: 14px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            letter-spacing: 2px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
             backdrop-filter: blur(6px);
-            box-shadow: 0 0 14px rgba(0,255,100,0.08);
+            box-shadow: 0 0 14px rgba(255, 50, 50, 0.25);
         }
 
         .buttons {
@@ -442,6 +469,77 @@
             color: white;
         }
 
+        .crew-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .crew-card {
+            background: rgba(0,255,100,0.05);
+            border: 1px solid rgba(0,255,100,0.18);
+            border-radius: 20px;
+            padding: 28px 22px;
+            box-shadow: 0 0 12px rgba(0,255,100,0.06);
+            transition: 0.25s ease;
+        }
+
+        .crew-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 18px rgba(0,255,100,0.14);
+            background: rgba(0,255,100,0.075);
+        }
+
+        .crew-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00dd66;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transition: 0.25s ease;
+        }
+
+        /* Neon Text Glow for Card Titles */
+        .crew-card:hover h3 {
+            color: #00ff66;
+            text-shadow: 0 0 10px rgba(0, 255, 100, 0.6);
+        }
+
+        .crew-role {
+            color: #8cffb5;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .crew-card p {
+            font-size: 1.05rem;
+            color: #d0d0d0;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        .crew-links a {
+            display: inline-block;
+            margin: 6px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #008c44, #00cc66);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s ease;
+        }
+
+        .crew-links a i {
+            margin-right: 6px;
+        }
+
+        .crew-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 14px rgba(0,255,100,0.2);
+        }
+
         .music-player {
             position: fixed;
             bottom: 10px;
@@ -452,6 +550,11 @@
             border-radius: 16px;
             border: 1px solid rgba(0,255,100,0.22);
             backdrop-filter: blur(6px);
+        }
+
+        /* Inversion UI Theme filter for standard audio module */
+        .music-player audio {
+            filter: invert(90%) hue-rotate(90deg) brightness(90%);
         }
 
         .music-credit {
@@ -485,7 +588,8 @@
         }
 
         @media (max-width: 900px) {
-            .video-link-grid {
+            .video-link-grid,
+            .crew-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -534,7 +638,7 @@
 
             .server-coming {
                 font-size: 0.72rem;
-                width: 90%;
+                width: 92%;
             }
         }
 
@@ -567,6 +671,7 @@
                 </span>
             </a>
 
+            <a href="#crew">Crew</a>
             <a href="about.html">About</a>
 
             <a href="#nobull">
@@ -601,7 +706,7 @@
             <h1>McBeth Gaming</h1>
 
             <p class="subtitle">
-                Family Friendly Streaming • Community Survival • <span class="hidden-word">7</span> <span class="hidden-word">Days</span> to Die
+                Family Friendly Streaming • Community Survival • <span class="hidden-word">7</span> <span class="hidden-word">Days</span> to Die[cite: 5]
             </p>
 
         </header>
@@ -617,7 +722,7 @@
                 >
 
                 <div class="server-coming">
-                    COMMUNITY SERVER COMING SOON
+                    SERVER WIPE COMING POST-STREAMERS WEEKEND (6/12 - 6/14)
                 </div>
 
             </div>
@@ -662,7 +767,7 @@
 
                 <p>
                     Check out some pinned McBeth Gaming videos — tutorials,
-                    giveaways, and every <span class="hidden-word">type</span> of 7 Days to Die community content.
+                    giveaways, and every <span class="hidden-word">type</span> of 7 Days to Die community content.[cite: 5]
                 </p>
 
                 <div class="video-link-grid">
@@ -673,10 +778,10 @@
 
                         <span class="video-label">Pinned Video</span>
 
-                        <h3>How <span class="hidden-word">to</span> Mod 7 Days to Die</h3>
+                        <h3>How <span class="hidden-word">to</span> Mod 7 Days to Die</h3>[cite: 5]
 
                         <p>
-                            Quick tutorial for getting mods set up and running.
+                            Quick tutorial for getting mods set up and running.[cite: 5]
                         </p>
 
                         <div class="watch-btn">
@@ -695,7 +800,7 @@
 
                         <p>
                             McBeth Gaming giveaway content and community hype rising from the
-                            <span class="hidden-word">ash</span>.
+                            <span class="hidden-word">ash</span>.[cite: 5]
                         </p>
 
                         <div class="watch-btn">
@@ -713,7 +818,7 @@
                         <h3>Top 5 POI's</h3>
 
                         <p>
-                            Top 5 7 Days to <span class="hidden-word">Die</span> POIs for players and builders.
+                            Top 5 7 Days to <span class="hidden-word">Die</span> POIs for players and builders.[cite: 5]
                         </p>
 
                         <div class="watch-btn">
@@ -726,6 +831,71 @@
 
             </div>
 
+            <div class="info-box" id="crew">
+
+                <h2>McBeth Gaming Crew</h2>
+
+                <p>
+                    Meet the crew behind the McBeth Gaming community.
+                </p>
+
+                <div class="crew-grid">
+
+                    <div class="crew-card">
+
+                        <h3>McBeth</h3>
+
+                        <div class="crew-role">
+                            Founder • Streamer • Community Lead
+                        </div>
+
+                        <p>
+                            Founder of McBeth Gaming and creator of family-friendly survival content.
+                            Focused on building an active community through livestreams, tutorials,
+                            servers, events, and the Fun Not Foul philosophy.
+                        </p>
+
+                        <div class="crew-links">
+
+                            <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+
+                            <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                                <i class="fab fa-twitch"></i> Twitch
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="crew-card">
+
+                        <h3>BoogieFaye00</h3>
+
+                        <div class="crew-role">
+                            Duo Partner • Second in Command • Streamer
+                        </div>
+
+                        <p>
+                            Duo Partner and Second in Command of McBeth Gaming. Known for bringing
+                            energy, teamwork, and plenty of laughs while helping create a welcoming,
+                            family-friendly community where everyone feels at home.
+                        </p>
+
+                        <div class="crew-links">
+
+                            <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
             <div class="info-box">
 
                 <h2>Server Mods</h2>
@@ -733,7 +903,7 @@
                 <p>
                     The McBeth Gaming community server runs a curated mod collection
                     focused on quality-of-life upgrades, better building, improved loot,
-                    and smoother community gameplay.
+                    and smoother community gameplay.[cite: 5]
                 </p>
 
                 <a
@@ -754,7 +924,7 @@
                     McBeth Gaming is a family-friendly 7 Days to Die gaming creator
                     focused on survival gameplay, livestreams, tutorials, mods,
                     community servers, creator events, and building a fun community
-                    forever <span class="hidden-word">bound</span> to survival.
+                    forever <span class="hidden-word">bound</span> to survival.[cite: 5]
                 </p>
 
                 <a
@@ -772,12 +942,12 @@
                 <h2>Powered By NoBull Networks</h2>
 
                 <p>
-                    Looking for a great game server host for your community?
+                    Looking for a great game server host for your community?[cite: 5]
 
-                    McBeth Gaming is proudly powered by NoBull Networks.
+                    McBeth Gaming is proudly powered by NoBull Networks.[cite: 5]
 
                     Fast servers, reliable support, and great performance
-                    for survival gaming communities.
+                    for survival gaming communities.[cite: 5]
                 </p>
 
                 <a
@@ -794,7 +964,7 @@
         </div>
 
         <footer>
-            © 2026 McBeth Gaming — Fun Not Foul
+            © 2026 McBeth Gaming — Fun Not Foul[cite: 5]
         </footer>
 
     </div>
@@ -830,12 +1000,17 @@
 <script>
 
     const music = document.getElementById('bgMusic');
+    const musicStartText = document.querySelector('.music-start');
 
-music.volume = 0.15;
+    music.volume = 0.15;
 
-document.body.addEventListener('click', () => {
-    music.play();
-}, { once: true });
+    document.body.addEventListener('click', () => {
+        music.play().then(() => {
+            if (musicStartText) {
+                musicStartText.textContent = "🔊 Ambient Music Playing";
+            }
+        }).catch(err => console.log("Audio play blocked:", err));
+    }, { once: true });
 
 </script>
 
