@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59920LRSF"></script>
 
@@ -56,6 +58,26 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 100, 0.2);
+            border-radius: 5px;
+            border: 1px solid rgba(0, 255, 100, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 100, 0.4);
+            box-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
         }
 
         body {
@@ -474,6 +496,13 @@
             color: #00dd66;
             font-size: 1.5rem;
             margin-bottom: 10px;
+            transition: 0.25s ease;
+        }
+
+        /* Neon Text Glow for Card Titles */
+        .crew-card:hover h3 {
+            color: #00ff66;
+            text-shadow: 0 0 10px rgba(0, 255, 100, 0.6);
         }
 
         .crew-role {
@@ -502,6 +531,10 @@
             transition: 0.25s ease;
         }
 
+        .crew-links a i {
+            margin-right: 6px;
+        }
+
         .crew-links a:hover {
             transform: translateY(-2px);
             box-shadow: 0 0 14px rgba(0,255,100,0.2);
@@ -517,6 +550,11 @@
             border-radius: 16px;
             border: 1px solid rgba(0,255,100,0.22);
             backdrop-filter: blur(6px);
+        }
+
+        /* Inversion UI Theme filter for standard audio module */
+        .music-player audio {
+            filter: invert(90%) hue-rotate(90deg) brightness(90%);
         }
 
         .music-credit {
@@ -805,55 +843,55 @@
 
                     <div class="crew-card">
 
-    <h3>McBeth</h3>
+                        <h3>McBeth</h3>
 
-    <div class="crew-role">
-        Founder • Streamer • Community Lead
-    </div>
+                        <div class="crew-role">
+                            Founder • Streamer • Community Lead
+                        </div>
 
-    <p>
-        Founder of McBeth Gaming and creator of family-friendly survival content.
-        Focused on building an active community through livestreams, tutorials,
-        servers, events, and the Fun Not Foul philosophy.
-    </p>
+                        <p>
+                            Founder of McBeth Gaming and creator of family-friendly survival content.
+                            Focused on building an active community through livestreams, tutorials,
+                            servers, events, and the Fun Not Foul philosophy.[cite: 3]
+                        </p>
 
-    <div class="crew-links">
+                        <div class="crew-links">
 
-        <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
-            TikTok
-        </a>
+                            <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
 
-        <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
-            Twitch
-        </a>
+                            <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                                <i class="fab fa-twitch"></i> Twitch
+                            </a>
 
-    </div>
+                        </div>
 
-</div>
+                    </div>
 
-<div class="crew-card">
+                    <div class="crew-card">
 
-    <h3>BoogieFaye00</h3>
+                        <h3>BoogieFaye00</h3>
 
-    <div class="crew-role">
-        Duo Partner • Second in Command • Streamer
-    </div>
+                        <div class="crew-role">
+                            Duo Partner • Second in Command • Streamer
+                        </div>
 
-    <p>
-        Duo Partner and Second in Command of McBeth Gaming. Known for bringing
-        energy, teamwork, and plenty of laughs while helping create a welcoming,
-        family-friendly community where everyone feels at home.
-    </p>
+                        <p>
+                            Duo Partner and Second in Command of McBeth Gaming. Known for bringing
+                            energy, teamwork, and plenty of laughs while helping create a welcoming,
+                            family-friendly community where everyone feels at home.[cite: 3]
+                        </p>
 
-    <div class="crew-links">
+                        <div class="crew-links">
 
-        <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">
-            TikTok
-        </a>
+                            <a href="https://www.tiktok.com/@boogiefaye_00" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
 
-    </div>
+                        </div>
 
-</div>
+                    </div>
                 </div>
 
             </div>
@@ -964,7 +1002,7 @@
     const music = document.getElementById('bgMusic');
     const musicStartText = document.querySelector('.music-start');
 
-    music.volume = 0.05;
+    music.volume = 0.15;
 
     document.body.addEventListener('click', () => {
         music.play().then(() => {
@@ -978,5 +1016,3 @@
 
 </body>
 </html>
-
-```
