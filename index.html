@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>McBeth Gaming | Server Live</title>
+    <title>McBeth Gaming</title>
 
     <meta name="description" content="McBeth Gaming is a family-friendly 7 Days to Die gaming creator focused on livestreams, mods, community servers, survival gameplay, tutorials, and creator events." />
 
@@ -60,7 +60,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Custom Scrollbar Theme - Blood Red Shift */
+        /* Custom Scrollbar Theme */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -70,25 +70,32 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: rgba(255, 0, 50, 0.25);
+            background: rgba(0, 255, 100, 0.2);
             border-radius: 5px;
-            border: 1px solid rgba(255, 0, 50, 0.15);
+            border: 1px solid rgba(0, 255, 100, 0.1);
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 0, 50, 0.45);
-            box-shadow: 0 0 8px rgba(255, 0, 50, 0.6);
+            background: rgba(0, 255, 100, 0.4);
+            box-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
         }
 
-        /* Locked into Crimson Core Theme */
         body {
             font-family: 'Rajdhani', sans-serif;
             color: white;
             background:
-                linear-gradient(rgba(25,0,0,0.85), rgba(40,0,0,0.92)),
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.88)),
                 url('images/background.png') center center / cover no-repeat fixed;
             min-height: 100vh;
             overflow-x: hidden;
+            transition: background 1s ease;
+        }
+
+        /* Dynamic Blood Moon State Triggered by JS */
+        body.blood-moon {
+            background:
+                linear-gradient(rgba(25,0,0,0.85), rgba(40,0,0,0.92)),
+                url('images/background.png') center center / cover no-repeat fixed;
         }
 
         .secret-letter {
@@ -98,8 +105,8 @@
         }
 
         .secret-letter:hover {
-            color: #ff3355;
-            text-shadow: 0 0 8px rgba(255,0,50,0.6);
+            color: #00dd66;
+            text-shadow: 0 0 8px rgba(0,255,100,0.35);
         }
 
         .hidden-word {
@@ -123,15 +130,19 @@
             z-index: 0;
         }
 
-        /* Blood Mist Floating Particles */
         .particles span {
             position: absolute;
             width: 5px;
             height: 5px;
-            background: rgba(255,0,50,0.4);
+            background: rgba(0,255,100,0.35);
             border-radius: 50%;
-            box-shadow: 0 0 8px rgba(255,0,50,0.6);
+            box-shadow: 0 0 8px rgba(0,255,100,0.45);
             animation: floatDust 18s linear infinite;
+        }
+
+        body.blood-moon .particles span {
+            background: rgba(255,0,50,0.4);
+            box-shadow: 0 0 8px rgba(255,0,50,0.6);
         }
 
         .particles span:nth-child(1) { left: 8%; animation-delay: 0s; }
@@ -172,12 +183,17 @@
             z-index: 999;
             background: rgba(0,0,0,0.88);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,0,50,0.35);
+            border-bottom: 1px solid rgba(0,255,100,0.18);
             padding: 14px 20px;
             display: flex;
             justify-content: center;
             gap: 28px;
-            box-shadow: 0 0 14px rgba(255,0,50,0.05);
+            box-shadow: 0 0 14px rgba(0,255,100,0.05);
+            transition: border-color 0.5s ease;
+        }
+
+        body.blood-moon .navbar {
+            border-bottom: 1px solid rgba(255,0,50,0.35);
         }
 
         .navbar a {
@@ -190,8 +206,48 @@
         }
 
         .navbar a:hover {
+            color: #00dd66;
+            text-shadow: 0 0 8px rgba(0,255,100,0.35);
+        }
+
+        body.blood-moon .navbar a:hover {
             color: #ff3355;
             text-shadow: 0 0 8px rgba(255,0,50,0.6);
+        }
+
+        .glitch-link {
+            position: relative;
+        }
+
+        .glitch-link::after {
+            content: "";
+            position: absolute;
+            inset: -5px;
+            border-radius: 6px;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow:
+                0 0 8px rgba(0,255,100,0.55),
+                0 0 18px rgba(0,255,100,0.25);
+            animation: navGlitch 20s infinite;
+        }
+
+        .glitch-edge {
+            position: absolute;
+            right: -12px;
+            top: -8px;
+            width: 16px;
+            height: 32px;
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        @keyframes navGlitch {
+            0%, 92%, 100% { opacity: 0; transform: none; }
+            94% { opacity: 1; transform: skewX(-10deg) translateX(1px); }
+            94.4% { opacity: 0.35; transform: translateX(3px); }
+            94.8% { opacity: 1; transform: translateX(-2px); }
+            95.4% { opacity: 0; transform: none; }
         }
 
         header {
@@ -204,9 +260,15 @@
             max-width: 90%;
             margin-bottom: 10px;
             filter:
+                drop-shadow(0 0 6px rgba(0,255,100,0.35))
+                drop-shadow(0 0 12px rgba(0,255,100,0.18));
+            transition: 0.3s ease;
+        }
+
+        body.blood-moon .logo {
+            filter:
                 drop-shadow(0 0 6px rgba(255,0,50,0.45))
                 drop-shadow(0 0 12px rgba(255,0,50,0.25));
-            transition: 0.3s ease;
         }
 
         .logo:hover {
@@ -218,11 +280,19 @@
             font-size: 4.8rem;
             font-weight: 900;
             letter-spacing: 3px;
+            color: #00dd66;
+            text-shadow:
+                0 0 4px rgba(0,255,100,0.35),
+                0 0 10px rgba(0,255,100,0.18);
+            margin-bottom: 15px;
+            transition: color 0.5s ease, text-shadow 0.5s ease;
+        }
+
+        body.blood-moon h1 {
             color: #ff3355;
             text-shadow:
                 0 0 4px rgba(255,0,50,0.5),
                 0 0 12px rgba(255,0,50,0.3);
-            margin-bottom: 15px;
         }
 
         .subtitle {
@@ -248,42 +318,59 @@
             width: 92%;
             max-width: 1000px;
             border-radius: 25px;
+            border: 2px solid rgba(0,255,100,0.4);
+            box-shadow:
+                0 0 14px rgba(0,255,100,0.18),
+                0 0 28px rgba(0,255,100,0.08);
+            transition: 0.3s ease;
+        }
+
+        body.blood-moon .server-img {
             border: 2px solid rgba(255,50,50,0.5);
             box-shadow:
                 0 0 14px rgba(255,50,50,0.3),
                 0 0 28px rgba(255,50,50,0.15);
-            transition: 0.3s ease;
         }
 
         .server-img:hover {
             transform: scale(1.005);
         }
 
-        /* Active Crimson Alert State Banner */
         .server-coming {
             position: absolute;
             top: 28px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(20, 0, 0, 0.9);
-            border: 2px solid rgba(255, 50, 50, 0.7);
+            background: rgba(20, 0, 0, 0.85);
+            border: 2px solid rgba(255, 50, 50, 0.6);
             color: #ff9999;
-            padding: 16px 24px;
+            padding: 14px 24px;
             border-radius: 14px;
             font-family: 'Orbitron', sans-serif;
             font-size: 1.05rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             backdrop-filter: blur(6px);
-            box-shadow: 0 0 20px rgba(255, 50, 50, 0.45);
+            box-shadow: 0 0 20px rgba(255, 50, 50, 0.35);
             width: auto;
             max-width: 92%;
         }
 
-        /* Pulsing Entry Module Buttons */
+        /* Ticking System Countdown Style */
+        .countdown-timer {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 1.4rem;
+            color: #ff3355;
+            text-shadow: 0 0 10px rgba(255, 0, 50, 0.6);
+            letter-spacing: 2px;
+        }
+
+        /* Live Reset Button Post-Countdown */
         .live-reset-btn {
-            display: inline-block;
-            margin-top: 12px;
+            display: none;
+            margin-top: 15px;
             padding: 12px 28px;
             background: linear-gradient(135deg, #99001b, #ff2449);
             color: white;
@@ -310,19 +397,30 @@
             display: inline-block;
             margin: 12px;
             padding: 16px 34px;
-            background: linear-gradient(135deg, #8a0016, #dd2244);
+            background: linear-gradient(135deg, #008c44, #00cc66);
             color: white;
             text-decoration: none;
             border-radius: 14px;
             font-size: 1.15rem;
             font-weight: bold;
             transition: 0.25s ease;
+            box-shadow: 0 0 10px rgba(0,255,100,0.16);
+        }
+
+        body.blood-moon .buttons a,
+        body.blood-moon .affiliate-btn {
+            background: linear-gradient(135deg, #8a0016, #dd2244);
             box-shadow: 0 0 10px rgba(255,0,50,0.25);
         }
 
         .buttons a:hover,
         .affiliate-btn:hover {
             transform: translateY(-3px);
+            box-shadow: 0 0 16px rgba(0,255,100,0.24);
+        }
+
+        body.blood-moon .buttons a:hover,
+        body.blood-moon .affiliate-btn:hover {
             box-shadow: 0 0 18px rgba(255,0,50,0.45);
         }
 
@@ -335,9 +433,9 @@
         .creator-badge {
             width: 100%;
             max-width: 420px;
-            opacity: 0.85;
+            opacity: 0.92;
             transition: 0.25s ease;
-            filter: drop-shadow(0 0 10px rgba(255,0,50,0.15));
+            filter: drop-shadow(0 0 10px rgba(0,255,100,0.12));
         }
 
         .creator-badge:hover {
@@ -349,23 +447,33 @@
             margin: 55px auto 20px;
             max-width: 1100px;
             background: rgba(0,0,0,0.62);
-            border: 1px solid rgba(255,50,50,0.25);
+            border: 1px solid rgba(0,255,100,0.22);
             border-radius: 20px;
             padding: 35px 25px;
-            box-shadow: 0 0 16px rgba(255,50,50,0.1);
+            box-shadow: 0 0 16px rgba(0,255,100,0.08);
             transition: 0.3s ease;
+        }
+
+        body.blood-moon .info-box {
+            border: 1px solid rgba(255,50,50,0.25);
+            box-shadow: 0 0 16px rgba(255,50,50,0.1);
         }
 
         .info-box:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(255,0,50,0.2);
+            box-shadow: 0 0 20px rgba(0,255,100,0.12);
         }
 
         .info-box h2 {
             font-family: 'Orbitron', sans-serif;
-            color: #ff3355;
+            color: #00dd66;
             margin-bottom: 15px;
             font-size: 2rem;
+            transition: color 0.5s ease;
+        }
+
+        body.blood-moon .info-box h2 {
+            color: #ff3355;
         }
 
         .info-box p {
@@ -385,32 +493,49 @@
         .video-link-card {
             display: block;
             text-decoration: none;
-            background: rgba(255,0,50,0.03);
-            border: 1px solid rgba(255,0,50,0.18);
+            background: rgba(0,255,100,0.05);
+            border: 1px solid rgba(0,255,100,0.2);
             border-radius: 18px;
             padding: 24px 18px;
             color: white;
-            box-shadow: 0 0 12px rgba(255,0,50,0.06);
+            box-shadow: 0 0 12px rgba(0,255,100,0.06);
             transition: 0.25s ease;
+        }
+
+        body.blood-moon .video-link-card {
+            background: rgba(255,0,50,0.03);
+            border: 1px solid rgba(255,0,50,0.18);
         }
 
         .video-link-card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 0 18px rgba(0,255,100,0.14);
+        }
+
+        body.blood-moon .video-link-card:hover {
             box-shadow: 0 0 18px rgba(255,0,50,0.25);
         }
 
         .video-label {
-            color: #ff99aa;
+            color: #8cffb5;
             font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
+        body.blood-moon .video-label {
+            color: #ff99aa;
+        }
+
         .video-link-card h3 {
-            color: #ff3355;
+            color: #00dd66;
             font-family: 'Orbitron', sans-serif;
             font-size: 1.15rem;
             margin: 14px 0;
+        }
+
+        body.blood-moon .video-link-card h3 {
+            color: #ff3355;
         }
 
         .video-link-card p {
@@ -422,10 +547,14 @@
         .watch-btn {
             display: inline-block;
             padding: 10px 18px;
-            background: linear-gradient(135deg, #8a0016, #dd2244);
+            background: linear-gradient(135deg, #008c44, #00cc66);
             border-radius: 12px;
             font-weight: bold;
             color: white;
+        }
+
+        body.blood-moon .watch-btn {
+            background: linear-gradient(135deg, #8a0016, #dd2244);
         }
 
         .music-player {
@@ -436,12 +565,12 @@
             background: rgba(0,0,0,0.85);
             padding: 12px;
             border-radius: 16px;
-            border: 1px solid rgba(255,0,50,0.25);
+            border: 1px solid rgba(0,255,100,0.22);
             backdrop-filter: blur(6px);
         }
 
         .music-player audio {
-            filter: invert(90%) hue-rotate(0deg) brightness(90%);
+            filter: invert(90%) hue-rotate(90deg) brightness(90%);
         }
 
         .music-credit {
@@ -453,13 +582,13 @@
         }
 
         .music-credit a {
-            color: #ff3355;
+            color: #00dd66;
             text-decoration: none;
             font-weight: bold;
         }
 
         .music-start {
-            color: #ff99aa;
+            color: #8cffb5;
             font-size: 0.85rem;
             margin-bottom: 8px;
             text-align: center;
@@ -489,6 +618,7 @@
             .music-player { left: 10px; right: 10px; }
             .music-player audio { width: 100%; }
             .server-coming { font-size: 0.72rem; width: 92%; }
+            .countdown-timer { font-size: 1.1rem; }
         }
 
     </style>
@@ -497,7 +627,6 @@
 
 <body>
 
-    <!-- Red Particles Active -->
     <div class="particles">
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
@@ -506,101 +635,248 @@
     <div class="overlay">
 
         <nav class="navbar">
+
             <a href="#home">Home</a>
             <a href="#links">Links</a>
             <a href="server.html">Server</a>
             <a href="#clips">Clips</a>
-            <a href="mods.html">Mods</a>
+
+            <a href="mods.html" class="glitch-link">
+                Mods
+                <span class="glitch-edge"
+                      onclick="event.preventDefault();
+                               event.stopPropagation();
+                               window.location.href='bunker.html';">
+                </span>
+            </a>
+
             <a href="about.html">About</a>
-            <a href="#nobull">NoBull</a>
+
+            <a href="#nobull">
+                N<span class="secret-letter" onclick="window.location.href='secret.html'">o</span>Bull
+            </a>
+
         </nav>
 
         <div class="music-player">
-            <div class="music-start">Click anywhere for music</div>
+
+            <div class="music-start">
+                Click anywhere for music
+            </div>
+
             <audio id="bgMusic" loop controls>
                 <source src="music/McBeth Online.mp3" type="audio/mpeg">
             </audio>
+
             <div class="music-credit">
-                Theme music created by <a href="https://www.tiktok.com/@skynetkids" target="_blank">@skynetkids</a>
+                Theme music created by
+                <a href="https://www.tiktok.com/@skynetkids" target="_blank">
+                    @skynetkids
+                </a>
             </div>
+
         </div>
 
         <header id="home">
+
             <img class="logo" src="images/logo.png" alt="McBeth Gaming Logo">
+
             <h1>McBeth Gaming</h1>
+
             <p class="subtitle">
                 Family Friendly Streaming • Community Survival • <span class="hidden-word">7</span> <span class="hidden-word">Days</span> to Die
             </p>
+
         </header>
 
         <div class="content">
 
             <div class="server-wrap">
-                <img src="images/server.png" alt="McBeth Gaming Server" class="server-img">
-                
-                <!-- Countdown is completely gone, replaced by the live redirect action item -->
+
+                <img
+                    src="images/server.png"
+                    alt="McBeth Gaming Server"
+                    class="server-img"
+                >
+
+                <!-- Anchor banner and clock precisely to the live date timeline -->
                 <div class="server-coming" id="serverBanner">
-                    <span>🔴 BLOOD MOON ACTIVE • SERVER LIVE</span>
-                    <br>
-                    <a href="infernal.html" class="live-reset-btn">
+                    <span id="bannerStatus">New Server Launch Countdown</span>
+                    <div class="countdown-timer" id="countdownClock">00d 00h 00m 00s</div>
+                    <a href="infernal.html" class="live-reset-btn" id="launchBtn">
                         <i class="fas fa-skull"></i> Enter Infernal Server
                     </a>
                 </div>
+
             </div>
 
             <div class="buttons" id="links">
-                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
-                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                <a href="https://mcbethgaming-shop.fourthwall.com" target="_blank"><i class="fas fa-shopping-bag"></i> Merch Store</a>
-                <a href="server.html"><i class="fas fa-server"></i> Join Server</a>
-                <a href="where-i-play.html"><i class="fas fa-desktop"></i> My PC Build</a>
+
+                <a href="https://www.twitch.tv/mcbeth_gaming" target="_blank">
+                    <i class="fab fa-twitch"></i> Twitch
+                </a>
+
+                <a href="https://www.tiktok.com/@mcbethgaming" target="_blank">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+
+                <a href="https://mcbethgaming-shop.fourthwall.com" target="_blank">
+                    <i class="fas fa-shopping-bag"></i> Merch Store
+                </a>
+
+                <a href="server.html">
+                    <i class="fas fa-server"></i> Join Server
+                </a>
+
+                <a href="where-i-play.html">
+                    <i class="fas fa-desktop"></i> My PC Build
+                </a>
+
             </div>
 
             <div class="creator-badge-wrap">
-                <img src="images/funpimpscreator.png" alt="The Fun Pimps Creator Program" class="creator-badge">
+
+                <img
+                    src="images/funpimpscreator.png"
+                    alt="The Fun Pimps Creator Program"
+                    class="creator-badge"
+                >
+
             </div>
 
             <div class="info-box" id="clips">
+
                 <h2>Featured TikToks</h2>
-                <p>Check out some pinned McBeth Gaming videos — tutorials, giveaways, and every <span class="hidden-word">type</span> of 7 Days to Die community content.</p>
+
+                <p>
+                    Check out some pinned McBeth Gaming videos — tutorials,
+                    giveaways, and every <span class="hidden-word">type</span> of 7 Days to Die community content.
+                </p>
+
                 <div class="video-link-grid">
-                    <a class="video-link-card" href="https://www.tiktok.com/@mcbethgaming/video/7480668502605483294" target="_blank">
+
+                    <a class="video-link-card"
+                       href="https://www.tiktok.com/@mcbethgaming/video/7480668502605483294"
+                       target="_blank">
+
                         <span class="video-label">Pinned Video</span>
+
                         <h3>How <span class="hidden-word">to</span> Mod 7 Days to Die</h3>
-                        <p>Quick tutorial for getting mods set up and running.</p>
-                        <div class="watch-btn">Watch on TikTok</div>
+
+                        <p>
+                            Quick tutorial for getting mods set up and running.
+                        </p>
+
+                        <div class="watch-btn">
+                            Watch on TikTok
+                        </div>
+
                     </a>
-                    <a class="video-link-card" href="https://www.tiktok.com/@mcbethgaming/video/7606514875400981790" target="_blank">
+
+                    <a class="video-link-card"
+                       href="https://www.tiktok.com/@mcbethgaming/video/7606514875400981790"
+                       target="_blank">
+
                         <span class="video-label">Pinned Video</span>
+
                         <h3>PC Giveaway</h3>
-                        <p>McBeth Gaming giveaway content and community hype rising from the <span class="hidden-word">ash</span>.</p>
-                        <div class="watch-btn">Watch on TikTok</div>
+
+                        <p>
+                            McBeth Gaming giveaway content and community hype rising from the
+                            <span class="hidden-word">ash</span>.
+                        </p>
+
+                        <div class="watch-btn">
+                            Watch on TikTok
+                        </div>
+
                     </a>
-                    <a class="video-link-card" href="https://www.tiktok.com/@mcbethgaming/video/7609696576314805535" target="_blank">
+
+                    <a class="video-link-card"
+                       href="https://www.tiktok.com/@mcbethgaming/video/7609696576314805535"
+                       target="_blank">
+
                         <span class="video-label">Pinned Video</span>
+
                         <h3>Top 5 POI's</h3>
-                        <p>Top 5 7 Days to <span class="hidden-word">Die</span> POIs for players and builders.</p>
-                        <div class="watch-btn">Watch on TikTok</div>
+
+                        <p>
+                            Top 5 7 Days to <span class="hidden-word">Die</span> POIs for players and builders.
+                        </p>
+
+                        <div class="watch-btn">
+                            Watch on TikTok
+                        </div>
+
                     </a>
+
                 </div>
+
             </div>
 
             <div class="info-box">
+
                 <h2>Server Mods</h2>
-                <p>The McBeth Gaming community server runs a curated mod collection focused on quality-of-life upgrades, better building, improved loot, and smoother community gameplay.</p>
-                <a class="affiliate-btn" href="mods.html">View Full Mods Page</a>
+
+                <p>
+                    The McBeth Gaming community server runs a curated mod collection
+                    focused on quality-of-life upgrades, better building, improved loot,
+                    and smoother community gameplay.
+                </p>
+
+                <a
+                    class="affiliate-btn"
+                    href="mods.html">
+
+                    View Full Mods Page
+
+                </a>
+
             </div>
 
             <div class="info-box">
+
                 <h2>About McBeth Gaming</h2>
-                <p>McBeth Gaming is a family-friendly 7 Days to Die gaming creator focused on survival gameplay, livestreams, tutorials, mods, community servers, creator events, and building a fun community forever <span class="hidden-word">bound</span> to survival.</p>
-                <a class="affiliate-btn" href="about.html">Learn More</a>
+
+                <p>
+                    McBeth Gaming is a family-friendly 7 Days to Die gaming creator
+                    focused on survival gameplay, livestreams, tutorials, mods,
+                    community servers, creator events, and building a fun community
+                    forever <span class="hidden-word">bound</span> to survival.
+                </p>
+
+                <a
+                    class="affiliate-btn"
+                    href="about.html">
+
+                    Learn More
+
+                </a>
+
             </div>
 
             <div class="info-box" id="nobull">
+
                 <h2>Powered By NoBull Networks</h2>
-                <p>Looking for a great game server host for your community? McBeth Gaming is proudly powered by NoBull Networks. Fast servers, reliable support, and great performance for survival gaming communities.</p>
-                <a class="affiliate-btn" href="https://my.nobullnetworks.com/aff.php?aff=21" target="_blank">Get Your Server Here</a>
+
+                <p>
+                    Looking for a great game server host for your community?
+
+                    McBeth Gaming is proudly powered by NoBull Networks.
+
+                    Fast servers, reliable support, and great performance
+                    for survival gaming communities.
+                </p>
+
+                <a
+                    class="affiliate-btn"
+                    href="https://my.nobullnetworks.com/aff.php?aff=21"
+                    target="_blank">
+
+                    Get Your Server Here
+
+                </a>
+
             </div>
 
         </div>
@@ -612,8 +888,38 @@
     </div>
 
 <script>
+
+    let secretCode = "";
+
+    document.addEventListener("keydown", (e) => {
+
+        const key = e.key.toUpperCase().replace(/[^A-Z0-9]/g, "");
+
+        if (!key) return;
+
+        secretCode += key;
+
+        if (secretCode.length > 30) {
+            secretCode = secretCode.slice(-30);
+        }
+
+        if (secretCode.includes("7DAYSTODIE")) {
+            window.location.href = "legend.html";
+        }
+
+        if (secretCode.includes("ASHBOUND")) {
+            window.location.href = "infernal.html";
+        }
+
+    });
+
+</script>
+
+<script>
+
     const music = document.getElementById('bgMusic');
     const musicStartText = document.querySelector('.music-start');
+
     music.volume = 0.15;
 
     document.body.addEventListener('click', () => {
@@ -621,8 +927,51 @@
             if (musicStartText) {
                 musicStartText.textContent = "🔊 Ambient Music Playing";
             }
-        });
+        }).catch(err => console.log("Audio play blocked:", err));
     }, { once: true });
+
+</script>
+
+<!-- Blood Moon Clock Logic Engine -->
+<script>
+    // Targets Friday, June 19, 2026 at midnight for the official launch night event
+    const targetLaunchDate = new Date("June 19, 2026 00:00:00").getTime();
+
+    const runCountdown = setInterval(function() {
+        const currentSystemTime = new Date().getTime();
+        const distanceRemaining = targetLaunchDate - currentSystemTime;
+
+        // Mathematical Breakdown Calculations
+        const calculations = {
+            days: Math.floor(distanceRemaining / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((distanceRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+            minutes: Math.floor((distanceRemaining % (1000 * 60 * 60)) / (1000 * 60)),
+            seconds: Math.floor((distanceRemaining % (1000 * 60)) / 1000)
+        };
+
+        // Standardize digits so single numbers display beautifully with a preceding zero
+        const padDigits = (num) => String(num).padStart(2, '0');
+
+        // Render the active timer text strings
+        document.getElementById("countdownClock").innerHTML = 
+            padDigits(calculations.days) + "d " + 
+            padDigits(calculations.hours) + "h " + 
+            padDigits(calculations.minutes) + "m " + 
+            padDigits(calculations.seconds) + "s";
+
+        // When the countdown completes, initiate the layout shift execution sequence
+        if (distanceRemaining < 0) {
+            clearInterval(runCountdown);
+            
+            // Re-render display labels
+            document.getElementById("bannerStatus").innerHTML = "🔴 BLOOD MOON ACTIVE • SERVER LIVE";
+            document.getElementById("countdownClock").style.display = "none";
+            document.getElementById("launchBtn").style.display = "inline-block";
+            
+            // Append target structural theme shift tags to body element properties
+            document.body.classList.add("blood-moon");
+        }
+    }, 1000);
 </script>
 
 </body>
