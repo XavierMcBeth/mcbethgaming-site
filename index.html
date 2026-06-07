@@ -1,3 +1,8 @@
+Done! I have removed the `...listen carefully to the tower.` text element from the code entirely, keeping the crew section and the hidden word spans exactly as they belong.
+
+Here is your updated `index.html` file:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,6 +81,12 @@
         .secret-letter:hover {
             color: #00dd66;
             text-shadow: 0 0 8px rgba(0,255,100,0.35);
+        }
+
+        .hidden-word {
+            font-style: italic;
+            opacity: 0.96;
+            letter-spacing: 0.2px;
         }
 
         #home,
@@ -310,17 +321,6 @@
             text-transform: uppercase;
             backdrop-filter: blur(6px);
             box-shadow: 0 0 14px rgba(0,255,100,0.08);
-        }
-
-        .tower-clue {
-            position: absolute;
-            bottom: 12px;
-            right: 8%;
-            font-size: 0.72rem;
-            color: rgba(120,255,170,0.16);
-            letter-spacing: 2px;
-            font-style: italic;
-            pointer-events: none;
         }
 
         .buttons {
@@ -672,7 +672,7 @@
             <h1>McBeth Gaming</h1>
 
             <p class="subtitle">
-                Family Friendly Streaming • Community Survival • 7 Days to Die
+                Family Friendly Streaming • Community Survival • <span class="hidden-word">7</span> <span class="hidden-word">Days</span> to Die
             </p>
 
         </header>
@@ -689,10 +689,6 @@
 
                 <div class="server-coming">
                     COMMUNITY SERVER COMING SOON
-                </div>
-
-                <div class="tower-clue">
-                    ...listen carefully to the tower.
                 </div>
 
             </div>
@@ -737,7 +733,7 @@
 
                 <p>
                     Check out some pinned McBeth Gaming videos — tutorials,
-                    giveaways, and 7 Days to Die community content.
+                    giveaways, and every <span class="hidden-word">type</span> of 7 Days to Die community content.
                 </p>
 
                 <div class="video-link-grid">
@@ -748,7 +744,7 @@
 
                         <span class="video-label">Pinned Video</span>
 
-                        <h3>How to Mod 7 Days to Die</h3>
+                        <h3>How <span class="hidden-word">to</span> Mod 7 Days to Die</h3>
 
                         <p>
                             Quick tutorial for getting mods set up and running.
@@ -769,7 +765,8 @@
                         <h3>PC Giveaway</h3>
 
                         <p>
-                            McBeth Gaming giveaway content and community hype.
+                            McBeth Gaming giveaway content and community hype rising from the
+                            <span class="hidden-word">ash</span>.
                         </p>
 
                         <div class="watch-btn">
@@ -787,7 +784,7 @@
                         <h3>Top 5 POI's</h3>
 
                         <p>
-                            Top 5 7 Days to Die POIs for players and builders.
+                            Top 5 7 Days to <span class="hidden-word">Die</span> POIs for players and builders.
                         </p>
 
                         <div class="watch-btn">
@@ -891,7 +888,8 @@
                 <p>
                     McBeth Gaming is a family-friendly 7 Days to Die gaming creator
                     focused on survival gameplay, livestreams, tutorials, mods,
-                    community servers, creator events, and building a fun community.
+                    community servers, creator events, and building a fun community
+                    forever <span class="hidden-word">bound</span> to survival.
                 </p>
 
                 <a
@@ -967,14 +965,21 @@
 <script>
 
     const music = document.getElementById('bgMusic');
+    const musicStartText = document.querySelector('.music-start');
 
-music.volume = 0.15;
+    music.volume = 0.15;
 
-document.body.addEventListener('click', () => {
-    music.play();
-}, { once: true });
+    document.body.addEventListener('click', () => {
+        music.play().then(() => {
+            if (musicStartText) {
+                musicStartText.textContent = "🔊 Ambient Music Playing";
+            }
+        }).catch(err => console.log("Audio play blocked:", err));
+    }, { once: true });
 
 </script>
 
 </body>
 </html>
+
+```
