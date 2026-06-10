@@ -90,13 +90,6 @@
             transition: background 1s ease;
         }
 
-        /* Dynamic Blood Moon State Triggered by JS */
-        body.blood-moon {
-            background:
-                linear-gradient(rgba(25,0,0,0.85), rgba(40,0,0,0.92)),
-                url('images/background.png') center center / cover no-repeat fixed;
-        }
-
         .secret-letter {
             color: inherit;
             cursor: default;
@@ -106,11 +99,6 @@
         .secret-letter:hover {
             color: #00dd66;
             text-shadow: 0 0 8px rgba(0,255,100,0.35);
-        }
-
-        body.blood-moon .secret-letter:hover {
-            color: #ff3355;
-            text-shadow: 0 0 8px rgba(255,0,50,0.6);
         }
 
         .hidden-word {
@@ -144,11 +132,6 @@
             animation: floatDust 18s linear infinite;
         }
 
-        body.blood-moon .particles span {
-            background: rgba(255,0,50,0.4);
-            box-shadow: 0 0 8px rgba(255,0,50,0.6);
-        }
-
         .particles span:nth-child(1) { left: 8%; animation-delay: 0s; }
         .particles span:nth-child(2) { left: 18%; animation-delay: 3s; }
         .particles span:nth-child(3) { left: 29%; animation-delay: 6s; }
@@ -165,8 +148,15 @@
                 transform: translateY(110vh) scale(0.4);
                 opacity: 0;
             }
-            20% { opacity: 0.6; }
-            80% { opacity: 0.6; }
+
+            20% {
+                opacity: 0.6;
+            }
+
+            80% {
+                opacity: 0.6;
+            }
+
             100% {
                 transform: translateY(-10vh) scale(1.1);
                 opacity: 0;
@@ -193,11 +183,7 @@
             justify-content: center;
             gap: 28px;
             box-shadow: 0 0 14px rgba(0,255,100,0.05);
-            transition: border-color 0.5s ease;
-        }
-
-        body.blood-moon .navbar {
-            border-bottom: 1px solid rgba(255,0,50,0.35);
+            transition: border 1s ease;
         }
 
         .navbar a {
@@ -214,10 +200,9 @@
             text-shadow: 0 0 8px rgba(0,255,100,0.35);
         }
 
-        body.blood-moon .navbar a:hover {
-            color: #ff3355;
-            text-shadow: 0 0 8px rgba(255,0,50,0.6);
-        }
+        /* =========================
+           MODS GLITCH EASTER EGG
+        ========================= */
 
         .glitch-link {
             position: relative;
@@ -247,11 +232,30 @@
         }
 
         @keyframes navGlitch {
-            0%, 92%, 100% { opacity: 0; transform: none; }
-            94% { opacity: 1; transform: skewX(-10deg) translateX(1px); }
-            94.4% { opacity: 0.35; transform: translateX(3px); }
-            94.8% { opacity: 1; transform: translateX(-2px); }
-            95.4% { opacity: 0; transform: none; }
+            0%, 92%, 100% {
+                opacity: 0;
+                transform: none;
+            }
+
+            94% {
+                opacity: 1;
+                transform: skewX(-10deg) translateX(1px);
+            }
+
+            94.4% {
+                opacity: 0.35;
+                transform: translateX(3px);
+            }
+
+            94.8% {
+                opacity: 1;
+                transform: translateX(-2px);
+            }
+
+            95.4% {
+                opacity: 0;
+                transform: none;
+            }
         }
 
         header {
@@ -269,12 +273,6 @@
             transition: 0.3s ease;
         }
 
-        body.blood-moon .logo {
-            filter:
-                drop-shadow(0 0 6px rgba(255,0,50,0.45))
-                drop-shadow(0 0 12px rgba(255,0,50,0.25));
-        }
-
         .logo:hover {
             transform: scale(1.02);
         }
@@ -289,14 +287,7 @@
                 0 0 4px rgba(0,255,100,0.35),
                 0 0 10px rgba(0,255,100,0.18);
             margin-bottom: 15px;
-            transition: color 0.5s ease, text-shadow 0.5s ease;
-        }
-
-        body.blood-moon h1 {
-            color: #ff3355;
-            text-shadow:
-                0 0 4px rgba(255,0,50,0.5),
-                0 0 12px rgba(255,0,50,0.3);
+            transition: color 1s ease, text-shadow 1s ease;
         }
 
         .subtitle {
@@ -326,14 +317,7 @@
             box-shadow:
                 0 0 14px rgba(0,255,100,0.18),
                 0 0 28px rgba(0,255,100,0.08);
-            transition: 0.3s ease;
-        }
-
-        body.blood-moon .server-img {
-            border: 2px solid rgba(255,50,50,0.5);
-            box-shadow:
-                0 0 14px rgba(255,50,50,0.3),
-                0 0 28px rgba(255,50,50,0.15);
+            transition: 0.3s ease, border 1s ease, box-shadow 1s ease;
         }
 
         .server-img:hover {
@@ -345,30 +329,20 @@
             top: 28px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(20, 0, 0, 0.85);
-            border: 2px solid rgba(255, 50, 50, 0.6);
-            color: #ff9999;
-            padding: 14px 24px;
+            background: rgba(20, 0, 0, 0.82);
+            border: 1px solid rgba(255, 50, 50, 0.5);
+            color: #ff8c8c;
+            padding: 12px 22px;
             border-radius: 14px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             backdrop-filter: blur(6px);
-            box-shadow: 0 0 20px rgba(255, 50, 50, 0.35);
+            box-shadow: 0 0 14px rgba(255, 50, 50, 0.25);
             width: auto;
             max-width: 92%;
-        }
-
-        /* Ticking Countdown Digit Display Layout */
-        .countdown-timer {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            margin-top: 10px;
-            font-size: 1.4rem;
-            color: #ff3355;
-            text-shadow: 0 0 10px rgba(255, 0, 50, 0.6);
-            letter-spacing: 2px;
+            transition: background 1s ease, border 1s ease, color 1s ease;
         }
 
         .buttons {
@@ -387,25 +361,14 @@
             border-radius: 14px;
             font-size: 1.15rem;
             font-weight: bold;
-            transition: 0.25s ease;
+            transition: 0.25s ease, background 1s ease;
             box-shadow: 0 0 10px rgba(0,255,100,0.16);
-        }
-
-        body.blood-moon .buttons a,
-        body.blood-moon .affiliate-btn {
-            background: linear-gradient(135deg, #8a0016, #dd2244);
-            box-shadow: 0 0 10px rgba(255,0,50,0.25);
         }
 
         .buttons a:hover,
         .affiliate-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 16px rgba(0,255,100,0.24);
-        }
-
-        body.blood-moon .buttons a:hover,
-        body.blood-moon .affiliate-btn:hover {
-            box-shadow: 0 0 18px rgba(255,0,50,0.45);
         }
 
         .creator-badge-wrap {
@@ -422,9 +385,9 @@
             filter: drop-shadow(0 0 10px rgba(0,255,100,0.12));
         }
 
-        body.blood-moon .creator-badge {
-            filter: drop-shadow(0 0 10px rgba(255,0,50,0.15));
-            opacity: 0.85;
+        .creator-badge:hover {
+            transform: scale(1.02);
+            opacity: 1;
         }
 
         .info-box {
@@ -435,12 +398,7 @@
             border-radius: 20px;
             padding: 35px 25px;
             box-shadow: 0 0 16px rgba(0,255,100,0.08);
-            transition: 0.3s ease;
-        }
-
-        body.blood-moon .info-box {
-            border: 1px solid rgba(255,50,50,0.25);
-            box-shadow: 0 0 16px rgba(255,50,50,0.1);
+            transition: 0.3s ease, border 1s ease;
         }
 
         .info-box:hover {
@@ -453,11 +411,7 @@
             color: #00dd66;
             margin-bottom: 15px;
             font-size: 2rem;
-            transition: color 0.5s ease;
-        }
-
-        body.blood-moon .info-box h2 {
-            color: #ff3355;
+            transition: color 1s ease;
         }
 
         .info-box p {
@@ -483,12 +437,7 @@
             padding: 24px 18px;
             color: white;
             box-shadow: 0 0 12px rgba(0,255,100,0.06);
-            transition: 0.25s ease;
-        }
-
-        body.blood-moon .video-link-card {
-            background: rgba(255,0,50,0.03);
-            border: 1px solid rgba(255,0,50,0.18);
+            transition: 0.25s ease, border 1s ease, background 1s ease;
         }
 
         .video-link-card:hover {
@@ -496,19 +445,12 @@
             box-shadow: 0 0 18px rgba(0,255,100,0.14);
         }
 
-        body.blood-moon .video-link-card:hover {
-            box-shadow: 0 0 18px rgba(255,0,50,0.25);
-        }
-
         .video-label {
             color: #8cffb5;
             font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-        }
-
-        body.blood-moon .video-label {
-            color: #ff99aa;
+            transition: color 1s ease;
         }
 
         .video-link-card h3 {
@@ -516,10 +458,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.15rem;
             margin: 14px 0;
-        }
-
-        body.blood-moon .video-link-card h3 {
-            color: #ff3355;
+            transition: color 1s ease;
         }
 
         .video-link-card p {
@@ -535,10 +474,7 @@
             border-radius: 12px;
             font-weight: bold;
             color: white;
-        }
-
-        body.blood-moon .watch-btn {
-            background: linear-gradient(135deg, #8a0016, #dd2244);
+            transition: background 1s ease;
         }
 
         .music-player {
@@ -551,14 +487,13 @@
             border-radius: 16px;
             border: 1px solid rgba(0,255,100,0.22);
             backdrop-filter: blur(6px);
+            transition: border 1s ease;
         }
 
+        /* Inversion UI Theme filter for standard audio module */
         .music-player audio {
             filter: invert(90%) hue-rotate(90deg) brightness(90%);
-        }
-
-        body.blood-moon .music-player audio {
-            filter: invert(90%) hue-rotate(0deg) brightness(90%);
+            transition: filter 1s ease;
         }
 
         .music-credit {
@@ -573,10 +508,7 @@
             color: #00dd66;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        body.blood-moon .music-credit a {
-            color: #ff3355;
+            transition: color 1s ease;
         }
 
         .music-start {
@@ -585,10 +517,7 @@
             margin-bottom: 8px;
             text-align: center;
             letter-spacing: 1px;
-        }
-
-        body.blood-moon .music-start {
-            color: #ff99aa;
+            transition: color 1s ease;
         }
 
         footer {
@@ -599,22 +528,146 @@
             padding: 25px;
         }
 
+        /* =========================================
+           BLOOD MOON LIVE RED THEME OVERRIDES
+        ========================================= */
+        body.blood-moon {
+            background:
+                linear-gradient(rgba(35,0,0,0.82), rgba(15,0,0,0.92)),
+                url('images/background.png') center center / cover no-repeat fixed;
+        }
+
+        body.blood-moon ::-webkit-scrollbar-thumb {
+            background: rgba(255, 0, 50, 0.25);
+            border: 1px solid rgba(255, 0, 50, 0.15);
+        }
+        body.blood-moon ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 0, 50, 0.5);
+            box-shadow: 0 0 8px rgba(255, 0, 50, 0.6);
+        }
+
+        body.blood-moon .particles span {
+            background: rgba(255, 30, 30, 0.45);
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+        }
+
+        body.blood-moon .secret-letter:hover,
+        body.blood-moon .navbar a:hover,
+        body.blood-moon h1,
+        body.blood-moon .info-box h2,
+        body.blood-moon .video-link-card h3,
+        body.blood-moon .music-credit a {
+            color: #ff3333;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+
+        body.blood-moon .navbar {
+            border-bottom: 1px solid rgba(255, 0, 0, 0.25);
+            box-shadow: 0 0 14px rgba(255, 0, 0, 0.08);
+        }
+
+        body.blood-moon .glitch-link::after {
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.6), 0 0 18px rgba(255, 0, 0, 0.3);
+        }
+
+        body.blood-moon .logo {
+            filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.45)) drop-shadow(0 0 16px rgba(255, 0, 0, 0.2));
+        }
+
+        body.blood-moon .server-img {
+            border: 2px solid rgba(255, 0, 0, 0.5);
+            box-shadow: 0 0 16px rgba(255, 0, 0, 0.25);
+        }
+
+        body.blood-moon .server-coming {
+            background: rgba(40, 0, 0, 0.9);
+            border: 1px solid rgba(255, 0, 0, 0.8);
+            color: #ff3333;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        body.blood-moon .buttons a,
+        body.blood-moon .affiliate-btn,
+        body.blood-moon .watch-btn {
+            background: linear-gradient(135deg, #990000, #ff2222);
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.25);
+        }
+
+        body.blood-moon .info-box {
+            border: 1px solid rgba(255, 0, 0, 0.25);
+            box-shadow: 0 0 16px rgba(255, 0, 0, 0.08);
+        }
+
+        body.blood-moon .video-link-card {
+            background: rgba(255, 0, 0, 0.03);
+            border: 1px solid rgba(255, 0, 0, 0.18);
+        }
+
+        body.blood-moon .video-label,
+        body.blood-moon .music-start {
+            color: #ff9999;
+        }
+
+        body.blood-moon .music-player {
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        body.blood-moon .music-player audio {
+            filter: invert(90%) hue-rotate(330deg) brightness(90%);
+        }
+
         @media (max-width: 900px) {
-            .video-link-grid { grid-template-columns: 1fr; }
+            .video-link-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .navbar { gap: 16px; flex-wrap: wrap; }
-            h1 { font-size: 2.8rem; }
-            .subtitle { font-size: 1rem; }
-            .buttons a, .affiliate-btn { width: 85%; max-width: 320px; }
-            .logo { width: 240px; }
-            .creator-badge { max-width: 320px; }
-            .info-box { padding: 25px 18px; }
-            .music-player { left: 10px; right: 10px; }
-            .music-player audio { width: 100%; }
-            .server-coming { font-size: 0.72rem; width: 92%; }
-            .countdown-timer { font-size: 1.1rem; }
+
+            .navbar {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .buttons a,
+            .affiliate-btn {
+                width: 85%;
+                max-width: 320px;
+            }
+
+            .logo {
+                width: 240px;
+            }
+
+            .creator-badge {
+                max-width: 320px;
+            }
+
+            .info-box {
+                padding: 25px 18px;
+            }
+
+            .music-player {
+                left: 10px;
+                right: 10px;
+            }
+
+            .music-player audio {
+                width: 100%;
+            }
+
+            .server-coming {
+                font-size: 0.72rem;
+                width: 92%;
+            }
         }
 
     </style>
@@ -695,9 +748,8 @@
                     class="server-img"
                 >
 
-                <div class="server-coming" id="serverBanner">
-                    <span id="bannerStatus">New Server Launch Countdown</span>
-                    <div class="countdown-timer" id="countdownClock">00d 00h 00m 00s</div>
+                <div class="server-coming" id="wipe-timer">
+                    SERVER WIPE COUNTDOWN LOADING...
                 </div>
 
             </div>
@@ -880,6 +932,37 @@
     </div>
 
 <script>
+    // Target Date: June 19, 2026 at 9:00 AM
+    const targetWipeDate = new Date("June 19, 2026 09:00:00").getTime();
+    const timerElement = document.getElementById("wipe-timer");
+
+    function updateWipeCountdown() {
+        const now = new Date().getTime();
+        const difference = targetWipeDate - now;
+
+        if (difference <= 0) {
+            // Trigger Blood Moon Phase
+            timerElement.textContent = "🚨 SERVER IS LIVE! CHOOSE YOUR SIDE 🚨";
+            document.body.classList.add("blood-moon");
+            return; 
+        }
+
+        // Time calculations
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // Update display text dynamically
+        timerElement.textContent = `SERVER WIPE COUNTDOWN: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    // Run immediately on page load, then update every second
+    updateWipeCountdown();
+    setInterval(updateWipeCountdown, 1000);
+</script>
+
+<script>
 
     let secretCode = "";
 
@@ -922,46 +1005,6 @@
         }).catch(err => console.log("Audio play blocked:", err));
     }, { once: true });
 
-</script>
-
-<script>
-    // Targets June 19, 2026 at midnight
-    const targetLaunchDate = new Date("June 19, 2026 00:00:00").getTime();
-
-    const runCountdown = setInterval(function() {
-        const currentSystemTime = new Date().getTime();
-        const distanceRemaining = targetLaunchDate - currentSystemTime;
-
-        // Mathematical Breakdown Calculations
-        const calculations = {
-            days: Math.floor(distanceRemaining / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((distanceRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-            minutes: Math.floor((distanceRemaining % (1000 * 60 * 60)) / (1000 * 60)),
-            seconds: Math.floor((distanceRemaining % (1000 * 60)) / 1000)
-        };
-
-        // Standardize digits so single numbers display beautifully with a preceding zero
-        const padDigits = (num) => String(num).padStart(2, '0');
-
-        // Render the active timer text strings
-        document.getElementById("countdownClock").innerHTML = 
-            padDigits(calculations.days) + "d " + 
-            padDigits(calculations.hours) + "h " + 
-            padDigits(calculations.minutes) + "m " + 
-            padDigits(calculations.seconds) + "s";
-
-        // When the countdown completes, initiate layout update sequence with no external buttons
-        if (distanceRemaining < 0) {
-            clearInterval(runCountdown);
-            
-            // Re-render display labels natively within the floating module banner box
-            document.getElementById("bannerStatus").innerHTML = "🔴 BLOOD MOON ACTIVE • WORLD LIVE";
-            document.getElementById("countdownClock").style.display = "none";
-            
-            // Apply crimson identity traits to body properties
-            document.body.classList.add("blood-moon");
-        }
-    }, 1000);
 </script>
 
 </body>
