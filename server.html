@@ -291,6 +291,88 @@
             margin-bottom: 8px;
         }
 
+        .application-form {
+            max-width: 820px;
+            margin: 28px auto 0;
+            text-align: left;
+            display: grid;
+            gap: 18px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .form-field label,
+        .rules-check label {
+            display: block;
+            color: #8cffb5;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.92rem;
+        }
+
+        .form-field input,
+        .form-field textarea,
+        .form-field select {
+            width: 100%;
+            border: 1px solid rgba(0,255,100,0.22);
+            border-radius: 12px;
+            background: rgba(0,0,0,0.55);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            padding: 13px 14px;
+            outline: none;
+        }
+
+        .form-field textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus,
+        .form-field select:focus {
+            border-color: rgba(0,255,100,0.62);
+            box-shadow: 0 0 14px rgba(0,255,100,0.12);
+        }
+
+        .rules-check {
+            display: grid;
+            gap: 10px;
+            padding: 16px;
+            border: 1px solid rgba(0,255,100,0.14);
+            border-radius: 14px;
+            background: rgba(0,255,100,0.045);
+        }
+
+        .rules-check label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 0;
+            color: #d8d8d8;
+            line-height: 1.4;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .rules-check input {
+            margin-top: 4px;
+            accent-color: #00cc66;
+        }
+
+        .form-help {
+            color: rgba(216,216,216,0.78);
+            font-size: 0.98rem;
+            line-height: 1.55;
+        }
+
         .back-home {
             margin-top: 55px;
         }
@@ -327,6 +409,10 @@
             .main-btn {
                 width: 100%;
                 max-width: 320px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -533,6 +619,104 @@
                 <li>Follow server announcements, mod rules, and event rules.</li>
                 <li>Help keep the McBeth Gaming community fun and welcoming.</li>
             </ul>
+
+        </section>
+
+        <section class="info-card" id="whitelist-application">
+
+            <h2>Whitelist Application</h2>
+
+            <p>
+                Apply for access to the McBeth Gaming 7 Days to Die server.
+                Approved survivors will be added to the whitelist and receive
+                the server password privately.
+            </p>
+
+            <form class="application-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+
+                <input type="hidden" name="application_type" value="7 Days to Die Whitelist Application">
+                <input type="hidden" name="server" value="McBeth Gaming - Wasteland Revival">
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="display-name">In-game name</label>
+                        <input id="display-name" name="in_game_name" type="text" autocomplete="nickname" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="discord-name">Discord name</label>
+                        <input id="discord-name" name="discord_name" type="text" placeholder="Name#0000 or username" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="steam-id">SteamID64</label>
+                        <input id="steam-id" name="steam_id_64" type="text" inputmode="numeric" placeholder="7656119..." required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="steam-profile">Steam profile URL</label>
+                        <input id="steam-profile" name="steam_profile_url" type="url" placeholder="https://steamcommunity.com/..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="follow-platform">Where do you follow us?</label>
+                        <select id="follow-platform" name="follow_platform" required>
+                            <option value="">Choose one</option>
+                            <option value="TikTok - McBeth Gaming">TikTok - McBeth Gaming</option>
+                            <option value="Twitch - McBeth Gaming">Twitch - McBeth Gaming</option>
+                            <option value="TikTok - BoogieFaye00">TikTok - BoogieFaye00</option>
+                            <option value="Discord/community">Discord/community</option>
+                            <option value="Friend referral">Friend referral</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="age-confirmation">Age confirmation</label>
+                        <select id="age-confirmation" name="age_confirmation" required>
+                            <option value="">Choose one</option>
+                            <option value="13 or older">I am 13 or older</option>
+                            <option value="Parent/guardian approved">I have parent/guardian approval</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="why-join">Why do you want to join?</label>
+                    <textarea id="why-join" name="why_join" required></textarea>
+                </div>
+
+                <div class="form-field">
+                    <label for="experience">7 Days to Die experience</label>
+                    <textarea id="experience" name="7dtd_experience" placeholder="New player, casual survivor, builder, trader, horde-night fighter, etc."></textarea>
+                </div>
+
+                <div class="rules-check">
+                    <label>
+                        <input type="checkbox" name="rules_family_friendly" value="agreed" required>
+                        I agree to keep chat, names, signs, and builds family friendly.
+                    </label>
+                    <label>
+                        <input type="checkbox" name="rules_no_griefing" value="agreed" required>
+                        I agree not to grief, steal, harass, exploit, or ruin another player's base.
+                    </label>
+                    <label>
+                        <input type="checkbox" name="rules_whitelist" value="agreed" required>
+                        I understand approval is required before I receive the password or whitelist access.
+                    </label>
+                </div>
+
+                <button class="main-btn" type="submit">Submit Application</button>
+
+                <p class="form-help">
+                    After approval, staff will add your SteamID64 to the Takaro whitelist
+                    and send server details privately. Do not share the password publicly.
+                </p>
+
+            </form>
 
         </section>
 
