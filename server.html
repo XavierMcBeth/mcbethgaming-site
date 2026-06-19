@@ -342,6 +342,21 @@
             box-shadow: 0 0 14px rgba(0,255,100,0.12);
         }
 
+        .field-help {
+            display: inline-block;
+            margin-top: 8px;
+            color: rgba(140,255,181,0.86);
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .field-help a {
+            color: #8cffb5;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
         .rules-check {
             display: grid;
             gap: 10px;
@@ -653,11 +668,19 @@
                     <div class="form-field">
                         <label for="steam-id">SteamID64</label>
                         <input id="steam-id" name="steam_id_64" type="text" inputmode="numeric" placeholder="7656119..." required>
+                        <span class="field-help">
+                            Need help?
+                            <a href="https://steamid.io/" target="_blank" rel="noopener">Find your SteamID64</a>
+                        </span>
                     </div>
 
                     <div class="form-field">
                         <label for="steam-profile">Steam profile URL</label>
                         <input id="steam-profile" name="steam_profile_url" type="url" placeholder="https://steamcommunity.com/..." required>
+                        <span class="field-help">
+                            Open your Steam profile, then copy the page link from your browser.
+                            <a href="https://steamcommunity.com/my/" target="_blank" rel="noopener">Open Steam profile</a>
+                        </span>
                     </div>
                 </div>
 
