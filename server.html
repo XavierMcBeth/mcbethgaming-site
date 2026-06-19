@@ -686,15 +686,19 @@
 
                 <div class="form-row">
                     <div class="form-field">
-                        <label for="follow-platform">Where do you follow us?</label>
-                        <select id="follow-platform" name="follow_platform" required>
+                        <label for="access-role">Access type</label>
+                        <select id="access-role" name="requested_access_role" required>
                             <option value="">Choose one</option>
-                            <option value="TikTok - McBeth Gaming">TikTok - McBeth Gaming</option>
-                            <option value="Twitch - McBeth Gaming">Twitch - McBeth Gaming</option>
-                            <option value="TikTok - BoogieFaye00">TikTok - BoogieFaye00</option>
-                            <option value="Discord/community">Discord/community</option>
+                            <option value="Regular player - McBeth Gaming follower">Regular player - McBeth Gaming follower</option>
+                            <option value="Regular player - BoogieFaye00 follower">Regular player - BoogieFaye00 follower</option>
+                            <option value="Subscriber - Twitch">Subscriber - Twitch</option>
+                            <option value="Subscriber - other platform">Subscriber - other platform</option>
+                            <option value="Discord/community member">Discord/community member</option>
                             <option value="Friend referral">Friend referral</option>
                         </select>
+                        <span class="field-help">
+                            Subscriber status will be checked before roles or perks are granted.
+                        </span>
                     </div>
 
                     <div class="form-field">
